@@ -10,7 +10,7 @@ $ npm install sphido
 
 ## Usage
 
-```
+```javascript
 const globby = require('globby');
 const Sphido = require('../../src/index');
 
