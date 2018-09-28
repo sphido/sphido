@@ -16,17 +16,17 @@ const Sphido = require('sphido');
 
 (async () => {
 
-	// get list of pages...
-	const pages = await Sphido.getPages(await globby('content/**/*.{md,html}'), ...Sphido.extenders);
+  // get list of pages...
+  const pages = await Sphido.getPages(await globby('content/**/*.{md,html}'), ...Sphido.extenders);
 
-	for await (const page of pages) {
-		// save page to HTML (with default template/single.html)
-		// from content ===> public directory
-		await page.save(
-				page.dir.replace('content', 'public')
-		);
-	}
-	
+  for await (const page of pages) {
+    // save page to HTML (with default template/single.html)
+    // from content ===> public directory
+    await page.save(
+        page.dir.replace('content', 'public')
+    );
+  }
+  
 })();
 ```
 
