@@ -32,8 +32,6 @@ const Sphido = require('sphido');
 
 See `example` folder for more examples.
 
-## Default page properties
-
 ## TODO
 
 - add cli.js 
