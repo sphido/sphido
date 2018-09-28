@@ -12,7 +12,7 @@ $ npm install sphido
 
 ```javascript
 const globby = require('globby');
-const Sphido = require('../../src/index');
+const Sphido = require('sphido');
 
 (async () => {
 
