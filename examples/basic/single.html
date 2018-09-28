@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ page.title | trim }}</title>
+</head>
+<body>
+
+<main>
+	<article>
+		{{ page.title }}
+		{{ page.content | trim | safe }}
+	</article>
+</main>
+
+
+<h2>Page</h2>
+<pre>{{ page | dump(1) }}</pre>
+</body>
+</html>
