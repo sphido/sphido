@@ -1,5 +1,7 @@
 # Sphido
 
+<img src="https://sphido.org/img/sphido.svg" />
+
 A rocket 🚀 fast, lightweight, static site generator.
 
 ## Install
