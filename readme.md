@@ -10,13 +10,13 @@
   A rocket 🚀 fast, lightweight, static site generator.
 </p>
 
-## Install
+## Installation
 
-```
-$ npm install sphido
+```bash 
+$ npm i sphido
 ```
 
-## Usage
+## Quick Start
 
 ```javascript
 const globby = require('globby');
@@ -39,6 +39,10 @@ const Sphido = require('sphido');
 ```
 
 See `example` folder for more examples.
+
+## License
+
+MIT
 
 ## TODO
 
