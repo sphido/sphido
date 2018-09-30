@@ -1,8 +1,15 @@
 # Sphido
 
-<img src="https://sphido.org/img/sphido.svg" />
+<p align="center">
+  <a href="https://sphido.org">
+    <img src="https://sphido.org/img/sphido.svg" 
+  </a>
+</p>
 
-A rocket 🚀 fast, lightweight, static site generator.
+
+<p align="center">
+  A rocket 🚀 fast, lightweight, static site generator.
+</p>
 
 ## Install
 
