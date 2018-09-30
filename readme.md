@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://sphido.org">
-    <img src="https://sphido.org/img/sphido.svg" 
+    <img src="https://sphido.org/img/sphido.svg" />
   </a>
 </p>
 
