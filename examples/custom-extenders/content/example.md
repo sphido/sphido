@@ -1,6 +1,6 @@
 ---
 title: Example markdown page
-slug: example
+slug: .
 ---
 
 

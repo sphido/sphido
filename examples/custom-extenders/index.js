@@ -8,7 +8,7 @@ const Sphido = require('../../index');
 	const pages = await Sphido.getPages(await globby(__dirname + '/content/**/*.{md,html}'), ...Sphido.extenders,
 			(page) => {
 				page.author = 'John Appleseed'; // add Custom property to all pages
-				page.template = 'examples/custom-extenders/single.html';
+				page.template = 'examples/custom-extenders/page.html';
 				page.title = page.title + ' | add to all titles';
 			},
 			{
