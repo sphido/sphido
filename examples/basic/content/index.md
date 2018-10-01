@@ -1,10 +1,14 @@
 ---
-title: Basic example
-slug: basic
+title: Basic example index
+slug: .
 ---
 
 
 # This is a basic example
+
+- [lorem-ipsum](./lorem-ipsum/index.html)
+- [dolor-sit-amet](./dolor-sit-amet/index.html)
+- [no-title](./no-title/index.html)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
