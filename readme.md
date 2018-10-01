@@ -43,8 +43,3 @@ See `example` folder for more examples.
 ## License
 
 MIT
-
-## TODO
-
-- add cli.js 
-- customize numjucks settings
