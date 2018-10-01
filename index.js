@@ -16,9 +16,9 @@ module.exports = {
 		)
 	],
 
+	template: require('./lib/template'),
 	pagination: require('./lib/pagination'),
 	getPages: require('./lib/getPages'),
 	getPage: require('./lib/getPage'),
-
-	render: require('./lib/render'),
 };
+
