@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const globby = require('globby');
 const Sphido = require('../../index');
 
@@ -19,7 +21,6 @@ const Sphido = require('../../index');
 			'theme/sitemap.xml',
 			{
 				pages: pages,
-				date: new Date().toISOString(),
 				domain: 'https://example.com'
 			}
 	);
