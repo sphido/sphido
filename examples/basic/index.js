@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const globby = require('globby');
 const Sphido = require('../../index');
 
@@ -9,7 +11,7 @@ const Sphido = require('../../index');
 	// 2. Save pages... (with default HTML template)
 	for await (const page of pages) {
 		await page.save(
-				page.dir.replace('content', 'public'),
+				page.dir.replace('content', 'public')
 		);
 	}
 
