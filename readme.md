@@ -30,7 +30,7 @@ const Sphido = require('sphido');
 	);
 
   for await (const page of pages) {
-    // save page to HTML (with default template/single.html)
+    // save page to HTML (with default theme/page.html)
     // from content ===> public directory
     await page.save(
         page.dir.replace('content', 'public')
