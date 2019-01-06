@@ -40,7 +40,13 @@ const Sphido = require('sphido');
 })();
 ```
 
-See `example` folder for more examples.
+
+## Examples
+
+* [Basic example](https://github.com/sphido/sphido/tree/master/examples/basic)
+* [Custom extenders](https://github.com/sphido/sphido/tree/master/examples/custom-extenders)
+* [RSS](https://github.com/sphido/sphido/tree/master/examples/rss)
+* [Sitemap](https://github.com/sphido/sphido/tree/master/examples/sitemap)
 
 ## License
 
