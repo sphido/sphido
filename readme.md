@@ -26,7 +26,8 @@ const Sphido = require('sphido');
 
   // get list of pages...
   const pages = await Sphido.getPages(
-  		await globby('content/**/*.{md,html}'), ...Sphido.extenders
+  		await globby('content/**/*.{md,html}'), 
+  		...Sphido.extenders
 	);
 
   for await (const page of pages) {
