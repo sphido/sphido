@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 
+const {join} = require('path');
 const globby = require('globby');
-const Sphido = require('../../index');
+const Sphido = require('../..');
 
 (async () => {
-
 	// 1. Get list of pages...
-	const pages = await Sphido.getPages(await globby(__dirname + '/content/**/*.{md,html}'), ...Sphido.extenders);
+	const pages = await Sphido.getPages(
+		await globby(join(__dirname, '/content/**/*.{md,html}')),
+		...Sphido.extenders
+	);
 
 	// 2. Save pages... (with default HTML template)
 	for await (const page of pages) {
@@ -14,5 +17,4 @@ const Sphido = require('../../index');
 			page.dir.replace('content', 'public')
 		);
 	}
-
 })();
