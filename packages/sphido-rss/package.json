@@ -1,0 +1,19 @@
+{
+	"name": "@sphido/rss",
+	"version": "0.0.1",
+	"author": {
+		"name": "Roman Ožana",
+		"email": "roman@omdesign.cz",
+		"url": "https://omdesign.cz"
+	},
+	"description": "RSS for Sphido CMS",
+	"main": "src/index.js",
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"ava": "^2.4.0"
+	},
+	"scripts": {
+		"test": "ava"
+	}
+}
