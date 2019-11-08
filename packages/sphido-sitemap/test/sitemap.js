@@ -1,5 +1,4 @@
 import test from 'ava';
-import SphidoSitemp from '../src/index';
 
 const posts = [
 	{
