@@ -1,17 +1,18 @@
 {
-	"name": "@sphido/rss",
+	"name": "@sphido/feed",
 	"version": "0.0.1",
 	"author": {
 		"name": "Roman Ožana",
 		"email": "roman@omdesign.cz",
 		"url": "https://omdesign.cz"
 	},
-	"description": "RSS for Sphido CMS",
+	"description": "Atom feed for Sphido CMS",
 	"main": "src/index.js",
 	"license": "MIT",
 	"type": "module",
 	"devDependencies": {
-		"ava": "^2.4.0"
+		"ava": "^2.4.0",
+		"fs-extra": "^8.1.0"
 	},
 	"scripts": {
 		"test": "ava"
