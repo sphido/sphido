@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 module.exports = {
 
 	extenders: [
@@ -16,9 +16,16 @@ module.exports = {
 		)
 	],
 
-	template: require('./lib/template'),
-	pagination: require('./lib/pagination'),
-	getPages: require('./lib/get-pages'),
-	getPage: require('./lib/get-page')
+
+	pagination: re
+	template: require('./packages/sphido-nunjucks/src/template'),
+	SphidoPagination: require('./packages/sphido-SphidoPagination/src/SphidoPagination'),
+	getPages: require('./packages/sphido-core/src/get-pages'),
+	getPage: require('./packages/sphido-core/src/get-page')
 };
 
+*/
+
+module.exports = {
+	pagination: require('./packages/sphido-pagination')
+};
