@@ -1,5 +1,4 @@
-# Sphido - pagination
-
+# @sphido/feed
 
 ## Install
 
@@ -7,7 +6,7 @@
 yarn add @sphido/feed
 ```
 
-## Usage
+## Example
 
 ```js
 const {outputFile} = require('fs-extra');

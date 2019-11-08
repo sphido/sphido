@@ -1,5 +1,4 @@
-# Sphido - pagination
-
+# @sphido/pagination
 
 ## Install
 
