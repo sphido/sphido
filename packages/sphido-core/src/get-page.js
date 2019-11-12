@@ -1,12 +1,14 @@
 'use strict';
 
 const {dirname, relative, extname, basename} = require('path');
-const {readFile} = require('fs-extra');
+
+
+const readFile =
 
 /**
  * Return {page} object
  * @param {String} file
- * @param {Array} extenders
+ * @param {Object.<string, number>} extenders
  * @returns {Promise<*>}
  */
 module.exports = async (file, ...extenders) => {
