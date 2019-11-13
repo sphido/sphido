@@ -13,7 +13,7 @@ const posts = [
 	}
 ];
 
-test('Sitemap basics', t => {
+test('sitemap.xml basics', t => {
 	let sitemap = SphidoSitemap(posts, 'https://www.site.com');
 	t.is(sitemap.includes('<?xml version="1.0" encoding="UTF-8"?>'), true);
 	t.is(sitemap.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), true);
