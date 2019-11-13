@@ -3,28 +3,30 @@
 import test from 'ava';
 import frontmatter from '../src/index';
 
-
-import SphidoPagination from "../../sphido-pagination/src";
-
-const posts = [
-	{title: 'first'},
-	{title: 'second'},
-	{title: 'another one'},
-	{title: 'another one'},
-	{title: 'another one'},
-	{title: 'another one'},
-	{title: 'another one'},
-	{title: 'another one', content: 'content'}
-];
-
-const markdown = {
-	content: `---\ntitle: example title\n slug: homepage\ntags:[a, b, c]\n---\n\n content content content\n\n`
+let page1 = {
+	content: `---\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n---\n\ncontent content content`
 };
 
-
 test('frontmatter markdown basics', t => {
-	let page = frontmatter(markdown);
 
-	t.is(page.title, 'example title');
-	t.is(page.slug, 'homepage');
+	frontmatter(page1);
+
+	t.is(page1.title, 'example title');
+	t.is(page1.slug, 'homepage');
+	t.deepEqual(page1.tags, ['a', 'b', 'c']);
+
+});
+
+let page2 = {
+	content: `<!--\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n --> \n\ncontent content content`
+};
+
+test('frontmatter html basics', t => {
+
+	frontmatter(page2);
+
+	t.is(page2.title, 'example title');
+	t.is(page2.slug, 'homepage');
+	t.deepEqual(page2.tags, ['a', 'b', 'c']);
+
 });
