@@ -1,9 +1,9 @@
 'use strict';
 
 const {dirname, relative, extname, basename} = require('path');
-
-
-const readFile =
+const fs = require('fs');
+const util = require('util');
+const readFile = util.promisify(fs.readFile);
 
 /**
  * Return {page} object

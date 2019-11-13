@@ -2,9 +2,10 @@ import test from 'ava';
 
 const {getPage} = require('../src/index');
 
-test('RSS basics', t => {
-	let page = getPage(__dirname + '/page.md');
+test('RSS basics', async t => {
+	let page = await getPage(__dirname + '/page.html');
 
-	console.log(page);
-	t.pass();
+	t.is(page.base, 'page');
+	t.is(page.dir, 'test');
+	t.is(page.ext, '.html');
 });

@@ -6,12 +6,9 @@
 		"email": "roman@omdesign.cz",
 		"url": "https://omdesign.cz"
 	},
-	"description": "Sitemap XML for Sphido CMS",
+	"description": "Sphido CMS core",
 	"main": "src/index.js",
 	"license": "MIT",
-	"dependencies": {
-		"fs-extra": "^8.1.0"
-	},
 	"devDependencies": {
 		"ava": "^2.4.0"
 	},
