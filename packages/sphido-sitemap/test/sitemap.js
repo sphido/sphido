@@ -1,35 +1,21 @@
 import test from 'ava';
+import SphidoSitemap from '../src/index'
 
 const posts = [
 	{
-		title: 'RSS test',
-		description: 'aaa',
-		content: '<p>This is content <strong>of article</strong></p>',
-		link: 'http://www.rss.com/example',
+		link: 'http://sitemap.com/example',
+		date: new Date()
+	},
+
+	{
+		link: 'https://sitemap.com/example2',
 		date: new Date()
 	}
 ];
 
-test('RSS basics', t => {
-	let rss = SphidoRSS([]);
-	t.is(rss.includes('<?xml version="1.0" encoding="UTF-8"?>'), true);
-	t.is(rss.includes('<title>Untitled RSS</title>'), true);
-	t.is(rss.includes('<generator>Sphido CMS</generator>'), true);
-});
-
-test('Change options', t => {
-	let rss = SphidoRSS([], {generator: 'omfg', title: 'example title'});
-	t.is(rss.includes('<title>example title</title>'), true);
-	t.is(rss.includes('<generator>omfg</generator>'), true);
-});
-
-test('Example posts', t => {
-	let rss = SphidoRSS(posts, {link: 'https://sphido.org'});
-	t.is(rss.includes(`<title>${posts[0].title}</title>`), true);
-	t.is(rss.includes(`<link>${posts[0].link}</link>`), true);
-	t.is(rss.includes(`<pubDate>${posts[0].date.toUTCString()}</pubDate>`), true);
-	t.is(rss.includes(`<description><![CDATA[${posts[0].description}]]></description>`), true);
-	t.is(rss.includes(`<content:encoded><![CDATA[${posts[0].content}]]></content:encoded>`), true);
-
-	console.log(rss);
+test('Sitemap basics', t => {
+	let sitemap = SphidoSitemap(posts, 'https://www.site.com');
+	t.is(sitemap.includes('<?xml version="1.0" encoding="UTF-8"?>'), true);
+	t.is(sitemap.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), true);
+	t.is(sitemap.includes('<loc>https://www.site.com</loc>'), true);
 });
