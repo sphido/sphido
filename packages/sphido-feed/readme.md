@@ -10,7 +10,7 @@ yarn add @sphido/feed
 
 ```js
 const {outputFile} = require('fs-extra');
-const SphidoFeed = require('../src/index');
+const SphidoFeed = require('@sphido/feed');
 
 const posts = [
 	{

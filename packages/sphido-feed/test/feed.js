@@ -1,5 +1,5 @@
 import test from 'ava';
-import SphidoFeed from '../src/index';
+import SphidoFeed from '..';
 
 const posts = [
 	{
@@ -31,6 +31,4 @@ test('Example posts', t => {
 	t.is(rss.includes(`<pubDate>${posts[0].date.toUTCString()}</pubDate>`), true);
 	t.is(rss.includes(`<description><![CDATA[${posts[0].description}]]></description>`), true);
 	t.is(rss.includes(`<content:encoded><![CDATA[${posts[0].content}]]></content:encoded>`), true);
-
-	console.log(rss);
 });

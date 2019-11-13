@@ -1,5 +1,5 @@
 import test from 'ava';
-import SphidoSitemap from '../src/index'
+import SphidoSitemap from '..'
 
 const posts = [
 	{

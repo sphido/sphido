@@ -1,6 +1,6 @@
 import test from 'ava';
 
-const {getPage} = require('../src/index');
+const {getPage} = require('..');
 
 test('RSS basics', async t => {
 	let page = await getPage(__dirname + '/page.html');

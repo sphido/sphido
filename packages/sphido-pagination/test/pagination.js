@@ -1,5 +1,5 @@
 import test from 'ava';
-import SphidoPagination from '../src/index';
+import SphidoPagination from '..';
 
 const posts = [
 	{title: 'first'},

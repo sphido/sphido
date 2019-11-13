@@ -1,7 +1,7 @@
 'use strict';
 
 import test from 'ava';
-import frontmatter from '../src/index';
+import frontmatter from '..';
 
 let page1 = {
 	content: `---\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n---\n\ncontent content content`

@@ -1,5 +1,5 @@
 const {outputFile} = require('fs-extra');
-const SphidoFeed = require('../src/index');
+const SphidoFeed = require('..');
 
 const posts = [
 	{
