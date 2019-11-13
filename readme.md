@@ -18,16 +18,17 @@ $ npm i sphido
 
 ## Quick Start
 
-```javascript
+```js
 const globby = require('globby');
-const Sphido = require('sphido');
+const Sphido = require('@sphido/core');
+const SphidoExtenders = [require('@sphido/frontmatter'), require('@sphido/marked'), require('@sphido/nunjucks')];
 
 (async () => {
 
   // get list of pages...
   const pages = await Sphido.getPages(
   		await globby('content/**/*.{md,html}'), 
-  		...Sphido.extenders
+		...SphidoExtenders
 	);
 
   for await (const page of pages) {
@@ -44,10 +45,10 @@ const Sphido = require('sphido');
 
 ## Examples
 
-* [Basic example](https://github.com/sphido/sphido/tree/master/examples/basic)
-* [Custom extenders](https://github.com/sphido/sphido/tree/master/examples/custom-extenders)
-* [RSS](https://github.com/sphido/sphido/tree/master/examples/rss)
-* [Sitemap](https://github.com/sphido/sphido/tree/master/examples/sitemap)
+* [Basic example](https://github.com/sphido/examples/tree/master/examples/basic)
+* [Custom extenders](https://github.com/sphido/examples/tree/master/examples/custom-extenders)
+* [RSS](https://github.com/sphido/examples/tree/master/examples/rss)
+* [Sitemap](https://github.com/sphido/examples/tree/master/examples/sitemap)
 
 ## License
 

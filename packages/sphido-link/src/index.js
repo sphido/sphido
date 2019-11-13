@@ -7,7 +7,7 @@ module.exports = {
 	 * Generate link to current page
 	 * @returns {string}
 	 */
-	url() {
+	link() {
 		return '/' + normalize(this.dir + sep + this.slug + sep)
 			.split(sep)
 			.splice(1)
