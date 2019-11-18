@@ -8,25 +8,7 @@
 	},
 	"license": "MIT",
 	"description": "A rocket 🚀 fast, lightweight, static site generator",
-	"keywords": [
-		"markdown",
-		"markup",
-		"content management system",
-		"cms",
-		"static",
-		"static site generator",
-		"generator",
-		"framework",
-		"numjucks",
-		"blog",
-		"scaffold"
-	],
 	"homepage": "https://sphido.org",
-	"bugs": "https://github.com/sphido/sphido/issues",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:sphido/sphido.git"
-	},
 	"workspaces": [
 		"packages/*"
 	],
