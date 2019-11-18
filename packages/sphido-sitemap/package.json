@@ -9,7 +9,6 @@
 	"description": "Sitemap XML for Sphido CMS",
 	"main": "src/index.js",
 	"license": "MIT",
-	"type": "module",
 	"devDependencies": {
 		"ava": "^2.4.0",
 		"fs-extra": "^8.1.0"

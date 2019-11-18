@@ -9,7 +9,6 @@
 	"description": "Pagination for Sphido CMS",
 	"main": "src/index.js",
 	"license": "MIT",
-	"type": "module",
 	"devDependencies": {
 		"ava": "^2.4.0"
 	},

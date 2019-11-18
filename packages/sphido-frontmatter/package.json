@@ -6,10 +6,9 @@
 		"email": "roman@omdesign.cz",
 		"url": "https://omdesign.cz"
 	},
-	"description": "Frontmatter for Sphido CMS",
+	"description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
 	"main": "src/index.js",
 	"license": "MIT",
-	"type": "module",
 	"devDependencies": {
 		"ava": "^2.4.0"
 	},
