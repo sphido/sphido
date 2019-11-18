@@ -1,0 +1,21 @@
+{
+	"name": "@sphido/twemoji",
+	"version": "0.0.1",
+	"author": {
+		"name": "Roman Ožana",
+		"email": "roman@omdesign.cz",
+		"url": "https://omdesign.cz"
+	},
+	"description": "Twemoji for Sphido - A 🚀 fast, lightweight, static site generator",
+	"main": "src/index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"ava": "^2.4.0"
+	},
+	"scripts": {
+		"test": "ava"
+	},
+	"dependencies": {
+		"twemoji": "^12.1.4"
+	}
+}
