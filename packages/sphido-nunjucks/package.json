@@ -1,8 +1,23 @@
 {
 	"name": "@sphido/nunjucks",
-	"version": "1.0.0",
+	"version": "0.0.1",
+	"author": {
+		"name": "Roman Ožana",
+		"email": "roman@omdesign.cz",
+		"url": "https://omdesign.cz"
+	},
+	"description": "",
+	"main": "src/index.js",
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"ava": "^2.4.0"
+	},
 	"dependencies": {
 		"fs-extra": "^8.1.0",
 		"nunjucks": "^3.2.0"
+	},
+	"scripts": {
+		"test": "ava"
 	}
 }

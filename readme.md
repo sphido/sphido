@@ -20,8 +20,17 @@ $ npm i sphido
 
 ```js
 const globby = require('globby');
+const {join} = require('path');
+
 const Sphido = require('@sphido/core');
-const SphidoExtenders = [require('@sphido/frontmatter'), require('@sphido/marked'), require('@sphido/nunjucks')];
+const SphidoExtenders = [
+    require('@sphido/frontmatter'),
+    require('@sphido/marked'),
+    page => {
+      page.out = join(page.dir.replace('content', 'public'), page.slug, 'index.html')
+    }
+];
+
 
 (async () => {
 
@@ -34,9 +43,13 @@ const SphidoExtenders = [require('@sphido/frontmatter'), require('@sphido/marked
   for await (const page of pages) {
     // save page to HTML (with default theme/page.html)
     // from content ===> public directory
-    await page.save(
-        page.dir.replace('content', 'public')
-    );
+    await Sphido.save(
+
+    )
+
+    save(`<html>${page.title}${page.content}</html>`)
+
+
   }
   
 })();

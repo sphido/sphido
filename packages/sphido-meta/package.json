@@ -1,11 +1,22 @@
 {
-  "name": "@sphido/extenders",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "license": "MIT",
-  "dependencies": {
-    "@sindresorhus/slugify": "^0.9.1",
-    "js-yaml": "^3.13.1",
-    "marked": "^0.7.0"
-  }
+	"name": "@sphido/meta",
+	"version": "0.0.1",
+	"author": {
+		"name": "Roman Ožana",
+		"email": "roman@omdesign.cz",
+		"url": "https://omdesign.cz"
+	},
+	"description": "",
+	"main": "src/index.js",
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"ava": "^2.4.0"
+	},
+	"scripts": {
+		"test": "ava"
+	},
+	"dependencies": {
+		"@sindresorhus/slugify": "^0.9.1"
+	}
 }
