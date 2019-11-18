@@ -13,11 +13,19 @@
 		"packages/*"
 	],
 	"scripts": {
-		"test": "xo"
+		"ava": "ava",
+		"xo": "xo",
+		"test": " ava && xo"
 	},
 	"devDependencies": {
 		"lerna": "^3.18.4",
-		"xo": "^0.24.0"
+		"ava": "^2.4.0",
+		"xo": "^0.25.0"
+	},
+	"ava": {
+		"files": [
+			"packages/**/test/**/*"
+		]
 	},
 	"xo": {
 		"rules": {
