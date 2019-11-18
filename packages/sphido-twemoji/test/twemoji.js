@@ -1,10 +1,9 @@
 import test from 'ava';
-import SphidoTwemoji from '..';
+import twemoji from '..';
 
-const post = {content: '❤️'};
-
-test('Twemoji basic', t => {
-	SphidoTwemoji(post);
+test('twemoji', t => {
+	const post = {content: '❤️'};
+	twemoji(post);
 	t.is(post.content.includes('<img'), true);
 	t.is(post.content.includes('twemoji.maxcdn.com'), true);
 	t.is(post.content.includes('class="emoji"'), true);

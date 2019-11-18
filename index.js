@@ -1,28 +1,25 @@
-'use strict'
+'use strict';
 
 const {join} = require('path');
 const {outputFile} = require('fs-extra');
 
 const globby = require('globby');
 const Sphido = require('@sphido/core');
-const SphidoPagination = require('@sphido/pagination');
-
-const PageExtenders = [
-	require('@sphido/frontmatter'),
-	require('@sphido/marked'),
-	require('@sphido/meta'),
-];
+const pagination = require('@sphido/pagination');
 
 (async () => {
-
-	// get list of pages...
+	// Get list of pages...
 	const posts = await Sphido.getPages(
 		await globby('packages/**/*.md'),
-		...PageExtenders
+		...[
+			require('@sphido/frontmatter'),
+			require('@sphido/marked'),
+			require('@sphido/meta')
+		]
 	);
 
 	for await (const page of posts) {
-		// save page to HTML (with default theme/page.html)
+		// Save page to HTML (with default theme/page.html)
 		// from content ===> public directory
 
 		/*
@@ -42,22 +39,18 @@ const PageExtenders = [
 		);
 		*/
 
-
 		// pages
 		await outputFile(
 			join(__dirname, 'public', page.slug + '.json'),
 			`${JSON.stringify(page, null, 2)}`
 		);
 
-
-		// pagination
-		const pages = SphidoPagination(posts, 3);
+		// Pagination
+		const pages = pagination(posts, 3);
 		for await (const page of pages) {
-			console.log(page.posts); // list of posts on current page
-			console.log(page.current); // current page no
-			console.log(page.pages); // array of other pages
+			console.log(page.posts); // List of posts on current page
+			console.log(page.current); // Current page no
+			console.log(page.pages); // Array of other pages
 		}
-
 	}
-
 })();

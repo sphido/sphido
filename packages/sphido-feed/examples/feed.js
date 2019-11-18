@@ -1,5 +1,6 @@
 const {outputFile} = require('fs-extra');
-const SphidoFeed = require('..');
+const {join} = require('path');
+const feed = require('..');
 
 const posts = [
 	{
@@ -15,20 +16,19 @@ const posts = [
 		content: '<p>article content</p>',
 		description: 'Short description',
 		date: new Date()
-	},
+	}
 ];
 
 (async () => {
-
-	const feed = SphidoFeed(
+	const rss = feed(
 		posts,
 		{
 			title: 'Feed of example.com',
 			description: 'This is my Atom feed',
-			link: 'https://example.com',
+			link: 'https://example.com'
 		},
 		'https://example.com/feed.xml'
 	);
 
-	await outputFile(__dirname + '/feed.xml', feed);
+	await outputFile(join(__dirname, '/feed.xml'), rss);
 })();

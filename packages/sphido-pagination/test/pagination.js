@@ -1,5 +1,5 @@
 import test from 'ava';
-import SphidoPagination from '..';
+import pagination from '..';
 
 const posts = [
 	{title: 'first'},
@@ -13,17 +13,17 @@ const posts = [
 ];
 
 test('first page', async t => {
-	const pages = SphidoPagination(posts, 1);
+	const pages = await pagination(posts, 1);
 	const firstPage = await pages.next();
 	t.is(firstPage.value.current, 1);
 	t.is(firstPage.value.posts.length, 1);
 	t.is(firstPage.value.posts[0].title, 'first');
 });
 
-
 test('second page', async t => {
-	const pages = SphidoPagination(posts, 1);
+	const pages = await pagination(posts, 1);
 	const firstPage = await pages.next();
+	t.is(firstPage.value.current, 1);
 	const secondPage = await pages.next();
 	t.is(secondPage.value.current, 2);
 	t.is(secondPage.value.posts.length, 1);
@@ -31,9 +31,9 @@ test('second page', async t => {
 });
 
 test('default parPage value', async t => {
-	const pages = SphidoPagination(posts);
+	const pages = pagination(posts);
 
-	// first page
+	// First page
 	const firstPage = await pages.next();
 	t.is(firstPage.value.posts.length, 5);
 	t.is(firstPage.value.posts[0].title, 'first');
@@ -42,7 +42,7 @@ test('default parPage value', async t => {
 	t.is(firstPage.value.posts[3].title, 'another one');
 	t.is(firstPage.value.posts[4].title, 'another one');
 
-	// second page
+	// Second page
 	const secondPage = await pages.next();
 	t.is(secondPage.value.current, 2);
 	t.is(secondPage.value.posts.length, 3);
@@ -52,7 +52,7 @@ test('default parPage value', async t => {
 });
 
 test('pagination over posts', async t => {
-	const pages = SphidoPagination(posts, 3);
+	const pages = await pagination(posts, 3);
 	for await (const page of pages) {
 		t.is(page.current > 0, true); // 1, 2, 3, 4
 		t.is(page.posts.length >= 2, true); // 3, 3, 2 posts per page
@@ -60,9 +60,12 @@ test('pagination over posts', async t => {
 });
 
 test('empty posts', async t => {
-	const pages = SphidoPagination([], 3);
+	const pages = await pagination([], 3);
+
 	for await (const page of pages) {
-		t.fail('');
+		t.is(typeof page === 'object', true);
+		t.fail('This page should not exists...');
 	}
+
 	t.pass();
 });

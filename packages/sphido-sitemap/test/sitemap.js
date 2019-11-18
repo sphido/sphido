@@ -1,5 +1,5 @@
 import test from 'ava';
-import SphidoSitemap from '..'
+import sitemap from '..';
 
 const posts = [
 	{
@@ -14,8 +14,8 @@ const posts = [
 ];
 
 test('sitemap.xml basics', t => {
-	let sitemap = SphidoSitemap(posts, 'https://www.site.com');
-	t.is(sitemap.includes('<?xml version="1.0" encoding="UTF-8"?>'), true);
-	t.is(sitemap.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), true);
-	t.is(sitemap.includes('<loc>https://www.site.com</loc>'), true);
+	const s = sitemap(posts, 'https://www.site.com');
+	t.is(s.includes('<?xml version="1.0" encoding="UTF-8"?>'), true);
+	t.is(s.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), true);
+	t.is(s.includes('<loc>https://www.site.com</loc>'), true);
 });

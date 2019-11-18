@@ -1,5 +1,6 @@
 const {outputFile} = require('fs-extra');
-const SphidoSitemap = require('..');
+const {join} = require('path');
+const sphidoSitemap = require('..');
 
 const posts = [
 	{
@@ -9,10 +10,10 @@ const posts = [
 	{
 		link: 'https://example.com/second',
 		date: new Date()
-	},
+	}
 ];
 
 (async () => {
-	const sitemap = SphidoSitemap(posts, 'https://example.com/');
-	await outputFile(__dirname + '/sitemap.xml', sitemap);
+	const sitemap = sphidoSitemap(posts, 'https://example.com/');
+	await outputFile(join(__dirname, '/sitemap.xml'), sitemap);
 })();

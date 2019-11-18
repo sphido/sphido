@@ -7,5 +7,5 @@ const twemoji = require('twemoji');
  * @param {Object} page
  */
 module.exports = page => {
-	page.content = twemoji.parse(page.content) // emoji
+	page.content = twemoji.parse(page.content); // Emoji
 };

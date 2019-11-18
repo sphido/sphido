@@ -3,6 +3,7 @@
 const {dirname, relative, extname, basename} = require('path');
 const fs = require('fs');
 const util = require('util');
+
 const readFile = util.promisify(fs.readFile);
 
 /**
@@ -27,6 +28,5 @@ module.exports = async (file, ...extenders) => {
 	extenders.filter(f => typeof f === 'function').map(f => f(page));
 
 	// Assign objects
-	return Object.assign(page, ...extenders.filter(f => typeof f === 'object'),
-	);
+	return Object.assign(page, ...extenders.filter(f => typeof f === 'object'));
 };
