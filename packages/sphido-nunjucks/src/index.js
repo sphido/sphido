@@ -12,7 +12,12 @@ const env = configure('.', {autoescape: true});
 
 // Default filters
 env.addFilter('h1strip', str => str.replace(/<h1.*>.*?<\/h1>/g, ''));
+
+// {{page.content|short}}
+// FXIME remove (it can be replaced with default functions...)
 env.addFilter('short', (str, length) => truncate(striptags(str.replace(/<h1[^>]*?>[\s\S]*?<\/h1>/i, '')), length || 380));
+
+
 
 module.exports = {
 	addFilter: env.addFilter,
