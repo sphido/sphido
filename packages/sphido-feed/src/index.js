@@ -5,7 +5,7 @@
  * @param {string} feed
  * @returns {string}
  */
-module.exports = function (posts, options, feed) {
+module.exports = function (posts, options, feed = undefined) {
 	const defaultOptions = {
 		title: 'Untitled RSS',
 		link: '',
