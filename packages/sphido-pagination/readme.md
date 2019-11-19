@@ -9,7 +9,7 @@ yarn add @sphido/pagination
 ## Usage
 
 ```js
-const SphidoPagination = require('@sphido/pagination');
+const pagination = require('@sphido/pagination');
 
 const posts = [
     {title: 'First title'},
@@ -19,7 +19,7 @@ const posts = [
 ];
 
 (async () => {
-    const pages = SphidoPagination(posts, 3);
+    const pages = pagination(posts, 3);
     for await (const page of pages) {
       console.log(page.posts); // list of posts on current page
       console.log(page.current); // current page no

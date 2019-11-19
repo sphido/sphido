@@ -14,14 +14,13 @@ const readFile = util.promisify(fs.readFile);
  */
 module.exports = async (file, ...extenders) => {
 	const ext = extname(file);
-	const content = await readFile(file, 'utf8');
 
 	const page = {
 		file,
 		dir: relative('.', dirname(file)),
 		ext,
 		base: basename(file, ext),
-		content
+		content: await readFile(file, 'utf8')
 	};
 
 	// Callbacks only

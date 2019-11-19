@@ -1,30 +1,46 @@
 'use strict';
 
+const {render, renderString, configure} = require('nunjucks');
+const {existsSync, outputFile} = require('fs-extra');
+const {join} = require('path');
+const env = configure('.', {autoescape: true});
+
 // -----------------------------------------
 // @see https://mozilla.github.io/nunjucks/
 // -----------------------------------------
 
-const {existsSync, outputFile} = require('fs-extra');
-const {render, renderString, configure} = require('nunjucks');
-const {striptags, truncate} = require('nunjucks/src/filters');
+const defaultTemplate = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>{{page.title}}</title></head><body><main><article>{{page.content|safe}}</article></main></body></html>';
 
-const env = configure('.', {autoescape: true});
-
-// Default filters
-env.addFilter('h1strip', str => str.replace(/<h1.*>.*?<\/h1>/g, ''));
-
-// {{page.content|short}}
-// FXIME remove (it can be replaced with default functions...)
-env.addFilter('short', (str, length) => truncate(striptags(str.replace(/<h1[^>]*?>[\s\S]*?<\/h1>/i, '')), length || 380));
-
-module.exports = {
-	addFilter: env.addFilter,
-	render,
-	renderString,
-	saveToFile: async (file, template, vars) => {
-		await outputFile(
-			file,
-			existsSync(template) ? render(template, vars) : renderString(template, vars)
-		);
-	}
+/**
+ * Render template to file
+ * @param {string} file
+ * @param {string} template
+ * @param {Object} vars
+ * @returns {Promise<void>}
+ */
+const renderToFile = async (file, template, vars = undefined) => {
+	await outputFile(file, existsSync(template) ? render(template, vars) : renderString(template, vars));
 };
+
+
+/**
+ * Sphido page extender for save
+ * @param {string} dir
+ * @param {string} template
+ * @returns {Promise<void>}
+ */
+const save = async (dir, template = 'theme/page.html') => {
+	template = this.template || template;
+
+
+	console.log(this);
+
+	//console.log(dir, this.slug, 'index.html');
+	return renderToFile(
+		join(dir, this.slug, 'index.html'),
+		template.endsWith('.html') && !existsSync(template) ? defaultTemplate : template,
+		{page: this}
+	);
+};
+
+module.exports = {env, render, renderString, renderToFile, save};
