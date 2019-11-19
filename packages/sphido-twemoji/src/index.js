@@ -1,6 +1,6 @@
 'use strict';
 
-const twemoji = require('twemoji');
+const {twemoji} = require('twemoji');
 
 /**
  * Process page content and replace with emoji
