@@ -1,5 +1,6 @@
 {
 	"name": "@sphido/frontmatter",
+	"version" : "0.0.1",
 	"author": {
 		"name": "Roman Ožana",
 		"email": "roman@omdesign.cz",
