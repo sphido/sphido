@@ -10,11 +10,11 @@ yarn add @sphido/core
 
 ```js
 const globby = require('globby');
-const Sphido = require('@sphido/core');
+const {getPages} = require('@sphido/core');
 
 (async () => {
 
-  const pages = await Sphido.getPages(
+  const pages = await getPages(
     await globby('content/**/*.{md,html}')
   );
 
