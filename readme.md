@@ -12,56 +12,56 @@
 
 ## Installation
 
-```bash 
-$ npm i sphido
+```bash
+$ npm i @sphido/core @sphido/nunjucks @sphido/frontmatter @sphido/marked @sphido/meta
 ```
 
 ## Quick Start
 
 ```js
 const globby = require('globby');
-const {join} = require('path');
-
-const Sphido = require('@sphido/core');
-const SphidoExtenders = [
-    require('@sphido/frontmatter'),
-    require('@sphido/marked'),
-    page => {
-      page.out = join(page.dir.replace('content', 'public'), page.slug, 'index.html')
-    }
-];
+const {save, renderToFile} = require('@sphido/nunjucks');
+const {getPages} = require('@sphido/core');
 
 
 (async () => {
-
-  // get list of pages...
-  const pages = await Sphido.getPages(
-  		await globby('content/**/*.{md,html}'), 
-		...SphidoExtenders
+	// 1. get list of pages...
+	const posts = await getPages(
+		await globby('packages/**/*.md'),
+		...[
+			require('@sphido/frontmatter'),
+			require('@sphido/marked'),
+			require('@sphido/meta'),
+			{save}
+		]
 	);
 
-  for await (const page of pages) {
-    // save page to HTML (with default theme/page.html)
-    // from content ===> public directory
-    await Sphido.save(
-
-    )
-
-    save(`<html>${page.title}${page.content}</html>`)
-
-
-  }
-  
+	// 2. save to html with default template
+	for await (const page of posts) {
+		await page.save(
+			page.dir.replace('packages', 'public'),
+		);
+	}
 })();
 ```
 
+## Packages
+
+```bash
+npm i @sphido/core              # basic getPages, getPage functions
+npm i @sphido/feed              # generate atom feed from pages
+npm i @sphido/frontmatter       # frontmatter for pages
+npm i @sphido/marked            # markdown pages content
+npm i @sphido/meta              # add common metadata to the pages
+npm i @sphido/nunjucks          # nunjucks templates
+npm i @sphido/pagination        # paginate over pages
+npm i @sphido/sitemap           # generate sitemap.xml
+npm i @sphido/twemoji           # add twemoji support
+```
 
 ## Examples
 
-* [Basic example](https://github.com/sphido/examples/tree/master/examples/basic)
-* [Custom extenders](https://github.com/sphido/examples/tree/master/examples/custom-extenders)
-* [RSS](https://github.com/sphido/examples/tree/master/examples/rss)
-* [Sitemap](https://github.com/sphido/examples/tree/master/examples/sitemap)
+* https://github.com/sphido/examples/
 
 ## License
 
