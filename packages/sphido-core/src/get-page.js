@@ -20,7 +20,7 @@ module.exports = async (file, ...extenders) => {
 		dir: relative('.', dirname(file)),
 		ext,
 		base: basename(file, ext),
-		content: await readFile(file, 'utf8')
+		content: await readFile(file)
 	};
 
 	// Callbacks only
