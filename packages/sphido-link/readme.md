@@ -1,6 +1,5 @@
 # @sphido/link
 
-
 ## Install
 
 ```bash
@@ -11,13 +10,20 @@ yarn add @sphido/link
 
 ```js
 const globby = require('globby');
-const Sphido = require('@sphido/core');
-const SphidoLink = require('@sphido/link');
+const {getPage} = require('@sphido/core');
+const {link} = require('@sphido/link');
 
 (async () => {
 
-  const page = await Sphido.getPage(    __dirname + '/example.html', SphidoLink);
-  console.log(page.link());
+	const page = await getPage('/example.html',
+		...[
+			require('@sphido/frontmatter'),
+			require('@sphido/marked'),
+			require('@sphido/meta'),
+			{link}
+		]
+	);
 
+	console.log(page.link());
 })();
 ```
