@@ -15,7 +15,8 @@
 	"scripts": {
 		"ava": "ava",
 		"xo": "xo",
-		"test": " ava && xo"
+		"test": " ava && xo",
+		"publish:release": "lerna publish --force-publish=* --no-push --no-git-tag-version"
 	},
 	"devDependencies": {
 		"lerna": "^3.18.5",
