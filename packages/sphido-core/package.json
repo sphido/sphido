@@ -1,6 +1,6 @@
 {
 	"name": "@sphido/core",
-	"version" : "0.0.0",
+	"version": "0.0.1",
 	"author": {
 		"name": "Roman Ožana",
 		"email": "roman@omdesign.cz",
@@ -34,6 +34,5 @@
 	"scripts": {
 		"test": "ava"
 	},
-	"gitHead": "90bc6bc73000a629fe7f005bdc9fbac170595b63",
-	"version": "0.0.0"
+	"gitHead": "90bc6bc73000a629fe7f005bdc9fbac170595b63"
 }
