@@ -1,8 +1,8 @@
 'use strict';
 
+const {join} = require('path');
 const {render, renderString, configure} = require('nunjucks');
 const {existsSync, outputFile} = require('fs-extra');
-const {join} = require('path');
 const env = configure('.', {autoescape: true});
 
 // -----------------------------------------
@@ -18,10 +18,9 @@ const defaultTemplate = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title
  * @param {Object} vars
  * @returns {Promise<void>}
  */
-const renderToFile = async (file, template, vars = undefined) => {
+async function renderToFile(file, template, vars = undefined) {
 	await outputFile(file, existsSync(template) ? render(template, vars) : renderString(template, vars));
-};
-
+}
 
 /**
  * Sphido page extender for save
@@ -29,18 +28,20 @@ const renderToFile = async (file, template, vars = undefined) => {
  * @param {string} template
  * @returns {Promise<void>}
  */
-const save = async (dir, template = 'theme/page.html') => {
+async function save(dir, template = 'theme/page.html') {
 	template = this.template || template;
 
-
-	console.log(this);
-
-	//console.log(dir, this.slug, 'index.html');
 	return renderToFile(
 		join(dir, this.slug, 'index.html'),
 		template.endsWith('.html') && !existsSync(template) ? defaultTemplate : template,
 		{page: this}
 	);
-};
+}
 
-module.exports = {env, render, renderString, renderToFile, save};
+module.exports = {
+	env,
+	render,
+	renderString,
+	renderToFile,
+	save
+};
