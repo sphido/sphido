@@ -13,14 +13,14 @@
 ## Installation
 
 ```bash
-$ npm i @sphido/core @sphido/nunjucks @sphido/frontmatter @sphido/marked @sphido/meta
+$ npm i @sphido/corecore @sphido/nunjucks @sphido/frontmatter @sphido/marked @sphido/meta
 ```
 
 ## Quick Start
 
 ```js
 const globby = require('globby');
-const {save, renderToFile} = require('@sphido/nunjucks');
+const {save} = require('@sphido/nunjucks');
 const {getPages} = require('@sphido/core');
 
 
