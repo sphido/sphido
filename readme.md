@@ -48,15 +48,16 @@ const {getPages} = require('@sphido/core');
 ## Packages
 
 ```bash
-npm i @sphido/core              # basic getPages, getPage functions
-npm i @sphido/feed              # generate atom feed from pages
-npm i @sphido/frontmatter       # frontmatter for pages
-npm i @sphido/marked            # markdown pages content
-npm i @sphido/meta              # add common metadata to the pages
-npm i @sphido/nunjucks          # nunjucks templates
-npm i @sphido/pagination        # paginate over pages
-npm i @sphido/sitemap           # generate sitemap.xml
-npm i @sphido/twemoji           # add twemoji support
+npm i @sphido/core           # basic getPages, getPage functions
+npm i @sphido/feed           # generate atom feed from pages
+npm i @sphido/frontmatter    # frontmatter for pages
+npm i @sphido/link           # add link() method to pages
+npm i @sphido/marked         # markdown pages content
+npm i @sphido/meta           # add common metadata to the pages
+npm i @sphido/nunjucks       # nunjucks templates
+npm i @sphido/pagination     # paginate over pages
+npm i @sphido/sitemap        # generate sitemap.xml
+npm i @sphido/twemoji        # add twemoji support
 ```
 
 ## Examples
