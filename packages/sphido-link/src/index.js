@@ -5,6 +5,7 @@ const {sep, normalize} = require('path');
 module.exports = {
 	/**
 	 * Generate link to current page
+	 * @param {string} domain
 	 * @returns {string}
 	 */
 	link(domain = '/') {

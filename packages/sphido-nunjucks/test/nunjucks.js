@@ -7,7 +7,7 @@ test('example content', async t => {
 });
 
 test('custom filter', async t => {
-	env.addFilter('xxx', str => 'working well');
+	env.addFilter('xxx', () => 'working well');
 	const result = await renderString('{{content|xxx}}', {content: '<p>strip h1</p>'});
 	t.is(result, 'working well');
 });
