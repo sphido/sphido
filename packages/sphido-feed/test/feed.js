@@ -6,7 +6,14 @@ const posts = [
 		title: 'RSS test',
 		description: 'aaa',
 		content: '<p>This is content <strong>of article</strong></p>',
-		link: 'http://www.rss.com/example',
+		link: 'http://www.rss.com',
+		date: new Date()
+	},
+	{
+		title: 'RSS with link',
+		description: 'aaa',
+		content: '<p>This is content <strong>of article</strong></p>',
+		link: () => '~link function called~',
 		date: new Date()
 	}
 ];
@@ -31,4 +38,11 @@ test('Example posts', t => {
 	t.is(rss.includes(`<pubDate>${posts[0].date.toUTCString()}</pubDate>`), true);
 	t.is(rss.includes(`<description><![CDATA[${posts[0].description}]]></description>`), true);
 	t.is(rss.includes(`<content:encoded><![CDATA[${posts[0].content}]]></content:encoded>`), true);
+});
+
+test('Link function test', t => {
+	const rss = feed(posts, {link: 'https://sphido.org'});
+	t.is(rss.includes(`<title>${posts[1].title}</title>`), true);
+	t.is(rss.includes('<guid>~link function called~</guid>'), true);
+	t.is(rss.includes('<link>~link function called~</link>'), true);
 });

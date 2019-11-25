@@ -27,9 +27,9 @@ module.exports = function (posts, options, feed = undefined) {
 	const toAtomItem = function (post) {
 		return {
 			item: {
-				guid: post.link ? post.link : undefined,
+				guid: typeof post.link === 'function' ? post.link() : post.link,
 				title: post.title ? post.title : undefined,
-				link: post.link ? post.link : undefined,
+				link: typeof post.link === 'function' ? post.link() : post.link,
 				pubDate: post.date instanceof Date ? post.date.toUTCString() : undefined,
 				description: post.description ? `<![CDATA[${post.description}]]>` : undefined,
 				'content:encoded': post.content ? `<![CDATA[${post.content.replace(/<h1.*>.*?<\/h1>/g, '')}]]>` : undefined
