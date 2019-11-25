@@ -31,6 +31,8 @@ const posts = [
 Pagination can be easily combine with [@sphido/nunjucks](https://github.com/sphido/sphido/tree/master/packages/sphido-nunjucks) package: 
 
 ```js
+const {join} = require('path');
+const globby = require('globby');
 const pagination = require('@sphido/pagination');
 const {renderToFile} = require('@sphido/nunjucks');
 
