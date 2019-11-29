@@ -19,6 +19,14 @@ test('slug', t => {
 	t.is(page.slug, 'this-is-title');
 });
 
+test('duplicite tags', t => {
+	const page = {tags: ['a', 'a', 'a']};
+	meta(page);
+	t.is(page.tags instanceof Set, true);
+	t.is(page.tags.has('a'), true);
+	t.is(page.tags.size, 1);
+});
+
 test('default', t => {
 	const page = {};
 	meta(page);
@@ -27,5 +35,6 @@ test('default', t => {
 	t.is(page.title, '');
 	t.is(page.slug, '');
 	t.is(page.date instanceof Date, true);
-	t.deepEqual(page.tags, []);
+	t.is(page.tags instanceof Set, true);
+	t.deepEqual(page.tags, new Set([]));
 });
