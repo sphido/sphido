@@ -10,7 +10,7 @@
 	"main": "src/index.js",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^2.4.0",
+		"ava": "^3.3.0",
 		"fs-extra": "^8.1.0"
 	},
 	"scripts": {

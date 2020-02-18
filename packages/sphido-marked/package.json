@@ -10,13 +10,13 @@
 	"main": "src/index.js",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^2.4.0"
+		"ava": "^3.3.0"
 	},
 	"scripts": {
 		"test": "ava"
 	},
 	"dependencies": {
-		"marked": "^0.7.0"
+		"marked": "^0.8.0"
 	},
 	"gitHead": "90bc6bc73000a629fe7f005bdc9fbac170595b63"
 }
