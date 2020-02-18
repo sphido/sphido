@@ -12,6 +12,9 @@
 	"scripts": {
 		"test": "ava"
 	},
+	"devDependencies": {
+		"ava": "^3.3.0"
+	},
 	"dependencies": {
 		"twemoji": "^12.1.5"
 	},
