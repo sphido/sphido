@@ -7,7 +7,7 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Twemoji for Sphido - A 🚀 fast, lightweight, static site generator",
-	"main": "src/index.js",
+	"main": "lib/twemoji.js",
 	"license": "MIT",
 	"scripts": {
 		"test": "ava"
