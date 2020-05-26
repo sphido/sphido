@@ -7,7 +7,7 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Sitemap XML for Sphido CMS",
-	"main": "src/index.js",
+	"main": "lib/sitemap.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.3.0",
