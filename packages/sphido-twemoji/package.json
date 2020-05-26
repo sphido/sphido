@@ -16,7 +16,7 @@
 		"ava": "^3.3.0"
 	},
 	"dependencies": {
-		"twemoji": "^12.1.5"
+		"twemoji": "^13.0.0"
 	},
 	"gitHead": "90bc6bc73000a629fe7f005bdc9fbac170595b63"
 }
