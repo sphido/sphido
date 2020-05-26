@@ -7,7 +7,7 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Marked",
-	"main": "src/index.js",
+	"main": "lib/marked.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.3.0"
