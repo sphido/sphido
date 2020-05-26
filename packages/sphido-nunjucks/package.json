@@ -7,7 +7,7 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "",
-	"main": "src/index.js",
+	"main": "lib/nunjucks.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.3.0"
