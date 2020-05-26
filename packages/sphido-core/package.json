@@ -21,7 +21,7 @@
 		"blog",
 		"scaffold"
 	],
-	"main": "src/index.js",
+	"main": "lib/index.js",
 	"homepage": "https://sphido.org",
 	"bugs": "https://github.com/sphido/sphido/issues",
 	"repository": {
