@@ -7,7 +7,7 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Pagination for Sphido CMS",
-	"main": "src/index.js",
+	"main": "lib/pagination.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.3.0"
