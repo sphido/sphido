@@ -7,7 +7,7 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
-	"main": "src/index.js",
+	"main": "lib/frontmatter.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.3.0"
