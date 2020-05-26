@@ -7,7 +7,7 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Link function for pages",
-	"main": "src/index.js",
+	"main": "lib/link.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.3.0"
