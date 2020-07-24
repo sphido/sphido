@@ -10,7 +10,7 @@
 	"main": "lib/pagination.js",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^3.3.0"
+		"ava": "^3.10.1"
 	},
 	"scripts": {
 		"test": "ava"

@@ -10,7 +10,7 @@
 	"main": "lib/nunjucks.js",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^3.3.0"
+		"ava": "^3.10.1"
 	},
 	"dependencies": {
 		"fs-extra": "^9.0.0",

@@ -10,13 +10,13 @@
 	"main": "lib/frontmatter.js",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^3.3.0"
+		"ava": "^3.10.1"
 	},
 	"scripts": {
 		"test": "ava"
 	},
 	"dependencies": {
-		"js-yaml": "^3.13.1"
+		"js-yaml": "^3.14.0"
 	},
 	"gitHead": "90bc6bc73000a629fe7f005bdc9fbac170595b63"
 }
