@@ -1,0 +1,21 @@
+{
+	"name": "@sphido/markdown",
+	"version": "0.0.1",
+	"author": {
+		"name": "Roman Ožana",
+		"email": "roman@omdesign.cz",
+		"url": "https://omdesign.cz"
+	},
+	"description": "Markdown with marked for Sphido CMS",
+	"main": "lib/markdown.js",
+	"license": "MIT",
+	"devDependencies": {
+		"ava": "^3.10.1"
+	},
+	"scripts": {
+		"test": "ava"
+	},
+	"dependencies": {
+		"marked": "^1.1.0"
+	}
+}

@@ -13,14 +13,18 @@
 ## Installation
 
 ```bash
-$ npm i @sphido/corecore @sphido/nunjucks @sphido/frontmatter @sphido/marked @sphido/meta
+$ npm i @sphido/corecore @sphido/nunjucks @sphido/frontmatter @sphido/markdown @sphido/meta
 ```
 
 ## Quick Start
 
 ```js
 const globby = require('globby');
+
 const {save} = require('@sphido/nunjucks');
+const {frontmatter} = require('@sphido/frontmatter');
+const {meta} = require('@sphido/meta');
+const {markdown} = require('@sphido/markdown') 
 const {getPages} = require('@sphido/core');
 
 
@@ -29,9 +33,9 @@ const {getPages} = require('@sphido/core');
 	const posts = await getPages(
 		await globby('packages/**/*.md'),
 		...[
-			require('@sphido/frontmatter'),
-			require('@sphido/marked'),
-			require('@sphido/meta'),
+			frontmatter,
+			markdown,
+			meta,
 			{save}
 		]
 	);
@@ -52,7 +56,7 @@ npm i @sphido/core           # basic getPages, getPage functions
 npm i @sphido/feed           # generate atom feed from pages
 npm i @sphido/frontmatter    # frontmatter for pages
 npm i @sphido/link           # add link() method to pages
-npm i @sphido/marked         # markdown pages content
+npm i @sphido/markdown       # markdown page processor 
 npm i @sphido/meta           # add common metadata to the pages
 npm i @sphido/nunjucks       # nunjucks templates
 npm i @sphido/pagination     # paginate over pages
