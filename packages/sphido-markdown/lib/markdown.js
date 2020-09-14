@@ -8,14 +8,14 @@ const markdown = page => {
 
 module.exports = {
 	marked,
-	options: (options) => {
+	options: options => {
 		marked.use({options});
 	},
-	renderer: (renderer) => {
+	renderer: renderer => {
 		marked.use({renderer});
 	},
-	tokenizer: (tokenizer) => {
+	tokenizer: tokenizer => {
 		marked.use({tokenizer});
 	},
 	markdown
-}
+};
