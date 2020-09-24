@@ -1,7 +1,5 @@
 # @sphido/meta
 
-[![npm version](https://badge.fury.io/js/%40sphido%2Fmeta.svg)](https://badge.fury.io/js/%40sphido%2Fmeta)
-
 Page extender that add follow properties to `page` object:
 
 * `page.title` - try detect correct title from `page.content` 

@@ -1,7 +1,5 @@
 # @sphido/twemoji
 
-[![npm version](https://badge.fury.io/js/%40sphido%2Ftwemoji.svg)](https://badge.fury.io/js/%40sphido%2Ftwemoji)
-
 Sphido extender that add support for https://twemoji.twitter.com/
  
 ## Install

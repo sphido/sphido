@@ -1,7 +1,5 @@
 # @sphido/pagination
 
-[![npm version](https://badge.fury.io/js/%40sphido%2Fpagination.svg)](https://badge.fury.io/js/%40sphido%2Fpagination)
-
 Allow paginate over pages return follow structure: 
 
 ```json

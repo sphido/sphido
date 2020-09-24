@@ -1,7 +1,5 @@
 # @sphido/nunjucks
 
-[![npm version](https://badge.fury.io/js/%40sphido%2Fnunjucks.svg)](https://badge.fury.io/js/%40sphido%2Fnunjucks)
-
 This package allow use [nunjucks](https://mozilla.github.io/nunjucks/) - a rich and powerful templating language for JavaScript from Mozilla
 for rendering HTML files from page object.
 

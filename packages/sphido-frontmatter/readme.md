@@ -1,7 +1,5 @@
 # @sphido/frontmatter
 
-[![npm version](https://badge.fury.io/js/%40sphido%2Ffrontmatter.svg)](https://badge.fury.io/js/%40sphido%2Ffrontmatter)
-
 [Front matter](https://jekyllrb.com/docs/front-matter/) is an optional section of valid
 YAML that is placed at the top of a page and is used for maintaining metadata for the
 page and its contents. `@sphido/frontmatter` is `page` extender that process this
