@@ -1,5 +1,7 @@
 # @sphido/markdown
 
+Sphido page extender that transform `page.content` markdown to HTML with [marked](https://marked.js.org/).
+
 ## Install
 
 ```bash
@@ -8,7 +10,7 @@ yarn add @sphido/markdown
 
 ## Example
 
-```js
+```javascript
 const globby = require('globby');
 const Sphido = require('@sphido/core');
 const {markdown, renderer} = require('@sphido/markdown');
@@ -28,3 +30,7 @@ renderer({
 
 })();
 ```
+
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-markdown

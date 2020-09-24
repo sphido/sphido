@@ -10,7 +10,7 @@ yarn add @sphido/marked
 
 ## Example
 
-```js
+```javascript
 const globby = require('globby');
 const Sphido = require('@sphido/core');
 const marked = require('@sphido/marked');
@@ -24,3 +24,6 @@ const marked = require('@sphido/marked');
 
 })();
 ```
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-marked

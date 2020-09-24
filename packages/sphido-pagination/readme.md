@@ -1,5 +1,15 @@
 # @sphido/pagination
 
+Allow paginate over pages return follow structure: 
+
+```json
+{
+  "posts": [ "... array of pages" ],
+  "current": "number of current page",
+  "pages": ["... array of other pages"]
+}
+```
+
 ## Install
 
 ```bash
@@ -8,7 +18,7 @@ yarn add @sphido/pagination
 
 ## Usage
 
-```js
+```javascript
 const pagination = require('@sphido/pagination');
 
 const posts = [
@@ -30,7 +40,7 @@ const posts = [
 
 Pagination can be easily combine with [@sphido/nunjucks](https://github.com/sphido/sphido/tree/master/packages/sphido-nunjucks) package: 
 
-```js
+```javascript
 const {join} = require('path');
 const globby = require('globby');
 const pagination = require('@sphido/pagination');
@@ -99,3 +109,7 @@ Example of `theme/pages.html` template:
 </body>
 </html>
 ```
+
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-pagination

@@ -1,5 +1,7 @@
 # @sphido/feed
 
+Generate atom feed from `pages`
+
 ## Install
 
 ```bash
@@ -8,7 +10,7 @@ yarn add @sphido/feed
 
 ## Example
 
-```js
+```javascript
 const {outputFile} = require('fs-extra');
 const SphidoFeed = require('@sphido/feed');
 
@@ -44,3 +46,9 @@ const posts = [
 	await outputFile(__dirname  + '/feed.xml', feed);
 })();
 ```
+
+https://github.com/sphido/examples/tree/master/rss
+
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-feed

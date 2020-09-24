@@ -1,5 +1,19 @@
 # @sphido/nunjucks
 
+This package allow use [nunjucks](https://mozilla.github.io/nunjucks/) - a rich and powerful templating language for JavaScript from Mozilla
+for rendering HTML files from page object.
+
+Functions:
+
+- `env.addFilter(name, func, [async])` -  allow [addFilter](https://mozilla.github.io/nunjucks/api.html#getfilter) to [nunjucks](https://mozilla.github.io/nunjucks) template engine.
+- `nunjucks.render(name, [context], [callback])` - render the template see [nunjucks docs](https://mozilla.github.io/nunjucks/api.html#render)
+- `nunjucks.renderString(str, context, [callback])` - 
+- `renderToFile(file, template, vars = undefined)` - render the template to file
+
+Extenders: 
+
+- `save(dir, template = 'theme/page.html')` - function extender allow save page to file
+
 ## Install
 
 ```bash
@@ -8,7 +22,7 @@ yarn add @sphido/nunjucks
 
 ## Usage
 
-```js
+```javascript
 const globby = require('globby');
 const {save} = require('@sphido/nunjucks');
 const {getPages} = require('@sphido/core');
@@ -34,3 +48,7 @@ const {getPages} = require('@sphido/core');
 	}
 })();
 ```
+
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-nunjucks

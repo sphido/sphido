@@ -8,7 +8,7 @@ yarn add @sphido/sitemap
 
 ## Example
 
-```js
+```javascript
 const {outputFile} = require('fs-extra');
 const sitemap = require('@sphido/sitemap');
 
@@ -24,3 +24,7 @@ const posts = [
 	);
 })();
 ```
+
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-sitemap

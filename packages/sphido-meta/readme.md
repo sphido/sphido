@@ -1,5 +1,11 @@
-# @sphido/meta
+# [@sphido/meta](https://github.com/sphido/sphido/tree/master/packages/sphido-meta)
 
+Page extender that add follow properties to `page` object:
+
+* `page.title` - try detect correct title from `page.content` 
+* `page.date` - detect date if is not set by date of last change 
+* `page.slug` - using [slugify](https://github.com/sindresorhus/slugify) to made url safe slug
+* `page.tags` - create Set from tags
 
 ## Install
 
@@ -7,14 +13,14 @@
 yarn add @sphido/marked
 ```
 
-```js
+```javascript
 const globby = require('globby');
 const {save} = require('@sphido/nunjucks');
 const {getPages} = require('@sphido/core');
 
 (async () => {
 
-	const posts = await getPages(
+	const pages = await getPages(
 		await globby('content/**/*.md'),
 		...[
 			require('@sphido/frontmatter'),
@@ -24,3 +30,8 @@ const {getPages} = require('@sphido/core');
 	);
 
 })();
+```
+
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-meta

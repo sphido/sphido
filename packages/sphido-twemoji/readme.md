@@ -1,5 +1,7 @@
 # @sphido/twemoji
 
+Sphido extender that add support for https://twemoji.twitter.com/
+ 
 ## Install
 
 ```bash
@@ -8,7 +10,7 @@ yarn add @sphido/twemoji
 
 ## Example
 
-```js
+```javascript
 const globby = require('globby');
 const {getPages} = require('@sphido/core');
 
@@ -31,3 +33,7 @@ const {getPages} = require('@sphido/core');
 ## Reference
 
 * https://twemoji.twitter.com/
+
+## Source codes
+
+https://github.com/sphido/sphido/tree/master/packages/sphido-twemoji
