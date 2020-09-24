@@ -1,5 +1,7 @@
 # @sphido/core
 
+[![npm version](https://badge.fury.io/js/%40sphido%2Fcore.svg)](https://badge.fury.io/js/%40sphido%2Fcore)
+
 Core contains most important [`getPage()`](https://github.com/sphido/sphido/blob/master/packages/sphido-core/lib/get-page.js) 
 and [`getPages()`](https://github.com/sphido/sphido/blob/master/packages/sphido-core/lib/get-page.js) functions.
 
