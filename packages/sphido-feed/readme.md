@@ -1,5 +1,7 @@
 # @sphido/feed
 
+[![npm version](https://badge.fury.io/js/%40sphido%2Ffeed.svg)](https://badge.fury.io/js/%40sphido%2Ffeed)
+
 Generate atom feed from `pages`
 
 ## Install

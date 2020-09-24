@@ -1,5 +1,7 @@
 # @sphido/sitemap
 
+[![npm version](https://badge.fury.io/js/%40sphido%2Fsitemap.svg)](https://badge.fury.io/js/%40sphido%2Fsitemap)
+
 ## Install
 
 ```bash

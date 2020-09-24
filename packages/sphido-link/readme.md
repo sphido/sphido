@@ -1,5 +1,7 @@
 # @sphido/link
 
+[![npm version](https://badge.fury.io/js/%40sphido%2Flink.svg)](https://badge.fury.io/js/%40sphido%2Flink)
+
 `@sphido/link` is **extender function** that add `link()` to `page` and allow create valid URL link to `page` 
 
 

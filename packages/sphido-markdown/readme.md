@@ -1,5 +1,7 @@
 # @sphido/markdown
 
+[![npm version](https://badge.fury.io/js/%40sphido%2Fmarkdown.svg)](https://badge.fury.io/js/%40sphido%2Fmarkdown)
+
 Sphido page extender that transform `page.content` markdown to HTML with [marked](https://marked.js.org/).
 
 ## Install
