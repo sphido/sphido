@@ -18,14 +18,15 @@ $ npm i @sphido/corecore @sphido/nunjucks @sphido/frontmatter @sphido/markdown @
 
 ## Quick Start
 
-```js
-const globby = require('globby');
+```javascript
+import globby from 'globby';
 
-const {save} = require('@sphido/nunjucks');
-const {frontmatter} = require('@sphido/frontmatter');
-const {meta} = require('@sphido/meta');
-const {markdown} = require('@sphido/markdown') 
-const {getPages} = require('@sphido/core');
+import {save} from '@sphido/nunjucks';
+import {frontmatter} from '@sphido/frontmatter';
+import {meta} from '@sphido/meta';
+import {markdown} from '@sphido/markdown';
+import {getPages} from '@sphido/core';
+
 
 
 (async () => {
@@ -53,6 +54,7 @@ const {getPages} = require('@sphido/core');
 
 ```bash
 npm i @sphido/core           # basic getPages, getPage functions
+npm i @sphido/emoji          # add twemoji support
 npm i @sphido/feed           # generate atom feed from pages
 npm i @sphido/frontmatter    # frontmatter for pages
 npm i @sphido/link           # add link() method to pages
@@ -61,7 +63,6 @@ npm i @sphido/meta           # add common metadata to the pages
 npm i @sphido/nunjucks       # nunjucks templates
 npm i @sphido/pagination     # paginate over pages
 npm i @sphido/sitemap        # generate sitemap.xml
-npm i @sphido/twemoji        # add twemoji support
 ```
 
 ## Examples
