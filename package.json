@@ -9,6 +9,7 @@
 	"license": "MIT",
 	"description": "A rocket 🚀 fast, lightweight, static site generator",
 	"homepage": "https://sphido.org",
+	"type": "module",
 	"workspaces": [
 		"packages/*"
 	],
@@ -21,7 +22,7 @@
 		"ava": "^3.12.1",
 		"esm": "^3.2.25",
 		"lerna": "^3.20.2",
-		"xo": "^0.33.1",
+		"xo": "^0.37.1",
 		"yarn": "^1.22.5"
 	},
 	"ava": {
