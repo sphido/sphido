@@ -21,5 +21,6 @@
 	},
 	"dependencies": {
 		"marked": "^1.1.0"
-	}
+	},
+	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
 }
