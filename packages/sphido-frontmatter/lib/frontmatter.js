@@ -1,6 +1,4 @@
-'use strict';
-
-const yaml = require('js-yaml');
+import yaml from 'js-yaml';
 
 /**
  * Process front matter data on the beginning of the markdown file
@@ -22,13 +20,13 @@ const yaml = require('js-yaml');
  * @see https://jekyllrb.com/docs/front-matter/
  * @param {Object} page
  */
-module.exports = page => {
+export function frontmatter(page) {
 	if (page.content.startsWith('---') || page.content.startsWith('<!--')) {
 		let meta = {};
 		page.content.replace(/^<!--([\s\S]+?)-->|^---([\s\S]+?)---/, (frontMatter, html, md) => {
-			meta = yaml.safeLoad((html || md).trim());
+			meta = yaml.load((html || md).trim());
 			page = Object.assign(page, meta);
 			page.content = page.content.slice(frontMatter.length).trim();
 		});
 	}
-};
+}

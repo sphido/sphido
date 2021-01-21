@@ -1,5 +1,5 @@
 import test from 'ava';
-import {markdown, renderer} from '..';
+import {markdown, renderer} from '../lib/markdown.js';
 
 test('basics renderer H1 test', t => {
 	const page = {content: '# H1'};

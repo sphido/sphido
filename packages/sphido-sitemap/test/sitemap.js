@@ -1,5 +1,5 @@
 import test from 'ava';
-import sitemap from '..';
+import {sitemap} from '../lib/sitemap.js';
 
 const posts = [
 	{

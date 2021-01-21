@@ -1,25 +1,25 @@
 {
-	"name": "@sphido/markdown",
-	"version": "0.0.6",
+	"name": "@sphido/emoji",
+	"version": "0.0.1",
 	"author": {
 		"name": "Roman Ožana",
 		"email": "roman@omdesign.cz",
 		"url": "https://omdesign.cz"
 	},
-	"description": "Markdown with marked for Sphido CMS",
 	"type": "module",
-	"exports": "./lib/markdown.js",
+	"exports": "./lib/emoji.js",
 	"engines": {
 		"node": ">=12"
 	},
+	"description": "Emoji for Sphido - A 🚀 fast, lightweight, static site generator",
 	"license": "MIT",
-	"devDependencies": {
-		"ava": "^3.10.1"
-	},
 	"scripts": {
 		"test": "ava"
 	},
+	"devDependencies": {
+		"ava": "^3.10.1"
+	},
 	"dependencies": {
-		"marked": "^1.1.0"
+		"twemoji": "^13.0.0"
 	}
 }

@@ -1,21 +1,19 @@
-'use strict';
+import marked from 'marked';
 
-const marked = require('marked');
-
-const markdown = page => {
+export const markdown = page => {
 	page.content = page.ext === '.html' ? page.content : marked(page.content);
 };
 
-module.exports = {
-	marked,
-	options: options => {
-		marked.use({options});
-	},
-	renderer: renderer => {
-		marked.use({renderer});
-	},
-	tokenizer: tokenizer => {
-		marked.use({tokenizer});
-	},
-	markdown
+export const options = options => {
+	marked.use({options});
 };
+
+export const renderer = renderer => {
+	marked.use({renderer});
+};
+
+export const tokenizer = tokenizer => {
+	marked.use({tokenizer});
+};
+
+export {marked};

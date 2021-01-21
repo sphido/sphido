@@ -5,7 +5,7 @@
  * @param {string} feed
  * @returns {string}
  */
-module.exports = function (posts, options, feed = undefined) {
+export function feed(posts, options, feed = undefined) {
 	const defaultOptions = {
 		title: 'Untitled RSS',
 		link: '',
@@ -27,7 +27,7 @@ module.exports = function (posts, options, feed = undefined) {
 	return '<?xml version="1.0" encoding="UTF-8"?>' +
 		'<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>' +
 		(feed ? `<atom:link href="${feed}" rel="self" type="application/rss+xml" />` : '') +
-		toXML(Object.assign({}, defaultOptions, options)) +
+		toXML({...defaultOptions, ...options}) +
 		toXML(posts.map(post => {
 			return {
 				item: {
@@ -41,4 +41,4 @@ module.exports = function (posts, options, feed = undefined) {
 			};
 		})) +
 		'</channel></rss>';
-};
+}

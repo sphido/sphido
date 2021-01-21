@@ -8,6 +8,11 @@
 	},
 	"license": "MIT",
 	"description": "A rocket 🚀 fast, lightweight, static site generator",
+	"type": "module",
+	"exports": "./lib/index.js",
+	"engines": {
+		"node": ">=12"
+	},
 	"keywords": [
 		"markdown",
 		"markup",
@@ -21,7 +26,6 @@
 		"blog",
 		"scaffold"
 	],
-	"main": "lib/index.js",
 	"homepage": "https://sphido.org",
 	"bugs": "https://github.com/sphido/sphido/issues",
 	"repository": {

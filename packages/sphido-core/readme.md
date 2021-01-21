@@ -19,7 +19,6 @@ Basic page object looks like bellow:
 
 Pages are merged inside `getPage()` function together with `extenders`. Extender can be `object` or `function`.    
 
-
 ## Install
 
 ```bash
@@ -29,11 +28,10 @@ yarn add @sphido/core
 ## Example
 
 ```javascript
-const globby = require('globby');
-const {getPages} = require('@sphido/core');
+import globby from 'globby';
+import {getPages} from '@sphido/core';
 
 (async () => {
-
   const pages = await getPages(
     await globby('content/**/*.{md,html}')
   );

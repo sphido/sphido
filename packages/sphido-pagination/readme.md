@@ -19,7 +19,7 @@ yarn add @sphido/pagination
 ## Usage
 
 ```javascript
-const pagination = require('@sphido/pagination');
+import {pagination} from "@sphido/pagination";
 
 const posts = [
   {title: 'First title'},

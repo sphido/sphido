@@ -1,5 +1,5 @@
 import test from 'ava';
-import feed from '..';
+import {feed} from '../lib/feed.js';
 
 const posts = [
 	{

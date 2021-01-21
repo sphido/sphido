@@ -1,10 +1,8 @@
-'use strict';
+import fs from 'fs';
+import path from 'path';
+import {promisify} from 'util';
 
-const {dirname, relative, extname, basename} = require('path');
-const fs = require('fs');
-const util = require('util');
-
-const readFile = util.promisify(fs.readFile);
+const readFile = promisify(fs.readFile);
 
 /**
  * Return {page} object
@@ -12,14 +10,14 @@ const readFile = util.promisify(fs.readFile);
  * @param {Object.<string, number>} extenders
  * @returns {Promise<*>}
  */
-module.exports = async (file, ...extenders) => {
-	const ext = extname(file);
+export async function getPage(file, ...extenders) {
+	const ext = path.extname(file);
 
 	const page = {
 		file,
-		dir: relative('.', dirname(file)),
+		dir: path.relative('.', path.dirname(file)),
 		ext,
-		base: basename(file, ext),
+		base: path.basename(file, ext),
 		content: await readFile(file, 'utf8')
 	};
 
@@ -28,4 +26,4 @@ module.exports = async (file, ...extenders) => {
 
 	// Assign objects
 	return Object.assign(page, ...extenders.filter(f => typeof f === 'object'));
-};
+}

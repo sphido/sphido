@@ -6,8 +6,12 @@
 		"email": "roman@omdesign.cz",
 		"url": "https://omdesign.cz"
 	},
+	"type": "module",
+	"exports": "./lib/pagination.js",
+	"engines": {
+		"node": ">=12"
+	},
 	"description": "Pagination for Sphido CMS",
-	"main": "lib/pagination.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.10.1"

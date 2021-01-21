@@ -7,7 +7,11 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Atom feed generator for Sphido - A rocket 🚀 fast, lightweight, static site generator",
-	"main": "lib/feed.js",
+	"type": "module",
+	"exports": "./lib/feed.js",
+	"engines": {
+		"node": ">=12"
+	},
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.10.1",

@@ -1,6 +1,9 @@
-const {join} = require('path');
-const {outputFile} = require('fs-extra');
-const feed = require('..');
+import path from 'path';
+import {fileURLToPath} from 'url';
+import fs from 'fs-extra';
+import {feed} from '../lib/feed.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const posts = [
 	{
@@ -30,5 +33,5 @@ const posts = [
 		'https://example.com/feed.xml'
 	);
 
-	await outputFile(join(__dirname, '/feed.xml'), rss);
+	await fs.outputFile(path.join(__dirname, '/feed.xml'), rss);
 })();

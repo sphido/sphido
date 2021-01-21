@@ -1,5 +1,5 @@
 import test from 'ava';
-import {renderString, env} from '..';
+import {env, renderString} from '../lib/nunjucks.js';
 
 test('example content', async t => {
 	const result = await renderString('{{content}}', {content: 'example content'});

@@ -7,7 +7,11 @@
 		"url": "https://omdesign.cz"
 	},
 	"description": "Link function for pages",
-	"main": "lib/link.js",
+	"type": "module",
+	"exports": "./lib/link.js",
+	"engines": {
+		"node": ">=12"
+	},
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.10.1"

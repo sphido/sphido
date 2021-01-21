@@ -1,5 +1,5 @@
 import test from 'ava';
-import pagination from '..';
+import {pagination} from '../lib/pagination.js';
 
 const posts = [
 	{title: 'first'},

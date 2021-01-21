@@ -1,6 +1,6 @@
-'use strict';
+import {getPages} from './get-pages.js';
+import {getPage} from './get-page.js';
 
-module.exports = {
-	getPages: require('./get-pages'),
-	getPage: require('./get-page')
+export {
+	getPage, getPages
 };

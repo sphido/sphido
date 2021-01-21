@@ -1,5 +1,5 @@
 import test from 'ava';
-import {link} from '..';
+import {link} from '../lib/link.js';
 
 test('basics', t => {
 	const page = {

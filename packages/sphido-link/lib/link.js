@@ -1,17 +1,13 @@
-'use strict';
+import path from 'path';
 
-const {sep, normalize} = require('path');
-
-module.exports = {
-	/**
-	 * Generate link to current page
-	 * @param {string} domain
-	 * @returns {string}
-	 */
-	link(domain = '/') {
-		return domain + normalize(this.dir + sep + this.slug + sep)
-			.split(sep)
-			.splice(1)
-			.join('/');
-	}
-};
+/**
+ * Generate link to current page
+ * @param {string} domain
+ * @returns {string}
+ */
+export function link(domain = '/') {
+	return domain + path.normalize(this.dir + path.sep + this.slug + path.sep)
+		.split(path.sep)
+		.splice(1)
+		.join('/');
+}

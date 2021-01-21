@@ -1,5 +1,5 @@
 import test from 'ava';
-import meta from '..';
+import {meta} from '../lib/meta.js';
 
 test('title detection', t => {
 	const page = {content: '<h1>This will be title</h1>'};

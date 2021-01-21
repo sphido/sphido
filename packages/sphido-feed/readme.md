@@ -11,8 +11,8 @@ yarn add @sphido/feed
 ## Example
 
 ```javascript
-const {outputFile} = require('fs-extra');
-const SphidoFeed = require('@sphido/feed');
+import fs from 'fs-extra';
+import feed from '@sphido/feed';
 
 const posts = [
 	{
@@ -43,7 +43,7 @@ const posts = [
 		'https://example.com/feed.xml'
 	);
 
-	await outputFile(__dirname  + '/feed.xml', feed);
+	await rs.outputFile(__dirname  + '/feed.xml', feed);
 })();
 ```
 

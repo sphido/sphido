@@ -1,7 +1,5 @@
-'use strict';
-
 import test from 'ava';
-import frontmatter from '..';
+import {frontmatter} from '../lib/frontmatter.js';
 
 const page1 = {
 	content: '---\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n---\n\ncontent content content'

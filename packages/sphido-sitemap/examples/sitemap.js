@@ -1,6 +1,9 @@
-const {join} = require('path');
-const {outputFile} = require('fs-extra');
-const sphidoSitemap = require('..');
+import sitemap from '../lib/sitemap.js';
+import path from 'path';
+import {fileURLToPath} from 'url';
+import fs from 'fs-extra';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const posts = [
 	{
@@ -14,6 +17,6 @@ const posts = [
 ];
 
 (async () => {
-	const sitemap = sphidoSitemap(posts, 'https://example.com/');
-	await outputFile(join(__dirname, '/sitemap.xml'), sitemap);
+	const output = sitemap(posts, 'https://example.com/');
+	await fs.outputFile(path.join(__dirname, '/sitemap.xml'), output);
 })();

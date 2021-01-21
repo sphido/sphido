@@ -6,8 +6,12 @@
 		"email": "roman@omdesign.cz",
 		"url": "https://omdesign.cz"
 	},
+	"type": "module",
+	"exports": "./lib/sitemap.js",
+	"engines": {
+		"node": ">=12"
+	},
 	"description": "Sitemap XML for Sphido CMS",
-	"main": "lib/sitemap.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ava": "^3.10.1",
