@@ -15,16 +15,18 @@ import globby from 'globby'
 import {getPages} from '@sphido/core';
 import {frontmatter} from '@sphido/frontmatter';
 import {emoji} from '@sphido/twemoji';
+import {meta} from '@sphido/meta'; 
+import {markdown} from '@sphido/markdown';
 
 (async () => {
 
 	const posts = await getPages(
 		await globby('packages/**/*.md'),
 		...[
-	frontmatter,
-	emoji,
-	require('@sphido/marked'),
-	require('@sphido/meta'),
+            frontmatter,
+            emoji,
+            markdown,
+            meta,
        ]
 	);
 
