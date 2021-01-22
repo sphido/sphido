@@ -1,5 +1,5 @@
 import test from 'ava';
-import emoji from '../lib/emoji.js';
+import {emoji} from '../lib/emoji.js';
 
 test('emoji test', t => {
 	const post = {content: '❤️'};
