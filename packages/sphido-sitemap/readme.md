@@ -10,7 +10,11 @@ yarn add @sphido/sitemap
 
 ```javascript
 import fs from 'fs-extra';
+import path from 'path';
+import {fileURLToPath} from 'url';
 import {sitemap} from '@sphido/sitemap';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const posts = [
 	{link: 'https://example.com/first', date: new Date()},
