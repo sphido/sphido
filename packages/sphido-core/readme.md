@@ -38,6 +38,16 @@ import {getPages} from '@sphido/core';
 })();
 ```
 
+You can also process single page like follow:
+
+```javascript
+import {getPage} from '@sphido/core';
+
+(async () => {
+  const page = await getPage('example.md');
+})();
+```
+
 ## Source codes
 
 https://github.com/sphido/sphido/tree/master/packages/sphido-core

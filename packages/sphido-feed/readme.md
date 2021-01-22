@@ -12,7 +12,7 @@ yarn add @sphido/feed
 
 ```javascript
 import fs from 'fs-extra';
-import feed from '@sphido/feed';
+import {feed} from '@sphido/feed';
 
 const posts = [
 	{

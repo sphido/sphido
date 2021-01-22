@@ -41,25 +41,28 @@ const posts = [
 Pagination can be easily combine with [@sphido/nunjucks](https://github.com/sphido/sphido/tree/master/packages/sphido-nunjucks) package: 
 
 ```javascript
-const {join} = require('path');
-const globby = require('globby');
-const pagination = require('@sphido/pagination');
-const {renderToFile} = require('@sphido/nunjucks');
+import path from 'path';
+import globby from 'globby';
+import {pagination} from "@sphido/pagination";
+import {renderToFile} from '@sphido/nunjucks';
+import {frontmatter} from "@sphido/frontmatter";
+import {markdown} from '@sphido/markdown';
+import {meta} from "@sphido/meta";
 
 (async () => {
   const posts = await getPages(
 	await globby('content/**/*.{md,html}'),
 	...[
-	  require('@sphido/frontmatter'),
-	  require('@sphido/marked'),
-	  require('@sphido/meta'),
+        frontmatter,
+        markdown,
+        meta
 	]
   );
   
 
   for await (const page of pagination(posts, 8)) {
 	await renderToFile(
-	  page.current === 1 ? 'public/index.html' : join('public/page/', page.current.toString(), 'index.html'),
+	  page.current === 1 ? 'public/index.html' : path.join('public/page/', page.current.toString(), 'index.html'),
 	  'theme/pages.html',
 	  {page}
 	);

@@ -11,9 +11,9 @@ yarn add @sphido/markdown
 ## Example
 
 ```javascript
-const globby = require('globby');
-const Sphido = require('@sphido/core');
-const {markdown, renderer} = require('@sphido/markdown');
+import globby from 'globby';
+import {getPages} from '@sphido/core';
+import {markdown, renderer} from '@sphido/markdown';
  
 // @see https://marked.js.org/using_pro#renderer
 
@@ -23,7 +23,7 @@ renderer({
 
 (async () => {
 
-  const pages = await Sphido.getPages(
+  const pages = await getPages(
     await globby('content/**/*.{md,html}'),
     markdown
   );

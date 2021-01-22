@@ -23,9 +23,12 @@ yarn add @sphido/nunjucks
 ## Usage
 
 ```javascript
-const globby = require('globby');
-const {save} = require('@sphido/nunjucks');
-const {getPages} = require('@sphido/core');
+import globby from 'globby';
+import {save} from '@sphido/nunjucks';
+import {getPages} from '@sphido/core';
+import {frontmatter} from '@sphido/frontmatter';
+import {markdown} from '@sphido/markdown';
+import {meta} from '@sphido/meta';
 
 (async () => {
 
@@ -33,11 +36,11 @@ const {getPages} = require('@sphido/core');
 	const posts = await getPages(
 		await globby('content/**/*.md'),
 		...[
-			require('@sphido/frontmatter'),
-			require('@sphido/marked'),
-			require('@sphido/meta'),
+            frontmatter,			
+            markdown,
+            meta,
+            {save}			
 		],
-		{save}
 	);
 
 	// 2. save to html with default template

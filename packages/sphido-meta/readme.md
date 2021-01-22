@@ -14,18 +14,20 @@ yarn add @sphido/marked
 ```
 
 ```javascript
-const globby = require('globby');
-const {save} = require('@sphido/nunjucks');
-const {getPages} = require('@sphido/core');
+import globby from 'globby';
+import {getPages} from '@sphido/core';
+import {frontmatter} from '@sphido/frontmatter';
+import {meta} from '@sphido/meta';
+import {markdown} from '@sphido/markdown';
 
 (async () => {
 
 	const pages = await getPages(
 		await globby('content/**/*.md'),
 		...[
-			require('@sphido/frontmatter'),
-			require('@sphido/marked'),
-			require('@sphido/meta'),
+			frontmatter,
+            markdown,
+            meta,
 		],
 	);
 

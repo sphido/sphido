@@ -9,8 +9,8 @@ yarn add @sphido/sitemap
 ## Example
 
 ```javascript
-const {outputFile} = require('fs-extra');
-const sitemap = require('@sphido/sitemap');
+import fs from 'fs-extra';
+import {sitemap} from '@sphido/sitemap';
 
 const posts = [
 	{link: 'https://example.com/first', date: new Date()},
@@ -18,7 +18,7 @@ const posts = [
 ];
 
 (async () => {
-	await outputFile(
+	await fs.outputFile(
 		__dirname  + '/sitemap.xml',
 		sitemap(posts, 'https://example.com')
 	);
