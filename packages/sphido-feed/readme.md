@@ -12,7 +12,11 @@ yarn add @sphido/feed
 
 ```javascript
 import fs from 'fs-extra';
+import path from 'path';
+import {fileURLToPath} from 'url';
 import {feed} from '@sphido/feed';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const posts = [
 	{
@@ -33,7 +37,7 @@ const posts = [
 
 (async () => {
 
-	const feed = SphidoFeed(
+	const output = feed(
 		posts,
 		{
 			title: 'Feed of example.com',
@@ -43,7 +47,7 @@ const posts = [
 		'https://example.com/feed.xml'
 	);
 
-	await rs.outputFile(__dirname  + '/feed.xml', feed);
+	await fs.outputFile(__dirname  + '/feed.xml', output);
 })();
 ```
 
