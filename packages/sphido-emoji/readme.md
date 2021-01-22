@@ -39,4 +39,4 @@ import {markdown} from '@sphido/markdown';
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-twemoji
+https://github.com/sphido/sphido/tree/master/packages/sphido-emoji
