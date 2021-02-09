@@ -3,8 +3,8 @@
 	"version": "1.0.2",
 	"author": {
 		"name": "Roman Ožana",
-		"email": "roman@omdesign.cz",
-		"url": "https://omdesign.cz"
+		"email": "roman@ozana.cz",
+		"url": "https://ozana.cz"
 	},
 	"description": "Link function for pages",
 	"type": "module",
