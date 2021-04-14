@@ -13,40 +13,63 @@
 ## Installation
 
 ```bash
-$ npm i @sphido/corecore @sphido/nunjucks @sphido/frontmatter @sphido/markdown @sphido/meta
+$ npm i @sphido/core @sphido/nunjucks @sphido/frontmatter @sphido/markdown @sphido/meta
+$ npm i @sphido/core @sphido/frontmatter @sphido/markdown @sphido/meta fs-extra globby
 ```
 
 ## Quick Start
 
 ```javascript
-import globby from 'globby';
+#!/usr/bin/env node --experimental-modules
 
-import {save} from '@sphido/nunjucks';
-import {frontmatter} from '@sphido/frontmatter';
-import {meta} from '@sphido/meta';
-import {markdown} from '@sphido/markdown';
-import {getPages} from '@sphido/core';
-
-
+import path from "path";
+import globby from "globby";
+import fs from "fs-extra";
+import {getPages} from "@sphido/core";
+import {frontmatter} from "@sphido/frontmatter";
+import {meta} from "@sphido/meta";
+import {markdown} from "@sphido/markdown";
 
 (async () => {
-	// 1. get list of pages...
-	const posts = await getPages(
-		await globby('packages/**/*.md'),
-		...[
-			frontmatter,
-			markdown,
-			meta,
-			{save}
-		]
-	);
 
-	// 2. save to html with default template
-	for await (const page of posts) {
-		await page.save(
-			page.dir.replace('packages', 'public'),
-		);
-	}
+    // 1. get list of pages
+
+    const pages = await getPages(
+        await globby('content/**/*.{md,html}'),
+        ...[
+
+            frontmatter,
+            markdown,
+            meta,
+
+            // add custom page extender
+            (page) => {
+                page.toFile = path.join(
+                    page.dir.replace('content', 'public'),
+                    page.slug,
+                    'index.html'
+                );
+            },
+
+            // add custom page function
+            {
+                head: function() {
+                  return `<head><meta charset="UTF-8"><title>${this.title}</title></head>`
+                },
+
+                getHtml: function () {
+                    return `<!DOCTYPE html>` + 
+                           `<html lang="en" dir="ltr">` + this.head() + 
+                           `<body>${this.content}</body></html>`
+                }
+            }
+        ],
+    );
+
+    // 2. save pages
+
+    pages.forEach(page => fs.outputFile(page.toFile, page.getHtml()))
+
 })();
 ```
 
