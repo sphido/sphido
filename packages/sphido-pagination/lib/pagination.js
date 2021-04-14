@@ -5,12 +5,15 @@
  * @param {int} perPage
  */
 export async function * pagination(posts, perPage = 5) {
-	const pages = [...new Array(Math.ceil(posts.length / perPage)).keys()].map(i => ++i);
-	for await (const current of pages) {
+	const pages = Math.ceil(posts.length / perPage);
+	let current = 1;
+
+	while (current <= pages) {
 		yield {
 			posts: posts.slice(perPage * (current - 1), current * perPage),
 			current,
 			pages
 		};
+		current++;
 	}
 }
