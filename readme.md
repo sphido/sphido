@@ -13,7 +13,6 @@
 ## Installation
 
 ```bash
-$ npm i @sphido/core @sphido/nunjucks @sphido/frontmatter @sphido/markdown @sphido/meta
 $ npm i @sphido/core @sphido/frontmatter @sphido/markdown @sphido/meta fs-extra globby
 ```
 
@@ -75,18 +74,16 @@ import {markdown} from "@sphido/markdown";
 
 ## Packages
 
-```bash
-npm i @sphido/core           # basic getPages, getPage functions
-npm i @sphido/emoji          # add twemoji support
-npm i @sphido/feed           # generate atom feed from pages
-npm i @sphido/frontmatter    # frontmatter for pages
-npm i @sphido/link           # add link() method to pages
-npm i @sphido/markdown       # markdown page processor 
-npm i @sphido/meta           # add common metadata to the pages
-npm i @sphido/nunjucks       # nunjucks templates
-npm i @sphido/pagination     # paginate over pages
-npm i @sphido/sitemap        # generate sitemap.xml
-```
+* [`@sphido/core`](https://github.com/sphido/sphido/tree/master/packages/sphido-core) - basic getPages, getPage functions
+* [`@sphido/emoji`](https://github.com/sphido/sphido/tree/master/packages/sphido-emoji) - add twemoji support
+* [`@sphido/feed`](https://github.com/sphido/sphido/tree/master/packages/sphido-feed) - generate atom feed from pages
+* [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/master/packages/sphido-frontmatter) - frontmatter for pages
+* [`@sphido/link`](https://github.com/sphido/sphido/tree/master/packages/sphido-link) - add link() method to pages
+* [`@sphido/markdown`](https://github.com/sphido/sphido/tree/master/packages/sphido-markdown) - markdown page processor 
+* [`@sphido/meta`](https://github.com/sphido/sphido/tree/master/packages/sphido-meta) - add common metadata to the pages
+* [`@sphido/nunjucks`](https://github.com/sphido/sphido/tree/master/packages/sphido-nunjucks) - add support for nunjucks templates
+* [`@sphido/pagination`](https://github.com/sphido/sphido/tree/master/packages/sphido-pagination) - paginate over pages
+* [`@sphido/sitemap`](https://github.com/sphido/sphido/tree/master/packages/sphido-sitemap) - generate sitemap.xml
 
 ## Examples
 
