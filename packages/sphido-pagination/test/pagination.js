@@ -15,7 +15,7 @@ const posts = [
 test('first page', async t => {
 	const pages = await pagination(posts, 1);
 	const firstPage = await pages.next();
-	t.is(firstPage.value.pages, posts.length);
+	t.deepEqual(firstPage.value.pages, [1, 2, 3, 4, 5, 6, 7, 8]);
 	t.is(firstPage.value.current, 1);
 	t.is(firstPage.value.posts.length, 1);
 	t.is(firstPage.value.posts[0].title, 'first');
@@ -24,7 +24,7 @@ test('first page', async t => {
 test('second page', async t => {
 	const pages = await pagination(posts, 1);
 	const firstPage = await pages.next();
-	t.is(firstPage.value.pages, posts.length);
+	t.deepEqual(firstPage.value.pages, [1, 2, 3, 4, 5, 6, 7, 8]);
 	t.is(firstPage.value.current, 1);
 	const secondPage = await pages.next();
 	t.is(secondPage.value.current, 2);
@@ -37,7 +37,7 @@ test('default parPage value', async t => {
 
 	// First page
 	const firstPage = await pages.next();
-	t.is(firstPage.value.pages, 2); // Total pages count
+	t.deepEqual(firstPage.value.pages, [1, 2]); // Total pages count
 	t.is(firstPage.value.posts.length, 5);
 	t.is(firstPage.value.posts[0].title, 'first');
 	t.is(firstPage.value.posts[1].title, 'second');
@@ -47,7 +47,7 @@ test('default parPage value', async t => {
 
 	// Second page
 	const secondPage = await pages.next();
-	t.is(secondPage.value.pages, 2); // Total pages count
+	t.deepEqual(secondPage.value.pages, [1, 2]); // Total pages count
 	t.is(secondPage.value.current, 2);
 	t.is(secondPage.value.posts.length, 3);
 	t.is(secondPage.value.posts[0].title, 'another one');
