@@ -14,7 +14,7 @@ yarn add @sphido/emoji
 import globby from 'globby' 
 import {getPages} from '@sphido/core';
 import {frontmatter} from '@sphido/frontmatter';
-import {emoji} from '@sphido/twemoji';
+import {emoji} from '@sphido/emoji';
 import {meta} from '@sphido/meta'; 
 import {markdown} from '@sphido/markdown';
 
