@@ -14,13 +14,13 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^3.10.1"
+		"ava": "^3.15.0"
 	},
 	"scripts": {
 		"test": "ava"
 	},
 	"dependencies": {
-		"marked": "^1.1.0"
+		"marked": "^2.0.3"
 	},
 	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
 }

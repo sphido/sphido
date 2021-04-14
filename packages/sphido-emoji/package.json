@@ -17,10 +17,10 @@
 		"test": "ava"
 	},
 	"devDependencies": {
-		"ava": "^3.10.1"
+		"ava": "^3.15.0"
 	},
 	"dependencies": {
-		"twemoji": "^13.0.0"
+		"twemoji": "^13.0.2"
 	},
 	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
 }
