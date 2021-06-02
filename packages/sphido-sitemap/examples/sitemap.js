@@ -1,7 +1,7 @@
-import sitemap from '../lib/sitemap.js';
-import path from 'path';
-import {fileURLToPath} from 'url';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import fs from 'fs-extra';
+import {sitemap} from '../lib/sitemap.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

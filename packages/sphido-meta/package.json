@@ -20,7 +20,7 @@
 		"test": "ava"
 	},
 	"dependencies": {
-		"@sindresorhus/slugify": "^1.0.0"
+		"@sindresorhus/slugify": "^2.1.0"
 	},
 	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
 }
