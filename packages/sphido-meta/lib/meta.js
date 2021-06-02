@@ -1,5 +1,5 @@
-import {statSync} from 'fs';
-import {inspect} from 'util';
+import {statSync} from 'node:fs';
+import {inspect} from 'node:util';
 import slugify from '@sindresorhus/slugify';
 
 const headline = /(?<=<h[12][^>]*?>)([^<>]+?)(?=<\/h[12]>)/i;

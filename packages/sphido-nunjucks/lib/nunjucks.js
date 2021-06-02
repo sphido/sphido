@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import nunjucks from 'nunjucks';
 import fs from 'fs-extra';
 
