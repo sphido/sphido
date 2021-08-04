@@ -8,6 +8,6 @@ import {getPage} from './get-page.js';
  */
 export const getPages = async (files, ...extenders) => Promise.all(
 	files.map(
-		file => getPage(file, ...extenders)
-	)
+		file => getPage(file, ...extenders),
+	),
 );

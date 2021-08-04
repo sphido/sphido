@@ -4,18 +4,18 @@ import {sitemap} from '../lib/sitemap.js';
 const posts = [
 	{
 		link: 'http://sitemap.com/example',
-		date: new Date()
+		date: new Date(),
 	},
 
 	{
 		link: 'https://sitemap.com/example2',
-		date: new Date()
+		date: new Date(),
 	},
 
 	{
 		link: () => 'generated with link function',
-		date: new Date()
-	}
+		date: new Date(),
+	},
 ];
 
 test('sitemap.xml basics', t => {

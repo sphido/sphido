@@ -7,7 +7,7 @@ test('basics renderer H1 test', t => {
 	// @see https://marked.js.org/using_pro#renderer
 
 	renderer({
-		heading: text => `<h1>XXX - ${text.toLowerCase()} - XXX</h1>`
+		heading: text => `<h1>XXX - ${text.toLowerCase()} - XXX</h1>`,
 	});
 
 	markdown(page);

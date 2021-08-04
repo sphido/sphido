@@ -7,15 +7,15 @@ const posts = [
 		description: 'aaa',
 		content: '<p>This is content <strong>of article</strong></p>',
 		link: 'http://www.rss.com',
-		date: new Date()
+		date: new Date(),
 	},
 	{
 		title: 'RSS with link',
 		description: 'aaa',
 		content: '<p>This is content <strong>of article</strong></p>',
 		link: () => '~link function called~',
-		date: new Date()
-	}
+		date: new Date(),
+	},
 ];
 
 test('RSS basics', t => {

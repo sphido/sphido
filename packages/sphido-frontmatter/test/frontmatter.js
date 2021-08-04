@@ -2,7 +2,7 @@ import test from 'ava';
 import {frontmatter} from '../lib/frontmatter.js';
 
 const page1 = {
-	content: '---\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n---\n\ncontent content content'
+	content: '---\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n---\n\ncontent content content',
 };
 
 test('frontmatter markdown basics', t => {
@@ -14,7 +14,7 @@ test('frontmatter markdown basics', t => {
 });
 
 const page2 = {
-	content: '<!--\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n --> \n\ncontent content content'
+	content: '<!--\ntitle: example title\nslug: homepage\ntags: [a, b, c]\n --> \n\ncontent content content',
 };
 
 test('frontmatter html basics', t => {

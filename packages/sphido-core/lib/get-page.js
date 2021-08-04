@@ -18,7 +18,7 @@ export async function getPage(file, ...extenders) {
 		dir: path.relative('.', path.dirname(file)),
 		ext,
 		base: path.basename(file, ext),
-		content: await readFile(file, 'utf8')
+		content: await readFile(file, 'utf8'),
 	};
 
 	// Callbacks only

@@ -23,7 +23,7 @@ export async function * pagination(posts, perPage = 5) {
 			total,
 			posts: posts.slice(perPage * (current - 1), current * perPage),
 			current,
-			pages: [...pages(total)]
+			pages: [...pages(total)],
 		};
 		current++;
 	}

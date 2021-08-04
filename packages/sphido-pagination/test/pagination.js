@@ -9,7 +9,7 @@ const posts = [
 	{title: 'another one'},
 	{title: 'another one'},
 	{title: 'another one'},
-	{title: 'another one', content: 'content'}
+	{title: 'another one', content: 'content'},
 ];
 
 test('first page', async t => {

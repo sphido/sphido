@@ -8,12 +8,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const posts = [
 	{
 		link: 'https://example.com/first',
-		date: new Date()
+		date: new Date(),
 	},
 	{
 		link: 'https://example.com/second',
-		date: new Date()
-	}
+		date: new Date(),
+	},
 ];
 
 (async () => {

@@ -33,7 +33,7 @@ export async function save(dir, template = 'theme/page.html') {
 	return renderToFile(
 		path.join(dir, this.slug, 'index.html'),
 		template.endsWith('.html') && !fs.existsSync(template) ? defaultTemplate : template,
-		{page: this}
+		{page: this},
 	);
 }
 
