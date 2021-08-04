@@ -5,7 +5,7 @@ export const markdown = page => {
 };
 
 export const options = options => {
-	marked.use({options});
+	marked.setOptions(options);
 };
 
 export const renderer = renderer => {
