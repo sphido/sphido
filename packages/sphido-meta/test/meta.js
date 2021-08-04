@@ -14,7 +14,7 @@ test('force title', t => {
 });
 
 test('slug', t => {
-	const page = {title: '$€  Thiš Iš Titlě  €$'};
+	const page = {title: '   Thiš Iš Titlě'};
 	meta(page);
 	t.is(page.slug, 'this-is-title');
 });
