@@ -36,4 +36,4 @@ import {markdown} from '@sphido/markdown';
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-meta
+https://github.com/sphido/sphido/tree/main/packages/sphido-meta

@@ -31,4 +31,4 @@ const posts = [
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-sitemap
+https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap

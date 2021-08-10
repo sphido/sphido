@@ -35,4 +35,4 @@ import {getPage} from '@sphido/core';
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-link
+https://github.com/sphido/sphido/tree/main/packages/sphido-link

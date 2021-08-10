@@ -74,16 +74,16 @@ import {markdown} from "@sphido/markdown";
 
 ## Packages
 
-* [`@sphido/core`](https://github.com/sphido/sphido/tree/master/packages/sphido-core) - basic getPages, getPage functions
-* [`@sphido/emoji`](https://github.com/sphido/sphido/tree/master/packages/sphido-emoji) - add twemoji support
-* [`@sphido/feed`](https://github.com/sphido/sphido/tree/master/packages/sphido-feed) - generate atom feed from pages
-* [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/master/packages/sphido-frontmatter) - frontmatter for pages
-* [`@sphido/link`](https://github.com/sphido/sphido/tree/master/packages/sphido-link) - add link() method to pages
-* [`@sphido/markdown`](https://github.com/sphido/sphido/tree/master/packages/sphido-markdown) - markdown page processor 
-* [`@sphido/meta`](https://github.com/sphido/sphido/tree/master/packages/sphido-meta) - add common metadata to the pages
-* [`@sphido/nunjucks`](https://github.com/sphido/sphido/tree/master/packages/sphido-nunjucks) - add support for nunjucks templates
-* [`@sphido/pagination`](https://github.com/sphido/sphido/tree/master/packages/sphido-pagination) - paginate over pages
-* [`@sphido/sitemap`](https://github.com/sphido/sphido/tree/master/packages/sphido-sitemap) - generate sitemap.xml
+* [`@sphido/core`](https://github.com/sphido/sphido/tree/main/packages/sphido-core) - basic getPages, getPage functions
+* [`@sphido/emoji`](https://github.com/sphido/sphido/tree/main/packages/sphido-emoji) - add twemoji support
+* [`@sphido/feed`](https://github.com/sphido/sphido/tree/main/packages/sphido-feed) - generate atom feed from pages
+* [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter) - frontmatter for pages
+* [`@sphido/link`](https://github.com/sphido/sphido/tree/main/packages/sphido-link) - add link() method to pages
+* [`@sphido/markdown`](https://github.com/sphido/sphido/tree/main/packages/sphido-markdown) - markdown page processor 
+* [`@sphido/meta`](https://github.com/sphido/sphido/tree/main/packages/sphido-meta) - add common metadata to the pages
+* [`@sphido/nunjucks`](https://github.com/sphido/sphido/tree/main/packages/sphido-nunjucks) - add support for nunjucks templates
+* [`@sphido/pagination`](https://github.com/sphido/sphido/tree/main/packages/sphido-pagination) - paginate over pages
+* [`@sphido/sitemap`](https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap) - generate sitemap.xml
 
 ## Examples
 

@@ -54,4 +54,4 @@ import {meta} from '@sphido/meta';
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-nunjucks
+https://github.com/sphido/sphido/tree/main/packages/sphido-nunjucks

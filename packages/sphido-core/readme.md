@@ -1,7 +1,7 @@
 # @sphido/core
 
-Core contains most important [`getPage()`](https://github.com/sphido/sphido/blob/master/packages/sphido-core/lib/get-page.js) 
-and [`getPages()`](https://github.com/sphido/sphido/blob/master/packages/sphido-core/lib/get-pages.js) functions.
+Core contains most important [`getPage()`](https://github.com/sphido/sphido/blob/main/packages/sphido-core/lib/get-page.js) 
+and [`getPages()`](https://github.com/sphido/sphido/blob/main/packages/sphido-core/lib/get-pages.js) functions.
 
 * `getPage(file, [...extenders])` - returns a `page` object generated from file.
 * `getPages(files, [...extenders])` - returns array of `page` objects from list of files. 
@@ -50,4 +50,4 @@ import {getPage} from '@sphido/core';
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-core
+https://github.com/sphido/sphido/tree/main/packages/sphido-core

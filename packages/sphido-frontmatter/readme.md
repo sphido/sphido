@@ -60,4 +60,4 @@ Lorem ipusm...
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-frontmatter
+https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter

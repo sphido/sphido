@@ -51,8 +51,8 @@ const posts = [
 })();
 ```
 
-https://github.com/sphido/examples/tree/master/rss
+https://github.com/sphido/examples/tree/main/rss
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-feed
+https://github.com/sphido/sphido/tree/main/packages/sphido-feed

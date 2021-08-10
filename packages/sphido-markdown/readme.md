@@ -33,4 +33,4 @@ renderer({
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/master/packages/sphido-markdown
+https://github.com/sphido/sphido/tree/main/packages/sphido-markdown
