@@ -16,7 +16,7 @@
 	"scripts": {
 		"ava": "ava",
 		"xo": "xo",
-		"test": " ava && xo"
+		"test": "ava && xo"
 	},
 	"devDependencies": {
 		"ava": "^3.15.0",
