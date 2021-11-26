@@ -1,4 +1,4 @@
-import marked from 'marked';
+import {marked} from 'marked';
 
 export const markdown = page => {
 	page.content = page.ext === '.html' ? page.content : marked(page.content);
