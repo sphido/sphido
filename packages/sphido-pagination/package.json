@@ -14,7 +14,7 @@
 	"description": "Pagination for Sphido CMS",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^3.15.0"
+		"ava": "^4.0.1"
 	},
 	"scripts": {
 		"test": "ava"
