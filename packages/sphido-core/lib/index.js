@@ -1,6 +1,2 @@
-import {getPages} from './get-pages.js';
-import {getPage} from './get-page.js';
-
-export {
-	getPage, getPages,
-};
+export {getPages} from './get-pages.js';
+export {getPage} from './get-page.js';

@@ -16,4 +16,4 @@ export const tokenizer = tokenizer => {
 	marked.use({tokenizer});
 };
 
-export {marked};
+export {marked} from 'marked';
