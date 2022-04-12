@@ -14,10 +14,10 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^4.0.1"
+		"ava": "^4.2.0"
 	},
 	"dependencies": {
-		"fs-extra": "^10.0.0",
+		"fs-extra": "^10.0.1",
 		"nunjucks": "^3.2.3"
 	},
 	"scripts": {

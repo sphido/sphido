@@ -33,7 +33,7 @@
 		"url": "git@github.com:sphido/sphido.git"
 	},
 	"devDependencies": {
-		"ava": "^4.0.1"
+		"ava": "^4.2.0"
 	},
 	"scripts": {
 		"test": "ava"

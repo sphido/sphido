@@ -14,8 +14,8 @@
 	"description": "Sitemap XML for Sphido CMS",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^4.0.1",
-		"fs-extra": "^10.0.0"
+		"ava": "^4.2.0",
+		"fs-extra": "^10.0.1"
 	},
 	"scripts": {
 		"test": "ava"
