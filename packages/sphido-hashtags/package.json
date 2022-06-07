@@ -1,5 +1,5 @@
 {
-	"name": "@sphido/meta",
+	"name": "@sphido/hashtags",
 	"version": "1.0.8",
 	"author": {
 		"name": "Roman Ožana",
@@ -8,7 +8,7 @@
 	},
 	"description": "",
 	"type": "module",
-	"exports": "./lib/meta.js",
+	"exports": "./lib/hashtags.js",
 	"engines": {
 		"node": ">=12"
 	},
@@ -21,6 +21,5 @@
 	},
 	"dependencies": {
 		"@sindresorhus/slugify": "^2.1.0"
-	},
-	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+	}
 }
