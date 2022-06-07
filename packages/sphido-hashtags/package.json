@@ -1,0 +1,26 @@
+{
+	"name": "@sphido/meta",
+	"version": "1.0.8",
+	"author": {
+		"name": "Roman Ožana",
+		"email": "roman@ozana.cz",
+		"url": "https://ozana.cz"
+	},
+	"description": "",
+	"type": "module",
+	"exports": "./lib/meta.js",
+	"engines": {
+		"node": ">=12"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"ava": "^4.0.1"
+	},
+	"scripts": {
+		"test": "ava"
+	},
+	"dependencies": {
+		"@sindresorhus/slugify": "^2.1.0"
+	},
+	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+}
