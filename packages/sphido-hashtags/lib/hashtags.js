@@ -6,8 +6,8 @@ import slugify from '@sindresorhus/slugify';
  */
 export function hashtags(page) {
 	const tags = page.content
-		.replace(/`{1,3}[^`]*`{1,3}/gim, '') // skip code
-		.match(/(?<=^|\s)#([\w-]{2,})/gim) // match all tags
+		.replace(/`{1,3}[^`]*`{1,3}/gim, '') // Skip code
+		.match(/(?<=^|\s)#([\w-]{2,})/gim); // Match all tags
 
 	page.tags = new Set(tags?.map(tag => tag.slice(1))); // Create unique tags list
 
