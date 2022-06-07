@@ -1,6 +1,6 @@
 # @sphido/hashtags
 
-Finds hashtags and replaces them with a link code `[#tag](/tag/tag)`
+Find hashtags and replaces them with a link code `[#hashtag](/tag/hashtag)`
 
 ## Install
 
