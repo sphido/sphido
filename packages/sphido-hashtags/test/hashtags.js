@@ -5,7 +5,7 @@ test('single tag has been detected', t => {
 	const page = {content: 'only #one hashtag'};
 	hashtags(page);
 	t.true(page.tags.has('one'));
-	t.is(page.content, 'only [#one](/tag/one) hashtag')
+	t.is(page.content, 'only [#one](/tag/one) hashtag');
 });
 
 test('multiple tags has been detected', t => {
@@ -14,7 +14,7 @@ test('multiple tags has been detected', t => {
 	t.true(page.tags.has('one'));
 	t.true(page.tags.has('two'));
 	t.true(page.tags.has('three'));
-	t.is(page.content, '[#one](/tag/one) [#two](/tag/two) [#three](/tag/three)')
+	t.is(page.content, '[#one](/tag/one) [#two](/tag/two) [#three](/tag/three)');
 });
 
 test('special cases that should be skipped', t => {
@@ -25,7 +25,7 @@ test('special cases that should be skipped', t => {
 });
 
 test('preformated code should be ignored', t => {
-	const page = {content: 'CSS code\n\n```css\n * { color: #fefefe; }\n```\n\n and contains one #hashtag at the end\n' };
+	const page = {content: 'CSS code\n\n```css\n * { color: #fefefe; }\n```\n\n and contains one #hashtag at the end\n'};
 	hashtags(page);
 	t.true(page.tags.has('hashtag'));
 	t.false(page.tags.has('fefefe'));
