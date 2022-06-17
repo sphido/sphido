@@ -10,7 +10,7 @@
 	"type": "module",
 	"exports": "./lib/markdown.js",
 	"engines": {
-		"node": ">=12"
+		"node": ">=14"
 	},
 	"license": "MIT",
 	"devDependencies": {

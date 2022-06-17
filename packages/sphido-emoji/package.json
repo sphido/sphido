@@ -9,7 +9,7 @@
 	"type": "module",
 	"exports": "./lib/emoji.js",
 	"engines": {
-		"node": ">=12"
+		"node": ">=14"
 	},
 	"description": "Emoji for Sphido - A 🚀 fast, lightweight, static site generator",
 	"license": "MIT",

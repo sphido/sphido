@@ -9,7 +9,7 @@
 	"type": "module",
 	"exports": "./lib/pagination.js",
 	"engines": {
-		"node": ">=12"
+		"node": ">=14"
 	},
 	"description": "Pagination for Sphido CMS",
 	"license": "MIT",

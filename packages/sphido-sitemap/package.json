@@ -9,7 +9,7 @@
 	"type": "module",
 	"exports": "./lib/sitemap.js",
 	"engines": {
-		"node": ">=12"
+		"node": ">=14"
 	},
 	"description": "Sitemap XML for Sphido CMS",
 	"license": "MIT",
