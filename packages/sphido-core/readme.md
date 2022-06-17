@@ -105,8 +105,8 @@ then you get this structure:
 		"path": "content/Main page.md",
 		"title": "Main page | my best website",
 		"author": "Roman Ožana",
-		"getDate": "<Function>",
-		"getLink": "<Function>"
+		"getDate": "[Function: getDate]",
+		"getLink": "[Function: getLink]"
 	}
 ]
 ```
@@ -124,30 +124,30 @@ Following example read all `*.md` files in `content` directory and process them 
 ```javascript
 #!/usr/bin/env node
 
-import {getPages, toFile, listPages, fromFile} from '@sphido/core';
+import {getPages, listPages, fromFile, toFile} from '@sphido/core';
 import {dirname, relative} from 'node:path';
 import {join} from 'node:path';
 import slugify from '@sindresorhus/slugify';
 import {marked} from 'marked';
 
-function getHtml({name, path, content}) {
+function getHtml() {
 	return `<!DOCTYPE html>
 <html lang="cs" dir="ltr">
 <head>
 	<meta charset="UTF-8">
-	<title>${name}</title>	
+	<title>${this.name}</title>	
 </head>
-<body>${content}</body>
-<!-- Generated with Sphido from ${path} -->
+<body>${this.content}</body>
+<!-- Generated with Sphido from ${this.path} -->
 </html>`;
 }
 
-const pages = await getPages({path: 'content'});
+const pages = await getPages({path: 'content'}, {getHtml});
 
 for (const page of listPages(pages)) {
-	const content = marked(await fromFile(page.path));
-	const outputFile = join('public', relative('content', dirname(page.path)), slugify(page.name) + '.html');
-	await toFile(outputFile, getHtml({...page, content}));
+	page.content = marked(await fromFile(page.path));
+	page.output = join('public', relative('content', dirname(page.path)), slugify(page.name) + '.html');
+	await toFile(page.output, page.getHtml());
 }
 ```
 
