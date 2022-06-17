@@ -4,6 +4,7 @@ import slugify from '@sindresorhus/slugify';
  * Transform hashtags to makdown links
  * @param {string} content
  * @param {array} tags
+ * @param {string} prefix
  * @returns {string}
  */
 export function tagsToLinks(content, tags = [], prefix = '/tag/') {

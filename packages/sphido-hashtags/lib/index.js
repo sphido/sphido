@@ -4,7 +4,6 @@ import {getHashtags} from './get-hashtags.js';
 export {getHashtags} from './get-hashtags.js';
 export {tagsToLinks} from './tags-to-links.js';
 
-
 /**
  * Replace hashtags in markdown with links
  * @param {Object} page

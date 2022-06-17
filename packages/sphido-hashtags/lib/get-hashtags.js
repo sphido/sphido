@@ -1,7 +1,7 @@
 /**
  * Return hashtags array from string
- * @param content
- * @returns {*}
+ * @param {string} content
+ * @returns {array}
  */
 export function getHashtags(content) {
 	return content
