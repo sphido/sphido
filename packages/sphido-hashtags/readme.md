@@ -11,17 +11,15 @@ yarn add @sphido/hashtags
 ```javascript
 import globby from 'globby';
 import {getPages} from '@sphido/core';
-import {hashtags} from '@sphido/hashtags';
+import {index} from '@sphido/hashtags';
 import {markdown} from '@sphido/markdown';
 
 (async () => {
 
 	const pages = await getPages(
 		await globby('content/**/*.md'),
-		...[
-			hashtags,
-			markdown,
-		],
+		hashtags,
+		markdown,
 	);
 
 })();
