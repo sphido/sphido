@@ -15,6 +15,10 @@
 $ npm i @sphido/core
 ```
 
+* ⚡️ built for speed
+* 🤘 no dependencies
+* 🚀️ light-weight and flexible
+
 ## Quick Start
 
 ```javascript
