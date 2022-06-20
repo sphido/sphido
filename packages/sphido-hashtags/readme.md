@@ -9,20 +9,18 @@ yarn add @sphido/hashtags
 ```
 
 ```javascript
-import globby from 'globby';
-import {getPages} from '@sphido/core';
-import {index} from '@sphido/hashtags';
-import {markdown} from '@sphido/markdown';
+import {getPages, listPages, fromFile} from '@sphido/core';
+import {getHashtags, tagsToLinks} from '@sphido/hashtags';
+import {marked} from 'marked';
+const pages = await getPages({path: 'content'});
 
-(async () => {
-
-	const pages = await getPages(
-		await globby('content/**/*.md'),
-		hashtags,
-		markdown,
-	);
-
-})();
+for (const page of listPages(pages)) {
+	page.content = fromFile(page.path);
+	page.tags = getHashtags(content);
+	page.tags = tagsToLinks(page.content, page.tags);
+	
+	
+}
 ```
 
 ## Source codes
