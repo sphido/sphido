@@ -6,12 +6,12 @@
 
 
 <p align="center">
-  A rocket 🚀 fast, lightweight, static site generator.
+  A rocket 🚀 fast, light-weight, static site generator.
 </p>
 
 ## Installation
 
-* ⚡️ built for speed
+* ⚡️ rocket 🚀 fast
 * 🤘 no dependencies
 * 🚀️ light-weight and flexible
 
