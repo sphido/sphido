@@ -9,12 +9,12 @@
   A rocket 🚀 fast, light-weight, static site generator.
 </p>
 
-## Installation
-
 * 🚀 rocket fast
 * ️⚖️ light-weight
 * 🤘 no dependencies
 * ⚡️ flexible
+
+## Installation
 
 ```bash
 $ npm i @sphido/core
@@ -46,7 +46,8 @@ function getHtml({name, content, path}) {
 const pages = await getPages({path: 'content'});
 
 for (const page of allPages(pages)) {
-	page.output = join('public', relative('content', dirname(page.path)), slugify(page.name) + '.html');
+	page.slug = slugify(page.name) + '.html';
+	page.output = join('public', relative('content', dirname(page.path)), page.slug);
 	page.content = marked(await readFile(page.path));
 	await writeFile(page.output, getHtml(page));
 }
