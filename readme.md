@@ -12,8 +12,8 @@
 ## Installation
 
 * 🚀 rocket fast
-* 🤘 no dependencies
 * ️⚖️ light-weight
+* 🤘 no dependencies
 * ⚡️ flexible
 
 ```bash
