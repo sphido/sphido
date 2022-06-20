@@ -32,3 +32,11 @@ map.end();
 ## Source codes
 
 https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap
+
+## TODO
+
+Ping Google about changes:
+
+```text
+https://www.google.com/webmasters/tools/ping?sitemap=https://www.mydomain.com/sitemap.xml
+```
