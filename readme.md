@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://sphido.org">
-    <img src="https://sphido.org/img/sphido.svg" width=""/>
+    <img src="https://sphido.org/img/sphido.svg" style="max-width: 480px; margin: auto;"/>
   </a>
 </p>
 
@@ -22,7 +22,6 @@ $ npm i @sphido/core
 
 import {dirname, relative, join} from 'node:path';
 import {getPages, allPages, readFile, writeFile} from '@sphido/core';
-import {frontmatter} from '@sphido/frontmatter';
 import slugify from '@sindresorhus/slugify';
 import {marked} from 'marked';
 
@@ -39,7 +38,7 @@ function getHtml({name, content, path}) {
 </html>`;
 }
 
-const pages = await getPages({path: 'content'}, frontmatter);
+const pages = await getPages({path: 'content'});
 
 for (const page of allPages(pages)) {
 	page.output = join('public', relative('content', dirname(page.path)), slugify(page.name) + '.html');
@@ -51,8 +50,14 @@ for (const page of allPages(pages)) {
 ## Packages
 
 * [`@sphido/core`](https://github.com/sphido/sphido/tree/main/packages/sphido-core) - basic `getPages()` and `allPages()` functions
-* [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter) - frontmatter for pages
-* [`@sphido/hashtags`](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags) - process hashtags in page content
+
+### Page extenders
+
+* [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter) - frontmatter extender for pages
+* [`@sphido/hashtags`](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags) - process hashtags in `page.content`
+
+### Website components
+
 * [`@sphido/sitemap`](https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap) - generate `sitemap.xml` file
 
 ## Examples
