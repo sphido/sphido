@@ -24,6 +24,4 @@ for (const page of listPages(pages)) {
 	page.content = marked(await fromFile(page.path));
 	page.output = join('public', relative('content', dirname(page.path)), slugify(page.name) + '.html');
 	await toFile(page.output, page.getHtml());
-
-	console.log(pages);
 }
