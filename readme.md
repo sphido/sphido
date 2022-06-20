@@ -63,7 +63,7 @@ for (const page of allPages(pages)) {
 
 ### Page extenders
 
-* [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter) - frontmatter extender for pages
+* [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter) - frontmatter extender for `page`
 * [`@sphido/hashtags`](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags) - process hashtags in `page.content`
 
 ### Website components
