@@ -11,13 +11,13 @@
 
 ## Installation
 
-```bash
-$ npm i @sphido/core
-```
-
 * ⚡️ built for speed
 * 🤘 no dependencies
 * 🚀️ light-weight and flexible
+
+```bash
+$ npm i @sphido/core
+```
 
 ## Quick Start
 
