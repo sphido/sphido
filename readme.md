@@ -13,7 +13,7 @@
 
 * 🚀 rocket fast
 * 🤘 no dependencies
-* 🚀️ light-weight
+* 🪶️ light-weight
 * ⚡️ flexible
 
 ```bash
