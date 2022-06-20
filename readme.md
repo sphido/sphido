@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  A rocket 🚀 fast, light-weight, static site generator.
+  A rocket 🚀 fast, light-weight and flexible static site generator.
 </p>
 
 * 🚀 rocket fast
