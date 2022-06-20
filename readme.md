@@ -55,7 +55,7 @@ for (const page of allPages(pages)) {
 
 ## Packages
 
-* [`@sphido/core`](https://github.com/sphido/sphido/tree/main/packages/sphido-core) - basic `getPages()` and `allPages()` functions
+* [`@sphido/core`](https://github.com/sphido/sphido/tree/main/packages/sphido-core) - core functions `getPages()` and `allPages()`
 
 ### Page extenders
 
