@@ -1,27 +1,27 @@
 #!/usr/bin/env node
 
-import {getPages, listPages, fromFile, toFile} from '@sphido/core';
-import {dirname, relative} from 'node:path';
-import {join} from 'node:path';
+import {dirname, relative, join} from 'node:path';
+import {getPages, allPages, readFile, writeFile} from '@sphido/core';
 import slugify from '@sindresorhus/slugify';
 import {marked} from 'marked';
 
-function getHtml() {
+function getHtml({name, content, path}) {
 	return `<!DOCTYPE html>
 <html lang="cs" dir="ltr">
 <head>
 	<meta charset="UTF-8">
-	<title>${this.name}</title>	
+	<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+	<title>${name} | Sphido Example page</title>	
 </head>
-<body>${this.content}</body>
-<!-- Generated with Sphido from ${this.path} -->
+<body class="prose mx-auto my-6">${content}</body>
+<!-- Generated with Sphido from ${path} -->
 </html>`;
 }
 
-const pages = await getPages({path: 'content'}, {getHtml});
+const pages = await getPages({path: 'content'});
 
-for (const page of listPages(pages)) {
-	page.content = marked(await fromFile(page.path));
+for (const page of allPages(pages)) {
 	page.output = join('public', relative('content', dirname(page.path)), slugify(page.name) + '.html');
-	await toFile(page.output, page.getHtml());
+	page.content = marked(await readFile(page.path));
+	await writeFile(page.output, getHtml(page));
 }

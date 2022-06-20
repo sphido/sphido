@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://sphido.org">
     <img src="https://sphido.org/img/sphido.svg" width=""/>
@@ -13,77 +12,48 @@
 ## Installation
 
 ```bash
-$ npm i @sphido/core @sphido/frontmatter @sphido/markdown @sphido/meta fs-extra globby
+$ npm i @sphido/core
 ```
 
 ## Quick Start
 
 ```javascript
-#!/usr/bin/env node --experimental-modules
+#!/usr/bin/env node
 
-import path from "path";
-import globby from "globby";
-import fs from "fs-extra";
-import {getPages} from "@sphido/core";
-import {frontmatter} from "@sphido/frontmatter";
-import {meta} from "@sphido/meta";
-import {markdown} from "@sphido/markdown";
+import {dirname, relative, join} from 'node:path';
+import {getPages, allPages, readFile, writeFile} from '@sphido/core';
+import {frontmatter} from '@sphido/frontmatter';
+import slugify from '@sindresorhus/slugify';
+import {marked} from 'marked';
 
-(async () => {
+function getHtml({name, content, path}) {
+	return `<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+	<title>${name} | Sphido Example page</title>	
+</head>
+<body class="prose mx-auto my-6">${content}</body>
+<!-- Generated with Sphido from ${path} -->
+</html>`;
+}
 
-    // 1. get list of pages
+const pages = await getPages({path: 'content'}, frontmatter);
 
-    const pages = await getPages(
-        await globby('content/**/*.{md,html}'),
-        ...[
-
-            frontmatter,
-            markdown,
-            meta,
-
-            // add custom page extender
-            (page) => {
-                page.toFile = path.join(
-                    page.dir.replace('content', 'public'),
-                    page.slug,
-                    'index.html'
-                );
-            },
-
-            // add custom page function
-            {
-                head: function() {
-                  return `<head><meta charset="UTF-8"><title>${this.title}</title></head>`
-                },
-
-                getHtml: function () {
-                    return `<!DOCTYPE html>` + 
-                           `<html lang="en" dir="ltr">` + this.head() + 
-                           `<body>${this.content}</body></html>`
-                }
-            }
-        ],
-    );
-
-    // 2. save pages
-
-    pages.forEach(page => fs.outputFile(page.toFile, page.getHtml()))
-
-})();
+for (const page of allPages(pages)) {
+	page.output = join('public', relative('content', dirname(page.path)), slugify(page.name) + '.html');
+	page.content = marked(await readFile(page.path));
+	await writeFile(page.output, getHtml(page));
+}
 ```
 
 ## Packages
 
-* [`@sphido/core`](https://github.com/sphido/sphido/tree/main/packages/sphido-core) - basic getPages, getPage functions
-* [`@sphido/emoji`](https://github.com/sphido/sphido/tree/main/packages/sphido-emoji) - add twemoji support
-* [`@sphido/feed`](https://github.com/sphido/sphido/tree/main/packages/sphido-feed) - generate atom feed from pages
+* [`@sphido/core`](https://github.com/sphido/sphido/tree/main/packages/sphido-core) - basic `getPages()` and `allPages()` functions
 * [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter) - frontmatter for pages
-* [`@sphido/link`](https://github.com/sphido/sphido/tree/main/packages/sphido-link) - add link() method to pages
-* [`@sphido/markdown`](https://github.com/sphido/sphido/tree/main/packages/sphido-markdown) - markdown page processor 
-* [`@sphido/meta`](https://github.com/sphido/sphido/tree/main/packages/sphido-meta) - add common metadata to the pages
-* [`@sphido/nunjucks`](https://github.com/sphido/sphido/tree/main/packages/sphido-nunjucks) - add support for nunjucks templates
-* [`@sphido/pagination`](https://github.com/sphido/sphido/tree/main/packages/sphido-pagination) - paginate over pages
-* [`@sphido/sitemap`](https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap) - generate sitemap.xml
+* [`@sphido/hashtags`](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags) - process hashtags in page content
+* [`@sphido/sitemap`](https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap) - generate `sitemap.xml` file
 
 ## Examples
 

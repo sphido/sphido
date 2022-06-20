@@ -3,7 +3,7 @@
 [Front matter](https://jekyllrb.com/docs/front-matter/) is an optional section of valid
 YAML that is placed at the top of a page and is used for maintaining metadata for the
 page and its contents. `@sphido/frontmatter` is `page` extender that process this
-blocks inside `page.content`. Using fastest Node.js YAML Parser [js-yaml](https://github.com/nodeca/js-yaml). 
+blocks inside `page.content`. Using the fastest Node.js YAML Parser [js-yaml](https://github.com/nodeca/js-yaml).
 
 ## Install
 
@@ -14,29 +14,28 @@ yarn add @sphido/frontmatter
 ## Example
 
 ```javascript
-import globby from 'globby';
-import {getPages} from '@sphido/core';
+#!/usr/bin/env node
+
+import {getPages, allPages} from '@sphido/core';
+import {dirname, relative} from 'node:path';
 import {frontmatter} from '@sphido/frontmatter';
 
-(async () => {
+const pages = await getPages({path: 'content'}, frontmatter);
 
-  const pages = await getPages(
-    await globby('content/**/*.{md,html}'),
-    frontmatter
-  );
-
-})();
+for (const page of allPages(pages)) {
+	console.log(page)
+}
 ```
 
 ## How to add front matter block
 
-* Must be first thing in the file
+* Must be first in the file
 * Must be valid YAML
-* Can be closed between triple-dashed lines `---` or  HTML comments `<!-- -->`
+* Can be closed between triple-dashed lines `---` and `---` or HTML comments `<!-- -->`
 
 ```markdown
 ---
-title: Some page title
+title: Page title
 tags: [one, two, other]
 ---
 
@@ -45,18 +44,18 @@ tags: [one, two, other]
 Lorem ipusm...
 ```
 
-or 
+or
 
 ```markdown
 <!--
-title: Some page title
+title: Page title
 tags: [one, two, other]
 -->
 
 # Content
 
 Lorem ipusm...
-``` 
+```
 
 ## Source codes
 

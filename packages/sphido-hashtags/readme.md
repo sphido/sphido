@@ -9,17 +9,18 @@ yarn add @sphido/hashtags
 ```
 
 ```javascript
-import {getPages, listPages, fromFile} from '@sphido/core';
+import {getPages, allPages, fromFile} from '@sphido/core';
 import {getHashtags, tagsToLinks} from '@sphido/hashtags';
 import {marked} from 'marked';
+
 const pages = await getPages({path: 'content'});
 
-for (const page of listPages(pages)) {
+for (const page of allPages(pages)) {
 	page.content = fromFile(page.path);
 	page.tags = getHashtags(content);
 	page.tags = tagsToLinks(page.content, page.tags);
-	
-	
+
+
 }
 ```
 

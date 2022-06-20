@@ -35,14 +35,7 @@
 	},
 	"xo": {
 		"rules": {
-			"valid-jsdoc": [
-				"warn",
-				{
-					"requireReturn": false,
-					"requireParamDescription": false,
-					"requireReturnDescription": false
-				}
-			]
+			"no-await-in-loop": 0
 		}
 	}
 }

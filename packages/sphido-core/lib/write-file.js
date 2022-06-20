@@ -1,4 +1,4 @@
-import {mkdir, writeFile} from 'node:fs/promises';
+import {mkdir, writeFile as writeFileAsync} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {dirname} from 'node:path';
 
@@ -9,9 +9,10 @@ import {dirname} from 'node:path';
  * @param {string} content
  * @returns {Promise<*>}
  */
-export async function toFile(file, content) {
+export async function writeFile(file, content) {
 	if (!existsSync(dirname(file))) {
 		await mkdir(dirname(file), {recursive: true});
 	}
-	return await writeFile(file, content);
+
+	return writeFileAsync(file, content);
 }

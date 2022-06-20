@@ -11,20 +11,22 @@ yarn add @sphido/sitemap
 ```javascript
 #!/usr/bin/env node
 
-import {getPages, listPages} from '@sphido/core';
-import {createSitemap} from '../lib/sitemap.js';
+import {dirname, relative, join} from 'node:path';
+import {getPages, allPages} from '@sphido/core';
 import slugify from '@sindresorhus/slugify';
+import {createSitemap} from '../lib/sitemap.js';
 
 const pages = await getPages({path: 'content'});
-const index = await createSitemap('sitemap.xml');
+const map = await createSitemap('sitemap.xml');
 
-index.add('https://sphido.org', new Date(), 1.0);
+map.add('https://sphido.org', new Date(), 1);
 
-for (const page of await listPages(pages)) {
-	index.add('https://sphido.org/' + slugify(page.name), new Date());
+for (const page of await allPages(pages)) {
+	page.slug = join('/', relative('content', dirname(page.path)), slugify(page.name) + '.html');
+	map.add('https://sphido.org' + page.slug, new Date());
 }
 
-index.end();
+map.end();
 ```
 
 ## Source codes

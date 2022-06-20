@@ -1,30 +1,33 @@
-import {join} from 'node:path';
-import {parse} from 'node:path';
+import {join, parse} from 'node:path';
 import {readdir} from 'node:fs/promises';
-import {isValidPage} from './is-valid-page.js';
+import {isPage as isPageDefault} from './is-page.js';
 
 /**
- * Return tree of pages from path
- * @param path
- * @param filter
+ * Retrieve an array tree of pages from path
+ * @param {string} path
+ * @param {Function} isPage
  * @param extenders
- * @returns {Promise<Awaited<unknown>[]>}
+ * @returns {Promise<Awaited<unknown>[{name, path}]>}
  */
-export async function getPages({path, filter = isValidPage}, ...extenders) {
-	return await Promise.all((await readdir(path, {withFileTypes: true}))
-		.filter(dirent => filter(dirent))
-		.map(async (dirent) => {
-			const page = {name: parse(dirent.name).name, path: join(path, dirent.name)};
+export async function getPages({path = 'content', isPage = isPageDefault} = {}, ...extenders) {
+	const dir = await readdir(path, {withFileTypes: true});
 
-			// Read subdirectory recursively
-			if (dirent.isDirectory()) {
-				page.children = await getPages({...page, filter}, ...extenders);
-			}
+	return Promise.all(
+		dir
+			.filter(dirent => isPage(dirent))
+			.map(async dirent => {
+				// Page
+				const page = {name: parse(dirent.name).name, path: join(path, dirent.name)};
 
-			// Callbacks
-			extenders.filter(f => typeof f === 'function').map(f => f(page, path, dirent));
+				// Read subdirectory recursively
+				if (dirent.isDirectory()) {
+					page.children = await getPages({path: page.path, isPage}, ...extenders);
+				}
 
-			// Assign objects
-			return Object.assign(page, ...extenders.filter(o => typeof o === 'object'));
-		}));
+				// Calling callbacks
+				await Promise.all(extenders.filter(f => typeof f === 'function').map(f => f(page, dirent, path)));
+
+				// Assign objects with page
+				return Object.assign(page, ...extenders.filter(o => typeof o === 'object'));
+			}));
 }

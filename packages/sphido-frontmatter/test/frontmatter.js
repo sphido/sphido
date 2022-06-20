@@ -6,7 +6,7 @@ const page1 = {
 };
 
 test('frontmatter markdown basics', t => {
-	frontmatter(page1);
+	frontmatter(page1, {isFile: () => true});
 
 	t.is(page1.title, 'example title');
 	t.is(page1.slug, 'homepage');
@@ -18,7 +18,7 @@ const page2 = {
 };
 
 test('frontmatter html basics', t => {
-	frontmatter(page2);
+	frontmatter(page2, {isFile: () => true});
 
 	t.is(page2.title, 'example title');
 	t.is(page2.slug, 'homepage');
