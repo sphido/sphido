@@ -43,11 +43,10 @@ function getHtml({name, content, path}) {
 </html>`;
 }
 
-const pages = await getPages({path: 'content'}, (page) => {
-	page.slug = slugify(page.name) + '.html';
-});
+const pages = await getPages({path: 'content'});
 
 for (const page of allPages(pages)) {
+	page.slug = slugify(page.name) + '.html';
 	page.output = join('public', relative('content', dirname(page.path)), page.slug);
 
 	// read content and process markdown
