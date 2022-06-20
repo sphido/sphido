@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://sphido.org">
-    <img src="https://sphido.org/img/sphido.svg" style="max-width: 480px; margin: auto;"/>
+    <img src="https://sphido.org/img/sphido.svg" width="480px"/>
   </a>
 </p>
 
