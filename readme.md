@@ -11,9 +11,10 @@
 
 ## Installation
 
-* ⚡️ rocket 🚀 fast
+* 🚀 rocket fast
 * 🤘 no dependencies
-* 🚀️ light-weight and flexible
+* 🚀️ light-weight
+* ⚡️ flexible
 
 ```bash
 $ npm i @sphido/core
