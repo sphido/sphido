@@ -1,14 +1,3 @@
-# @sphido/sitemap
-
-## Install
-
-```bash
-yarn add @sphido/sitemap
-```
-
-## Example
-
-```javascript
 #!/usr/bin/env node
 
 import {getPages, listPages} from '@sphido/core';
@@ -25,8 +14,3 @@ for (const page of await listPages(pages)) {
 }
 
 index.end();
-```
-
-## Source codes
-
-https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap
