@@ -10,8 +10,8 @@ import {dirname} from 'node:path';
  * @returns {Promise<*>}
  */
 export async function copyFile(src, dest) {
-	if (!existsSync(dirname(src))) {
-		await mkdir(dirname(src), {recursive: true});
+	if (!existsSync(dirname(dest))) {
+		await mkdir(dirname(dest), {recursive: true});
 	}
 
 	return copyFileSync(src, dest);
