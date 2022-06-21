@@ -1,27 +1,27 @@
 import {join, parse} from 'node:path';
 import {readdir} from 'node:fs/promises';
-import {isPage as isPageDefault} from './is-page.js';
+import {isPage} from './is-page.js';
 
 /**
  * Retrieve an array tree of pages from path
  * @param {string} path
- * @param {Function} isPage
+ * @param {Function} include
  * @param extenders
  * @returns {Promise<Awaited<unknown>[{name, path}]>}
  */
-export async function getPages({path = 'content', isPage = isPageDefault} = {}, ...extenders) {
+export async function getPages({path = 'content', include = isPage} = {}, ...extenders) {
 	const dir = await readdir(path, {withFileTypes: true});
 
 	return Promise.all(
 		dir
-			.filter(dirent => isPage(dirent))
+			.filter(dirent => include(dirent))
 			.map(async dirent => {
 				// Page
 				const page = {name: parse(dirent.name).name, path: join(path, dirent.name)};
 
 				// Read subdirectory recursively
 				if (dirent.isDirectory()) {
-					page.children = await getPages({path: page.path, isPage}, ...extenders);
+					page.children = await getPages({path: page.path, isPage: include}, ...extenders);
 				}
 
 				// Calling callbacks
