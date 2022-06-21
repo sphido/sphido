@@ -5,7 +5,7 @@ import {dirname} from 'node:path';
 /**
  * Generate XML sitemap
  * @param {string} file
- * @returns {Object<{addUrl: add, end: end}>}
+ * @returns {Object<{add: add, end: end}>}
  */
 export async function createSitemap(file = 'public/sitemap.xml') {
 	// Create directory
