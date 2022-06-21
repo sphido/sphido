@@ -21,7 +21,7 @@ export async function getPages({path = 'content', include = isPage} = {}, ...ext
 
 				// Read subdirectory recursively
 				if (dirent.isDirectory()) {
-					page.children = await getPages({path: page.path, isPage: include}, ...extenders);
+					page.children = await getPages({path: page.path, include}, ...extenders);
 				}
 
 				// Calling callbacks
