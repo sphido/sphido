@@ -14,7 +14,7 @@ export async function getPages({path = 'content', include = isPage} = {}, ...ext
 
 	return Promise.all(
 		dir
-			.filter(dirent => include(dirent))
+			.filter(dirent => include(dirent, path))
 			.map(async dirent => {
 				// Page
 				const page = {name: parse(dirent.name).name, path: join(path, dirent.name)};
