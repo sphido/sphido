@@ -62,7 +62,6 @@ await got.get('https://www.google.com/webmasters/tools/ping?sitemap=https://sphi
 
 [IndexNow](https://www.indexnow.org/) is an open-source protocol that allows website publishers to
 instantly index across participating search engines, updating results based upon the latest content changes.
-
 [IndexNow](https://www.indexnow.org/) protocol is supported by [Microsoft Bing](https://www.bing.com/indexnow), [Seznam.cz](https://www.seznam.cz/) and Yandex.
 
 1. **Generate an API Key** – This is submitted alongside URLs to ensure ownership of the domain. You can use [Microsoft Bing API Key generator](https://www.bing.com/indexnow).
