@@ -50,14 +50,13 @@ that it's changed. Alert Google about a sitemap only when it's new or updated;
 don't submit or ping unchanged sitemaps multiple times.
 
 You can use [got](https://github.com/sindresorhus/got) - Human-friendly and powerful HTTP request library for Node.js
+or visit [URL manually](https://www.google.com/webmasters/tools/ping?sitemap=https://sphido.org/sitemap.xml)
 
 ```javascript
 import got from 'got';
-
 await got.get('https://www.google.com/webmasters/tools/ping?sitemap=https://sphido.org/sitemap.xml');
 ```
 
-or visit [URL manually](https://www.google.com/webmasters/tools/ping?sitemap=https://sphido.org/sitemap.xml)
 
 ### Bing, Seznam, Yandex
 
