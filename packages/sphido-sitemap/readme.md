@@ -54,9 +54,9 @@ or visit [URL manually](https://www.google.com/webmasters/tools/ping?sitemap=htt
 
 ```javascript
 import got from 'got';
+
 await got.get('https://www.google.com/webmasters/tools/ping?sitemap=https://sphido.org/sitemap.xml');
 ```
-
 
 ### Bing, Seznam, Yandex
 
@@ -75,4 +75,4 @@ https://search.seznam.cz/indexnow?url=[URL]&key=[YOUR KEY]
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap
+[@sphido/sitemap](https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap)

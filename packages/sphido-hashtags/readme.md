@@ -19,11 +19,9 @@ for (const page of allPages(pages)) {
 	page.content = fromFile(page.path);
 	page.tags = getHashtags(content);
 	page.tags = tagsToLinks(page.content, page.tags);
-
-
 }
 ```
 
 ## Source codes
 
-https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags
+[@sphido/hashtags](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags)
