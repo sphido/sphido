@@ -153,4 +153,4 @@ for (const page of allPages(pages)) {
 
 ## Source codes
 
-[@sphido/core](https://github.com/sphido/sphido/tree/main/packages/sphido-core)ß
+[@sphido/core](https://github.com/sphido/sphido/tree/main/packages/sphido-core)
