@@ -7,7 +7,6 @@
  * - accept only *.html and *.md files
  *
  * @param {Dirent} dirent
- * @param {string} path
  * @returns {boolean}
  */
 export function isPage(dirent) {

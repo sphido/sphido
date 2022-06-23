@@ -5,9 +5,9 @@ import {isPage} from './is-page.js';
 /**
  * Retrieve an array tree of pages from path
  * @param {string} path
- * @param {Function} include
- * @param extenders
- * @returns {Promise<Awaited<unknown>[{name, path}]>}
+ * @param {function(dirent:Dirent, path:string)} include
+ * @param {Object|function(page:{name:string, path:string}, dirent:Dirent, path:string)} extenders
+ * @returns {Promise<Awaited<unknown>[{name:string, path:string}]>}
  */
 export async function getPages({path = 'content', include = isPage} = {}, ...extenders) {
 	const dir = await readdir(path, {withFileTypes: true});
