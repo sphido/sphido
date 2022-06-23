@@ -24,8 +24,10 @@ export async function getPages({path = 'content', include = isPage} = {}, ...ext
 					page.children = await getPages({path: page.path, include}, ...extenders);
 				}
 
-				// Calling callbacks
-				await Promise.all(extenders.filter(f => typeof f === 'function').map(f => f(page, dirent, path)));
+				// Calling callbacks in the series
+				for (const cb of extenders.filter(f => typeof f === 'function')) {
+					await cb(page, dirent, path);
+				}
 
 				// Assign objects with page
 				return Object.assign(page, ...extenders.filter(o => typeof o === 'object'));

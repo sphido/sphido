@@ -6,7 +6,8 @@
  * - skip drafts files with underscore at the beginning
  * - accept only *.html and *.md files
  *
- * @param {object} dirent
+ * @param {Dirent} dirent
+ * @param {string} path
  * @returns {boolean}
  */
 export function isPage(dirent) {
