@@ -20,7 +20,7 @@ import {readFile} from '@sphido/core';
  *
  * @see https://jekyllrb.com/docs/front-matter/
  * @param {Object} page
- * @param {Object} dirent
+ * @param {Dirent} dirent
  */
 export async function frontmatter(page, dirent) {
 	if (dirent.isFile()) {

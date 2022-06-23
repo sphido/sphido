@@ -5,7 +5,7 @@ import {tagsToLinks} from './tags-to-links.js';
 /**
  * Replace hashtags in markdown with links
  * @param {Object} page
- * @param {Object} dirent
+ * @param {Dirent} dirent
  */
 export async function hashtags(page, dirent) {
 	if (dirent.isFile()) {
