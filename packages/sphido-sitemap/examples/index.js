@@ -12,11 +12,17 @@ const map = await createSitemap('sitemap.xml');
 map.add({url: 'https://sphido.org', priority: 1});
 
 for (const page of await allPages(pages)) {
-	page.slug = join('/', relative('content', dirname(page.path)), slugify(page.name) + '.html');
-	map.add({
-		url: 'https://sphido.org' + page.slug,
-		date: new Date(),
-	});
+	page.slug = slugify(page.name) + '.html';
+	page.output = join('/', relative('content', dirname(page.path)), page.slug);
+
+	// prepare sitemap item properties
+	page.url = new URL(page.slug, 'https://sphido.org');
+	page.date = new Date();
+	page.priority = 0.5;
+	page.changefreq = 'daily';
+
+	// add page to sitemap
+	map.add(page);
 }
 
 map.end();

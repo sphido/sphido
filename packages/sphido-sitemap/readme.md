@@ -14,7 +14,7 @@ yarn add @sphido/sitemap
 import {dirname, relative, join} from 'node:path';
 import {getPages, allPages} from '@sphido/core';
 import slugify from '@sindresorhus/slugify';
-import {createSitemap, pingSitemap} from '@sphido/sitemap';
+import {createSitemap} from '@sphido/sitemap';
 import got from 'got';
 
 const pages = await getPages({path: 'content'});
@@ -23,17 +23,20 @@ const map = await createSitemap('sitemap.xml');
 map.add({url: 'https://sphido.org', priority: 1});
 
 for (const page of await allPages(pages)) {
-	page.slug = join('/', relative('content', dirname(page.path)), slugify(page.name) + '.html');
-	map.add({
-		url: 'https://sphido.org' + page.slug,
-		date: new Date(),
-	});
+	page.slug = slugify(page.name) + '.html';
+	page.output = join('/', relative('content', dirname(page.path)), page.slug);
+
+	// prepare sitemap item properties
+	page.url = new URL(page.slug, 'https://sphido.org');
+	page.date = new Date();
+	page.priority = 0.5;
+	page.changefreq = 'daily';
+
+	// add page to sitemap
+	map.add(page);
 }
 
 map.end();
-
-// ping Google about new sitemap
-await got.get('https://www.google.com/webmasters/tools/ping?sitemap=https://sphido.org/sitemap.xml');
 ```
 
 ## Let them know
@@ -49,13 +52,12 @@ the first time that we notice it, and thereafter only when you ping us to let us
 that it's changed. Alert Google about a sitemap only when it's new or updated;
 don't submit or ping unchanged sitemaps multiple times.
 
-You can use [got](https://github.com/sindresorhus/got) - Human-friendly and powerful HTTP request library for Node.js
+You can use e.g. [got](https://github.com/sindresorhus/got) an HTTP request library for Node.js
 or visit [URL manually](https://www.google.com/webmasters/tools/ping?sitemap=https://sphido.org/sitemap.xml)
 
 ```javascript
 import got from 'got';
-
-await got.get('https://www.google.com/webmasters/tools/ping?sitemap=https://sphido.org/sitemap.xml');
+await got.get('https://www.google.com/webmasters/tools/ping?sitemap=URL');
 ```
 
 ### Bing, Seznam, Yandex
