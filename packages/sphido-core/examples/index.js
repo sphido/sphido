@@ -8,15 +8,14 @@ import {marked} from 'marked';
 const pages = await getPages({path: 'content'}, // ... extenders
 	(page) => {
 		page.slug = slugify(page.name) + '.html';
+		page.dir = dirname(page.path);
 	});
 
 for (const page of allPages(pages)) {
-	page.output = join('public', relative('content', dirname(page.path)), page.slug);
+	page.output = join('public', relative('content', page.dir), page.slug);
 	page.content = marked(await readFile(page.path));
 
-	await writeFile(
-		page.output,
-		`<!DOCTYPE html>
+	await writeFile(page.output, `<!DOCTYPE html>
 		<html lang="en" dir="ltr">
 		<head>
 			<meta charset="UTF-8">
