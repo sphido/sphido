@@ -6,11 +6,11 @@
 
 
 <p align="center">
-  A rocket 🚀 fast, light-weight and flexible static site generator.
+  A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.
 </p>
 
 * 🚀 rocket fast
-* ️⚖️ light-weight
+* ️💭 lightweight
 * 🤘 no dependencies
 * ⚡️ flexible
 
