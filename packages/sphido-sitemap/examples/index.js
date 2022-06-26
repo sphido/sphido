@@ -15,13 +15,13 @@ for (const page of await allPages(pages)) {
 	page.slug = slugify(page.name) + '.html';
 	page.output = join('/', relative('content', dirname(page.path)), page.slug);
 
-	// prepare sitemap item properties
+	// Prepare sitemap item properties
 	page.url = new URL(page.slug, 'https://sphido.org');
 	page.date = new Date();
 	page.priority = 0.5;
 	page.changefreq = 'daily';
 
-	// add page to sitemap
+	// Add page to sitemap
 	map.add(page);
 }
 

@@ -6,7 +6,7 @@ import slugify from '@sindresorhus/slugify';
 import {marked} from 'marked';
 
 const pages = await getPages({path: 'content'}, // ... extenders
-	(page) => {
+	page => {
 		page.slug = slugify(page.name) + '.html';
 		page.dir = dirname(page.path);
 	});
