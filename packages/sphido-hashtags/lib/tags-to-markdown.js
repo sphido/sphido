@@ -1,5 +1,9 @@
 import slugify from '@sindresorhus/slugify';
 
+function defaultTagToUrl(tag) {
+	return `${slugify(tag)}.html`;
+}
+
 /**
  * Convert #hashtags to Markdown links
  *
@@ -9,7 +13,7 @@ import slugify from '@sindresorhus/slugify';
  * @param {Function} tagToUrl
  * @returns {string}
  */
-export function tagsToMarkdown(content, tags = [], {urlBase = '/tag/', tagToUrl = slugify} = {}) {
+export function tagsToMarkdown(content, tags = [], {urlBase = '/tag/', tagToUrl = defaultTagToUrl} = {}) {
 	if (tags && tags.length > 0) {
 		const anchor = new RegExp('(' + tags.join('|') + ')', 'gmi');
 		return content.replace(anchor, (match, capture) => `[${match}](${urlBase}${tagToUrl(capture)})`);
