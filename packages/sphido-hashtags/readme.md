@@ -10,7 +10,7 @@ yarn add @sphido/hashtags
 
 ```javascript
 import {getPages, allPages, fromFile} from '@sphido/core';
-import {getHashtags, tagsToMarkdownLinks} from '@sphido/hashtags';
+import {getHashtags, tagsToMarkdown} from '@sphido/hashtags';
 import {marked} from 'marked';
 
 const pages = await getPages({path: 'content'});
@@ -18,7 +18,7 @@ const pages = await getPages({path: 'content'});
 for (const page of allPages(pages)) {
 	page.content = fromFile(page.path);
 	page.tags = getHashtags(content);
-	page.content = tagsToMarkdownLinks(page.content, page.tags);
+	page.content = tagsToMarkdown(page.content, page.tags);
 }
 ```
 
