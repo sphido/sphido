@@ -1,5 +1,6 @@
 /**
  * Return hashtags array from string
+ *
  * @param {string} content
  * @returns {array}
  */

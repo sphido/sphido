@@ -1,5 +1,5 @@
 import test from 'ava';
-import {hashtags} from '../lib/index.js';
+import {hashtags} from '../lib/hashtags.js';
 
 test('single tag has been detected', t => {
 	const page = {content: 'only #one hashtag'};

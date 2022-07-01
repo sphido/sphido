@@ -1,6 +1,9 @@
 import {readFile} from '@sphido/core';
 import {getHashtags} from './get-hashtags.js';
-import {tagsToLinks} from './tags-to-links.js';
+import {tagsToMarkdownLinks} from './tags-to-markdown-links.js';
+
+export {getHashtags} from './get-hashtags.js';
+export {tagsToMarkdownLinks} from './tags-to-markdown-links.js';
 
 /**
  * Replace hashtags in markdown with links
@@ -16,7 +19,7 @@ export async function hashtags(page, dirent) {
 		if (page?.content) {
 			const tags = getHashtags(page.content);
 			page.tags = new Set(tags?.map(tag => tag.slice(1))); // Create unique tags list
-			page.content = tagsToLinks(page.content, tags);
+			page.content = tagsToMarkdownLinks(page.content, tags);
 		}
 	}
 }
