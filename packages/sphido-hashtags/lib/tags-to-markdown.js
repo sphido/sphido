@@ -10,7 +10,7 @@ import slugify from '@sindresorhus/slugify';
  * @returns {string}
  */
 export function tagsToMarkdown(content, tags = [], {urlBase = '/tag/', tagToUrl = slugify} = {}) {
-	if (tags && tags.length) {
+	if (tags && tags.length > 0) {
 		const anchor = new RegExp('(' + tags.join('|') + ')', 'gmi');
 		return content.replace(anchor, (match, capture) => `[${match}](${urlBase}${tagToUrl(capture)})`);
 	}
