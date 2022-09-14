@@ -26,7 +26,7 @@ console.log(tags); // will be ['#one', '#two', '#three'];
 ### function `tagsToMarkdown(content, tags = [], options = {})`
 
 Function `tagsToMarkdown()` expect at last two parameters on the input - `content` and `tags`
-Replace hashtags with Markdown syntax for links [#hash](/tag/hash)
+Replace hashtags with Markdown syntax for links `[#hash](/tag/hash)`
 
 ```javascript
 import {getPages, allPages, readFile} from '@sphido/core';
