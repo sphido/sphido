@@ -10,7 +10,7 @@ yarn add @sphido/hashtags
 
 ## Functions
 
-### function `getHashtags(content)`
+### `getHashtags(content)`
 
 Function `getHashtags()` searches the string for all hashtags and returns them as an array.
 The input `content` parameter is expected in Markdown format, function automatically skips
@@ -23,7 +23,7 @@ const tags = getHashtags('#one #two #three `color: #red`');
 console.log(tags); // will be ['#one', '#two', '#three']; 
 ```
 
-### function `tagsToMarkdown(content, tags = [], options = {})`
+### `tagsToMarkdown(content, tags = [], options = {})`
 
 Function `tagsToMarkdown()` expect at last two parameters on the input - `content` and `tags`
 Replace hashtags with Markdown syntax for links `[#hash](/tag/hash)`
@@ -43,10 +43,13 @@ for (const page of allPages(pages)) {
 }
 ```
 
-### function `hashtags()`
+### `hashtags()`
 
-Function `hashtags()` is a Sphido extender. That extender will be load `page.content` automatically
-and add `page.tags` property to the `page` object and replace all hashtags with Markdown links. 
+Function `hashtags()` search for all hashtags in `page.content`. 
+In case that `page.content` property is empty, function will load file 
+content automatically. All found tags are then stored in a `page.tags`
+property as an array. Function will also automatically replace hashtags to 
+Markdown syntax for links `[#hash](/tag/hash)`.
 
 ```javascript
 import {getPages, allPages} from '@sphido/core';
