@@ -1,6 +1,6 @@
 # @sphido/hashtags
 
-Search hashtags and replaces them with a link `[#hashtag](/tag/hashtag)` code.
+Search Markdown for hashtags and replaces them with a links `[#hashtag](/tag/hashtag)` code.
 
 ## Install
 
@@ -8,7 +8,7 @@ Search hashtags and replaces them with a link `[#hashtag](/tag/hashtag)` code.
 yarn add @sphido/hashtags
 ```
 
-## Functions
+## API
 
 ### `getHashtags(content)`
 
@@ -23,7 +23,7 @@ const tags = getHashtags('#one #two #three `color: #red`');
 console.log(tags); // will be ['#one', '#two', '#three']; 
 ```
 
-### `tagsToMarkdown(content, tags = [], options = {})`
+### `tagsToMarkdown(content, tags = [], options?)`
 
 Function `tagsToMarkdown()` expect at last two parameters on the input - `content` and `tags`
 Replace hashtags with Markdown syntax for links `[#hash](/tag/hash)`
@@ -43,12 +43,12 @@ for (const page of allPages(pages)) {
 }
 ```
 
-### `hashtags()`
+### `hashtags(page, dirent)`
 
-Function `hashtags()` search for all hashtags in `page.content`. 
-In case that `page.content` property is empty, function will load file 
+Function `hashtags()` search for all hashtags in `page.content`.
+In case that `page.content` property is empty, function will load file
 content automatically. All found tags are then stored in a `page.tags`
-property as an array. Function will also automatically replace hashtags to 
+property as an array. Function will also automatically replace hashtags to
 Markdown syntax for links `[#hash](/tag/hash)`.
 
 ```javascript
