@@ -33,9 +33,9 @@
 		"url": "git@github.com:sphido/sphido.git"
 	},
 	"devDependencies": {
-		"@sindresorhus/slugify": "^2.1.0",
+		"@sindresorhus/slugify": "^2.1.1",
 		"ava": "^4.2.0",
-		"marked": "^4.0.17"
+		"marked": "^4.1.1"
 	},
 	"scripts": {
 		"test": "ava"

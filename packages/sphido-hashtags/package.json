@@ -20,6 +20,6 @@
 		"test": "ava"
 	},
 	"dependencies": {
-		"@sindresorhus/slugify": "^2.1.0"
+		"@sindresorhus/slugify": "^2.1.1"
 	}
 }
