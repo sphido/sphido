@@ -1,25 +1,25 @@
 {
-	"name": "@sphido/sitemap",
-	"version": "2.0.9",
-	"author": {
-		"name": "Roman Ožana",
-		"email": "roman@ozana.cz",
-		"url": "https://ozana.cz"
-	},
-	"type": "module",
-	"exports": "./lib/sitemap.js",
-	"engines": {
-		"node": ">=14"
-	},
-	"description": "Sitemap XML for Sphido CMS",
-	"license": "MIT",
-	"devDependencies": {
-		"@sindresorhus/slugify": "^2.1.1",
-		"ava": "^4.2.0",
-		"got": "^12.5.2"
-	},
-	"scripts": {
-		"test": "ava"
-	},
-	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+  "name": "@sphido/sitemap",
+  "version": "2.0.10",
+  "author": {
+    "name": "Roman Ožana",
+    "email": "roman@ozana.cz",
+    "url": "https://ozana.cz"
+  },
+  "type": "module",
+  "exports": "./lib/sitemap.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "description": "Sitemap XML for Sphido CMS",
+  "license": "MIT",
+  "devDependencies": {
+    "@sindresorhus/slugify": "^2.1.1",
+    "ava": "^4.2.0",
+    "got": "^12.5.2"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
 }
