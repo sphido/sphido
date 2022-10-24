@@ -1,26 +1,26 @@
 {
-	"name": "@sphido/frontmatter",
-	"version": "2.0.2",
-	"author": {
-		"name": "Roman Ožana",
-		"email": "roman@ozana.cz",
-		"url": "https://ozana.cz"
-	},
-	"description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
-	"type": "module",
-	"exports": "./lib/frontmatter.js",
-	"engines": {
-		"node": ">=14"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"ava": "^5.0.1"
-	},
-	"scripts": {
-		"test": "ava"
-	},
-	"dependencies": {
-		"js-yaml": "^4.1.0"
-	},
-	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+  "name": "@sphido/frontmatter",
+  "version": "2.0.3",
+  "author": {
+    "name": "Roman Ožana",
+    "email": "roman@ozana.cz",
+    "url": "https://ozana.cz"
+  },
+  "description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
+  "type": "module",
+  "exports": "./lib/frontmatter.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^5.0.1"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
 }
