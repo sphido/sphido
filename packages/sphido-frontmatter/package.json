@@ -14,7 +14,7 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^4.2.0"
+		"ava": "^5.0.1"
 	},
 	"scripts": {
 		"test": "ava"

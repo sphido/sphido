@@ -19,7 +19,7 @@
 		"test": "ava && xo"
 	},
 	"devDependencies": {
-		"ava": "^4.3.0",
+		"ava": "^5.0.1",
 		"esm": "^3.2.25",
 		"lerna": "^6.0.1",
 		"xo": "^0.52.4",
