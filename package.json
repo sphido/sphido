@@ -4,7 +4,7 @@
 	"author": {
 		"name": "Roman Ožana",
 		"email": "roman@ozana.cz",
-		"url": "https://ozana.cz/"
+		"url": "https://ozana.cz"
 	},
 	"license": "MIT",
 	"description": "A rocket 🚀 fast, lightweight, static site generator",
@@ -15,7 +15,7 @@
 	],
 	"scripts": {
 		"ava": "ava",
-		"xo": "xo",
+		"xo": "xo *.js",
 		"test": "ava && xo"
 	},
 	"devDependencies": {
