@@ -1,49 +1,52 @@
 {
-  "name": "@sphido/core",
-  "version": "2.0.15",
-  "author": {
-    "name": "Roman Ožana",
-    "email": "roman@ozana.cz",
-    "url": "https://ozana.cz"
-  },
-  "license": "MIT",
-  "description": "A rocket 🚀 fast, lightweight, static site generator",
-  "type": "module",
-  "exports": "./lib/index.js",
-  "engines": {
-    "node": ">=14"
-  },
-  "keywords": [
-    "markdown",
-    "markup",
-    "content management system",
-    "cms",
-    "static",
-    "static site generator",
-    "generator",
-    "framework",
-    "numjucks",
-    "blog",
-    "scaffold"
-  ],
-  "homepage": "https://sphido.org",
-  "bugs": "https://github.com/sphido/sphido/issues",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:sphido/sphido.git"
-  },
-  "devDependencies": {
-    "@sindresorhus/slugify": "^2.1.1",
-    "ava": "^5.0.1",
-    "marked": "^4.1.1"
-  },
-  "scripts": {
-    "test": "ava"
-  },
-  "xo": {
-    "rules": {
-      "no-await-in-loop": 0
-    }
-  },
-  "gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+	"name": "@sphido/core",
+	"version": "2.0.15",
+	"author": {
+		"name": "Roman Ožana",
+		"email": "roman@ozana.cz",
+		"url": "https://ozana.cz"
+	},
+	"license": "MIT",
+	"description": "A rocket 🚀 fast, lightweight, static site generator",
+	"type": "module",
+	"exports": "./lib/index.js",
+	"engines": {
+		"node": ">=16"
+	},
+	"types": "types/index.d.ts",
+	"keywords": [
+		"markdown",
+		"markup",
+		"content management system",
+		"cms",
+		"static",
+		"static site generator",
+		"generator",
+		"framework",
+		"numjucks",
+		"blog",
+		"scaffold"
+	],
+	"homepage": "https://sphido.org",
+	"bugs": "https://github.com/sphido/sphido/issues",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:sphido/sphido.git"
+	},
+	"devDependencies": {
+		"@sindresorhus/slugify": "^2.1.1",
+		"ava": "^5.0.1",
+		"marked": "^4.1.1"
+	},
+	"scripts": {
+		"test": "ava",
+		"types": "tsc lib/*.js --declaration --allowJs --emitDeclarationOnly --outDir types"
+	},
+	"xo": {
+		"ignores": ["types/**"],
+		"rules": {
+			"no-await-in-loop": 0
+		}
+	},
+	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
 }

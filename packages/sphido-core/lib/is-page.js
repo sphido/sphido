@@ -6,7 +6,7 @@
  * - skip drafts files with underscore at the beginning
  * - accept only *.html and *.md files
  *
- * @param {Dirent} dirent
+ * @param {import('node:fs').Dirent} dirent
  * @returns {boolean}
  */
 export function isPage(dirent) {

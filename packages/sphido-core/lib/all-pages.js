@@ -1,9 +1,8 @@
 /**
  * Page generator that flatten pages structure
  *
- * @generator
- * @param {array} pages
- * @yields {name:string, path:string} next page in pages list
+ * @param {import('get-pages.js').Pages} pages
+ * @return {import('get-pages.js').Page}
  */
 export function * allPages(pages) {
 	for (const page of pages) {
