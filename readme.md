@@ -3,13 +3,13 @@
 [![NPM License](https://img.shields.io/npm/l/@sphido/core?style=for-the-badge)](https://github.com/OzzyCzech/wticons/blob/main/LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/sphido/sphido?style=for-the-badge)](https://github.com/OzzyCzech/wticons/commit/main)
 
-<p style="text-align: center;">
+<p align="center">
   <a href="https://sphido.org">
-    <img src="https://sphido.org/img/sphido.svg" width="420px"/>
+    <img src="https://sphido.org/img/sphido.svg" width="420px" alt="Sphido logo"/>
   </a>
 </p>
 
-<p style="text-align: center">
+<p align="center">
   A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.
 </p>
 
