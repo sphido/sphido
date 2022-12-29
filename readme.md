@@ -2,8 +2,8 @@
 
 [![NPM Downloads](https://img.shields.io/npm/dm/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
 [![NPM Version](https://img.shields.io/npm/v/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
-[![NPM License](https://img.shields.io/npm/l/@sphido/core?style=for-the-badge)](https://github.com/OzzyCzech/wticons/blob/main/LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/sphido/sphido?style=for-the-badge)](https://github.com/OzzyCzech/wticons/commit/main)
+[![NPM License](https://img.shields.io/npm/l/@sphido/core?style=for-the-badge)](https://github.com/sphido/sphido/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/sphido/sphido?style=for-the-badge)](https://github.com/sphido/sphido/commits/main)
 
 <a href="https://sphido.org">
  <img src="https://sphido.org/img/sphido.svg" width="420px" alt="Sphido logo"/>
