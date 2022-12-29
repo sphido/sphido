@@ -36,14 +36,16 @@
 	"devDependencies": {
 		"@sindresorhus/slugify": "^2.1.1",
 		"ava": "^5.0.1",
-		"marked": "^4.1.1"
+		"marked": "^4.2.5"
 	},
 	"scripts": {
 		"test": "ava",
 		"types": "tsc lib/*.js --declaration --allowJs --emitDeclarationOnly --outDir types"
 	},
 	"xo": {
-		"ignores": ["types/**"],
+		"ignores": [
+			"types/**"
+		],
 		"rules": {
 			"no-await-in-loop": 0
 		}
