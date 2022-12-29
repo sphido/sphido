@@ -1,33 +1,33 @@
+<div align="center">
+
 [![NPM Downloads](https://img.shields.io/npm/dm/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/wticons)
 [![NPM Version](https://img.shields.io/npm/v/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/wticons)
 [![NPM License](https://img.shields.io/npm/l/@sphido/core?style=for-the-badge)](https://github.com/OzzyCzech/wticons/blob/main/LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/sphido/sphido?style=for-the-badge)](https://github.com/OzzyCzech/wticons/commit/main)
 
-<p align="center">
-  <a href="https://sphido.org">
-    <img src="https://sphido.org/img/sphido.svg" width="420px" alt="Sphido logo"/>
-  </a>
-</p>
+<a href="https://sphido.org">
+ <img src="https://sphido.org/img/sphido.svg" width="420px" alt="Sphido logo"/>
+</a>
 
-<p align="center">
-  A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.
-</p>
+<p>A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.</p>
 
-* 🚀 rocket fast
-* ️💭 lightweight
-* 🤘 no dependencies
-* ⚡️ flexible
+</div>
+
+* 🚀rocket fast
+* ️💭lightweight
+* 🤘no dependencies
+* ⚡️flexible
 
 ## Installation
 
 ```bash
-$ yarn add @sphido/core
+yarn add @sphido/core
 ```
 
-or 
+or
 
 ```bash
-$ npm i @sphido/core
+npm i @sphido/core
 ```
 
 ## Quick Start
