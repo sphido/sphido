@@ -1,22 +1,30 @@
-<div align="center">
+# A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.
 
-[![NPM Downloads](https://img.shields.io/npm/dm/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
-[![NPM Version](https://img.shields.io/npm/v/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
-[![NPM License](https://img.shields.io/npm/l/@sphido/core?style=for-the-badge)](https://github.com/sphido/sphido/blob/main/LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/sphido/sphido?style=for-the-badge)](https://github.com/sphido/sphido/commits/main)
+<div align="center">
 
 <a href="https://sphido.org">
  <img src="https://sphido.org/img/sphido.svg" width="420px" alt="Sphido logo"/>
 </a>
 
-<p>A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.</p>
+[![NPM Downloads](https://img.shields.io/npm/dm/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
+[![NPM Version](https://img.shields.io/npm/v/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
+[![NPM License](https://img.shields.io/npm/l/@sphido/core?style=for-the-badge)](https://github.com/sphido/sphido/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/sphido/sphido?style=for-the-badge)](https://github.com/sphido/sphido/commits/main)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/sphido/sphido/main.yml?style=for-the-badge)](https://github.com/sphido/sphido/actions)
 
 </div>
 
-* 🚀rocket fast
-* ️💭lightweight
-* 🤘no dependencies
-* ⚡️flexible
+I know, another [static site generator](https://github.com/collections/static-site-generators)! This one is different - it's totally minimalistic.
+Basically, it's just two functions. The first, the `getPages()` function, allows you to retrieve a list of pages, and the `allPages()` function allows
+you to iterate through them.
+
+You get a static site generator that is:
+
+- 🚀 rocket fast
+- 💭️ light-weight
+- 🤘 no dependencies
+- ⚡️ flexible
+
 
 ## Installation
 
@@ -62,6 +70,14 @@ for (const page of allPages(pages)) {
 		</html>
 	`);
 }
+```
+
+Sphido requires Node `14.x` and newer. To load an ES module, set `"type": "module"` in the `package.json` or use the `.mjs` extension.
+
+## Run script
+
+```bash
+node index.js
 ```
 
 ## Packages

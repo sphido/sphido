@@ -16,7 +16,7 @@
   "devDependencies": {
     "@sindresorhus/slugify": "^2.2.0",
     "ava": "^5.2.0",
-    "got": "^12.5.2"
+    "got": "^12.6.0"
   },
   "scripts": {
     "test": "ava"
