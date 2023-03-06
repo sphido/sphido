@@ -1,18 +1,10 @@
 # A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.
 
-<div align="center">
-
-<a href="https://sphido.org">
- <img src="https://sphido.org/img/sphido.svg" width="420px" alt="Sphido logo"/>
-</a>
-
 [![NPM Downloads](https://img.shields.io/npm/dm/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
 [![NPM Version](https://img.shields.io/npm/v/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
 [![NPM License](https://img.shields.io/npm/l/@sphido/core?style=for-the-badge)](https://github.com/sphido/sphido/blob/main/LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/sphido/sphido?style=for-the-badge)](https://github.com/sphido/sphido/commits/main)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/sphido/sphido/main.yml?style=for-the-badge)](https://github.com/sphido/sphido/actions)
-
-</div>
 
 I know, another [static site generator](https://github.com/collections/static-site-generators)! This one is different - it's totally minimalistic.
 Basically, it's just two functions. The first, the `getPages()` function, allows you to retrieve a list of pages, and the `allPages()` function allows
