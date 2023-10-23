@@ -28,7 +28,7 @@ export async function frontmatter(page, dirent) {
 			page.content = await readFile(page.path);
 		}
 
-		// Process frontmatter
+		// Process Front Matter
 		if (page?.content.startsWith('---') || page?.content.startsWith('<!--')) {
 			let meta = {};
 			page.content.replace(/^<!--([\s\S]+?)-->|^---([\s\S]+?)---/, (frontMatter, html, md) => {

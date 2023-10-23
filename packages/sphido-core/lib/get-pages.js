@@ -10,29 +10,29 @@ import {isPage} from './is-page.js';
  * @return {Promise<Awaited<Pages>[]>}
  */
 export async function getPages({path = 'content', include = isPage} = {}, ...extenders) {
-	const dir = await readdir(path, {withFileTypes: true});
+  const dir = await readdir(path, {withFileTypes: true});
 
-	return Promise.all(
-		dir
-			.filter(dirent => include(dirent, path))
-			.map(async dirent => {
-				// Page
-				const page = {name: parse(dirent.name).name, path: join(path, dirent.name)};
+  return Promise.all(
+    dir
+      .filter(dirent => include(dirent, path))
+      .map(async dirent => {
+        // Page object
+        const page = {name: parse(dirent.name).name, path: join(path, dirent.name)};
 
-				// Read subdirectory recursively
-				if (dirent.isDirectory()) {
-					page.children = await getPages({path: page.path, include}, ...extenders);
-				}
+        // Read subdirectory recursively
+        if (dirent.isDirectory()) {
+          page.children = await getPages({path: page.path, include}, ...extenders);
+        }
 
-				// Calling callbacks in the series
-				for (const cb of extenders.filter(f => typeof f === 'function')) {
-					/** @type {ExtenderCallback} */
-					await cb(page, dirent, path);
-				}
+        // Calling callbacks in the series
+        for (const cb of extenders.filter(f => typeof f === 'function')) {
+          /** @type {ExtenderCallback} */
+          await cb(page, dirent, path);
+        }
 
-				// Assign objects with page
-				return Object.assign(page, ...extenders.filter(o => typeof o === 'object'));
-			}));
+        // Assign objects with page
+        return Object.assign(page, ...extenders.filter(o => typeof o === 'object'));
+      }));
 }
 
 /**
