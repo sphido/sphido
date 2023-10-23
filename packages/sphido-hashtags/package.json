@@ -14,12 +14,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "ava": "^5.2.0"
+    "ava": "^5.3.1"
   },
   "scripts": {
     "test": "ava"
   },
   "dependencies": {
-    "@sindresorhus/slugify": "^2.2.0"
+    "@sindresorhus/slugify": "^2.2.1"
   }
 }
