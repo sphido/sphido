@@ -19,7 +19,7 @@
 		"test": "ava && xo"
 	},
 	"devDependencies": {
-		"@types/node": "^20.8.7",
+		"@types/node": "^20.8.9",
 		"ava": "^5.3.1",
 		"esm": "^3.2.25",
 		"lerna": "^7.4.1",
