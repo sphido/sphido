@@ -1,38 +1,38 @@
 {
-	"name": "sphido",
-	"private": true,
-	"author": {
-		"name": "Roman Ožana",
-		"email": "roman@ozana.cz",
-		"url": "https://ozana.cz"
-	},
-	"license": "MIT",
-	"description": "A rocket 🚀 fast, lightweight, static site generator",
-	"homepage": "https://sphido.org",
-	"type": "module",
-	"workspaces": [
-		"packages/*"
-	],
-	"scripts": {
-		"ava": "ava",
-		"xo": "xo *.js",
-		"test": "ava && xo"
-	},
-	"devDependencies": {
-		"@types/node": "^20.8.9",
-		"ava": "^5.3.1",
-		"esm": "^3.2.25",
-		"lerna": "^7.4.1",
-		"typescript": "^5.2.2",
-		"xo": "^0.56.0",
-		"yarn": "^1.22.19"
-	},
-	"ava": {
-		"files": [
-			"packages/**/test/**/*"
-		],
-		"require": [
-			"esm"
-		]
-	}
+  "name": "sphido",
+  "private": true,
+  "author": {
+    "name": "Roman Ožana",
+    "email": "roman@ozana.cz",
+    "url": "https://ozana.cz"
+  },
+  "license": "MIT",
+  "description": "A rocket 🚀 fast, lightweight, static site generator",
+  "homepage": "https://sphido.org",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "ava": "ava",
+    "xo": "xo *.js",
+    "test": "ava && xo"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "ava": "^5.3.1",
+    "esm": "^3.2.25",
+    "lerna": "^7.4.1",
+    "typescript": "^5.2.2",
+    "xo": "^0.56.0",
+    "yarn": "^1.22.19"
+  },
+  "ava": {
+    "files": [
+      "packages/**/test/**/*"
+    ],
+    "require": [
+      "esm"
+    ]
+  }
 }
