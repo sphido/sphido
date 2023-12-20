@@ -19,13 +19,13 @@ You get a static site generator that is:
 
 ## Installation
 
-```bash
+```shell
 yarn add @sphido/core
 ```
 
 or
 
-```bash
+```shell
 npm i @sphido/core
 ```
 
@@ -67,7 +67,7 @@ Sphido requires Node `16.x` and newer. To load an ES module, set `"type": "modul
 
 ## Run script
 
-```bash
+```shell
 node index.js
 ```
 
