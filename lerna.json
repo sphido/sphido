@@ -1,10 +1,5 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "npmClient": "yarn",
-  "npmClientArgs": [
-    "--no-lockfile"
-  ],
-  "version": "independent"
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "independent",
+  "npmClient": "yarn"
 }
