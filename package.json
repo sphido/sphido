@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "description": "A rocket 🚀 fast, lightweight, static site generator",
-  "homepage": "https://sphido.org",
+  "homepage": "https://sphido.cz",
   "type": "module",
   "workspaces": [
     "packages/*"

@@ -86,7 +86,7 @@ node index.js
 ## Examples
 
 * https://github.com/sphido/examples/
-* https://sphido.org
+* https://sphido.cz
 
 ## License
 
