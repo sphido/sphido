@@ -15,8 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "@sindresorhus/slugify": "^2.2.1",
-    "ava": "^5.3.1",
-    "got": "^14.0.0"
+    "ava": "^6.1.1"
   },
   "scripts": {
     "test": "ava"
