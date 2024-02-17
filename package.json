@@ -1,11 +1,8 @@
 {
   "name": "sphido",
   "private": true,
-  "author": {
-    "name": "Roman Ožana",
-    "email": "roman@ozana.cz",
-    "url": "https://ozana.cz"
-  },
+  "author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+  "repository": "git@github.com:sphido/sphido.git",
   "license": "MIT",
   "description": "A rocket 🚀 fast, lightweight, static site generator",
   "homepage": "https://sphido.cz",
@@ -30,9 +27,6 @@
   "ava": {
     "files": [
       "packages/**/test/**/*"
-    ],
-    "require": [
-      "esm"
     ]
   }
 }
