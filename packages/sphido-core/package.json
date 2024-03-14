@@ -34,8 +34,8 @@
   },
   "devDependencies": {
     "@sindresorhus/slugify": "^2.2.1",
-    "ava": "^6.1.1",
-    "marked": "^12.0.0"
+    "ava": "^6.1.2",
+    "marked": "^12.0.1"
   },
   "scripts": {
     "test": "ava",

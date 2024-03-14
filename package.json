@@ -16,13 +16,13 @@
     "test": "ava && xo"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
-    "ava": "^6.1.1",
+    "@types/node": "^20.11.27",
+    "ava": "^6.1.2",
     "esm": "^3.2.25",
     "lerna": "^8.1.2",
-    "typescript": "^5.3.3",
-    "xo": "^0.57.0",
-    "yarn": "^1.22.21"
+    "typescript": "^5.4.2",
+    "xo": "^0.58.0",
+    "yarn": "^1.22.22"
   },
   "ava": {
     "files": [
