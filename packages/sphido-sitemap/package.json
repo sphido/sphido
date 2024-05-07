@@ -1,17 +1,19 @@
 {
   "name": "@sphido/sitemap",
   "version": "2.0.23",
-  "author": {
-    "name": "Roman Ožana",
-    "email": "roman@ozana.cz",
-    "url": "https://ozana.cz"
-  },
   "type": "module",
+  "author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+  "homepage": "https://sphido.cz",
+  "repository": "sphido/sphido",
+  "description": "Sitemap XML for Sphido CMS",
   "exports": "./lib/sitemap.js",
+  "keywords": [
+    "sphido",
+    "sitemap"
+  ],
   "engines": {
     "node": ">=16"
   },
-  "description": "Sitemap XML for Sphido CMS",
   "license": "MIT",
   "devDependencies": {
     "@sindresorhus/slugify": "^2.2.1",

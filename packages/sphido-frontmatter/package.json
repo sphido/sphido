@@ -1,18 +1,21 @@
 {
   "name": "@sphido/frontmatter",
   "version": "2.0.15",
-  "author": {
-    "name": "Roman Ožana",
-    "email": "roman@ozana.cz",
-    "url": "https://ozana.cz"
-  },
-  "description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
   "type": "module",
+  "author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+  "homepage": "https://sphido.cz",
+  "repository": "sphido/sphido",
+  "description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "sphido",
+    "frontmatter"
+  ],
   "exports": "./lib/frontmatter.js",
   "engines": {
     "node": ">=16"
   },
-  "license": "MIT",
   "devDependencies": {
     "ava": "^6.1.2"
   },

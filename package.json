@@ -1,12 +1,24 @@
 {
   "name": "sphido",
+  "type": "module",
   "private": true,
   "author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
-  "repository": "git@github.com:sphido/sphido.git",
+  "repository": "sphido/sphido",
+  "homepage": "https://sphido.cz",
   "license": "MIT",
   "description": "A rocket 🚀 fast, lightweight, static site generator",
-  "homepage": "https://sphido.cz",
-  "type": "module",
+  "keywords": [
+    "sphido",
+    "static-site-generator",
+    "cms-framework",
+    "static",
+    "site",
+    "generator",
+    "cms",
+    "ssg",
+    "blog",
+    "markdown"
+  ],
   "workspaces": [
     "packages/*"
   ],

@@ -1,14 +1,19 @@
 {
   "name": "@sphido/hashtags",
-  "version": "2.0.26",
-  "author": {
-    "name": "Roman Ožana",
-    "email": "roman@ozana.cz",
-    "url": "https://ozana.cz"
-  },
-  "description": "",
   "type": "module",
+  "version": "2.0.26",
+  "author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+  "homepage": "https://sphido.cz",
+  "repository": "sphido/sphido",
+  "description": "Parse hashtags from string",
   "exports": "./lib/hashtags.js",
+  "keywords": [
+    "sphido",
+    "markdown",
+    "parser",
+    "tags",
+    "hashtags"
+  ],
   "engines": {
     "node": ">=16"
   },
