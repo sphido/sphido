@@ -25,7 +25,8 @@
   "scripts": {
     "ava": "ava",
     "xo": "xo *.js",
-    "test": "ava && xo"
+    "test": "ava && xo",
+    "publish": "lerna version && lerna publish"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
