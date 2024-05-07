@@ -26,7 +26,7 @@
     "ava": "ava",
     "xo": "xo *.js",
     "test": "ava && xo",
-    "publish": "lerna version && lerna publish"
+    "publish": "lerna version --no-private && lerna publish --no-private"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
