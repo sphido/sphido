@@ -90,4 +90,4 @@ node index.js
 
 ## License
 
-MIT
+[MIT](./LICENSE)
