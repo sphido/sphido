@@ -1,39 +1,1 @@
-{
-	"name": "@sphido/core",
-	"version": "2.0.30",
-	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
-	"homepage": "https://sphido.cz",
-	"repository": "sphido/sphido",
-	"license": "MIT",
-	"description": "A rocket 🚀 fast, lightweight, static site generator",
-	"type": "module",
-	"engines": {
-		"node": ">=16"
-	},
-	"exports": "./dist/index.js",
-	"types": "dist/index.d.ts",
-	"main": "dist/index.js",
-	"keywords": [
-		"markdown",
-		"markup",
-		"content management system",
-		"cms",
-		"static",
-		"static site generator",
-		"generator",
-		"framework",
-		"blog",
-		"scaffold"
-	],
-	"bugs": "https://github.com/sphido/sphido/issues",
-	"devDependencies": {
-		"@sindresorhus/slugify": "^2.2.1",
-		"ava": "^6.1.2",
-		"marked": "^14.0.0"
-	},
-	"scripts": {
-		"test": "ava",
-		"build": "rm -rf dist/* && tsc"
-	},
-	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
-}
+{	"name": "@sphido/core",	"version": "2.0.30",	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",	"homepage": "https://sphido.cz",	"repository": "sphido/sphido",	"license": "MIT",	"description": "A rocket 🚀 fast, lightweight, static site generator",	"type": "module",	"engines": {		"node": ">=16"	},	"exports": "./dist/index.js",	"types": "dist/index.d.ts",	"main": "dist/index.js",	"keywords": [		"markdown",		"markup",		"content management system",		"cms",		"static",		"static site generator",		"generator",		"framework",		"blog",		"scaffold"	],	"bugs": "https://github.com/sphido/sphido/issues",	"devDependencies": {		"@sindresorhus/slugify": "^2.2.1",		"ava": "^6.1.2",		"marked": "^14.0.0"	},	"scripts": {		"test": "ava",		"build": "rm -rf dist/* && tsc"	},	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"}

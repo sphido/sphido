@@ -1,43 +1,1 @@
-{
-	"name": "sphido",
-	"type": "module",
-	"private": true,
-	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
-	"repository": "sphido/sphido",
-	"homepage": "https://sphido.cz",
-	"license": "MIT",
-	"description": "A rocket 🚀 fast, lightweight, static site generator",
-	"keywords": [
-		"sphido",
-		"static-site-generator",
-		"cms-framework",
-		"static",
-		"site",
-		"generator",
-		"cms",
-		"ssg",
-		"blog",
-		"markdown"
-	],
-	"workspaces": ["packages/*"],
-	"scripts": {
-		"ava": "ava",
-		"test": "ava && biome ci",
-		"fix": "biome check --fix",
-		"build": "yarn workspaces run build",
-		"release": "yarn build && lerna version --no-private --force-publish && lerna publish from-git --no-private"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^1.8.3",
-		"@types/node": "^22.1.0",
-		"ava": "^6.1.2",
-		"esm": "^3.2.25",
-		"lerna": "^8.1.8",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.5.4",
-		"yarn": "^1.22.22"
-	},
-	"ava": {
-		"files": ["packages/**/test/**/*"]
-	}
-}
+{	"name": "sphido",	"type": "module",	"private": true,	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",	"repository": "sphido/sphido",	"homepage": "https://sphido.cz",	"license": "MIT",	"description": "A rocket 🚀 fast, lightweight, static site generator",	"keywords": [		"sphido",		"static-site-generator",		"cms-framework",		"static",		"site",		"generator",		"cms",		"ssg",		"blog",		"markdown"	],	"workspaces": ["packages/*"],	"scripts": {		"ava": "ava",		"test": "ava && biome ci",		"fix": "biome check --fix",		"build": "yarn workspaces run build",		"release": "yarn build && lerna version --no-private --force-publish && lerna publish from-git --no-private"	},	"devDependencies": {		"@biomejs/biome": "^1.8.3",		"@types/node": "^22.1.0",		"ava": "^6.1.2",		"esm": "^3.2.25",		"lerna": "^8.1.8",		"ts-node": "^10.9.2",		"typescript": "^5.5.4",		"yarn": "^1.22.22"	},	"ava": {		"files": ["packages/**/test/**/*"]	}}
