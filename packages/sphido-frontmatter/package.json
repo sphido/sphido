@@ -1,1 +1,29 @@
-{	"name": "@sphido/frontmatter",	"version": "2.0.17",	"type": "module",	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",	"homepage": "https://sphido.cz",	"repository": "sphido/sphido",	"description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",	"license": "MIT",	"keywords": ["markdown", "sphido", "frontmatter"],	"exports": "./dist/frontmatter.js",	"types": "dist/frontmatter.d.ts",	"main": "dist/frontmatter.js",	"engines": {		"node": ">=16"	},	"devDependencies": {		"@types/js-yaml": "^4.0.9",		"ava": "^6.1.2"	},	"scripts": {		"test": "ava",		"build": "rm -rf dist/* && tsc"	},	"dependencies": {		"js-yaml": "^4.1.0"	},	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"}
+{
+	"name": "@sphido/frontmatter",
+	"version": "2.0.17",
+	"type": "module",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": "sphido/sphido",
+	"description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
+	"license": "MIT",
+	"keywords": ["markdown", "sphido", "frontmatter"],
+	"exports": "./dist/frontmatter.js",
+	"types": "dist/frontmatter.d.ts",
+	"main": "dist/frontmatter.js",
+	"engines": {
+		"node": ">=16"
+	},
+	"devDependencies": {
+		"@types/js-yaml": "^4.0.9",
+		"ava": "^6.1.2"
+	},
+	"scripts": {
+		"test": "ava",
+		"build": "rm -rf dist/* && tsc"
+	},
+	"dependencies": {
+		"js-yaml": "^4.1.0"
+	},
+	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+}

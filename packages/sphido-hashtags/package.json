@@ -1,1 +1,27 @@
-{	"name": "@sphido/hashtags",	"type": "module",	"version": "2.0.28",	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",	"homepage": "https://sphido.cz",	"repository": "sphido/sphido",	"description": "Parse hashtags from string",	"keywords": ["sphido", "markdown", "parser", "tags", "hashtags"],	"engines": {		"node": ">=16"	},	"exports": "./dist/hashtags.js",	"types": "dist/hashtags.d.ts",	"main": "dist/hashtags.js",	"license": "MIT",	"devDependencies": {		"ava": "^6.1.2"	},	"scripts": {		"test": "ava",		"build": "rm -rf dist/* && tsc"	},	"dependencies": {		"@sindresorhus/slugify": "^2.2.1"	}}
+{
+	"name": "@sphido/hashtags",
+	"type": "module",
+	"version": "2.0.28",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": "sphido/sphido",
+	"description": "Parse hashtags from string",
+	"keywords": ["sphido", "markdown", "parser", "tags", "hashtags"],
+	"engines": {
+		"node": ">=16"
+	},
+	"exports": "./dist/hashtags.js",
+	"types": "dist/hashtags.d.ts",
+	"main": "dist/hashtags.js",
+	"license": "MIT",
+	"devDependencies": {
+		"ava": "^6.1.2"
+	},
+	"scripts": {
+		"test": "ava",
+		"build": "rm -rf dist/* && tsc"
+	},
+	"dependencies": {
+		"@sindresorhus/slugify": "^2.2.1"
+	}
+}
