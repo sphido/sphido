@@ -1,3 +1,4 @@
-examples
-test
-*.log
+*
+!dist/*
+!package.json
+!readme.md
