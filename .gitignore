@@ -1,3 +1,4 @@
-public
+packages/*/dist
 node_modules
-*.log
+public
+dist

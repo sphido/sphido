@@ -1,1 +1,4 @@
-examples
+*
+!dist/*
+!package.json
+!readme.md

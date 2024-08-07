@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"moduleDetection": "force",
+		"allowSyntheticDefaultImports": true,
+		"target": "es2022",
+		"lib": ["ES2022"],
+		"paths": {
+			"@sphido/*": ["packages/*/lib"]
+		},
+		"declaration": true,
+		"declarationMap": true,
+		"outDir": "./dist"
+	}
+}

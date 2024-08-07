@@ -67,7 +67,7 @@ Sphido requires Node `16.x` and newer. To load an ES module, set `"type": "modul
 ## Run script
 
 ```shell
-node index.js
+node index.ts
 ```
 
 ## Packages
