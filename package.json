@@ -25,7 +25,7 @@
 		"test": "ava && biome ci",
 		"fix": "biome check --fix",
 		"build": "yarn workspaces run build",
-		"release": "lerna version --no-private --force-publish && lerna publish from-git --no-private"
+		"release": "yarn build && lerna version --no-private --force-publish && lerna publish from-git --no-private"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.8.3",
