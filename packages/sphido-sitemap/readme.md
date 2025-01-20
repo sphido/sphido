@@ -11,10 +11,10 @@ yarn add @sphido/sitemap
 ```javascript
 #!/usr/bin/env node
 
-import {dirname, relative, join} from 'node:path';
-import {getPages, allPages} from '@sphido/core';
+import { dirname, relative, join } from 'node:path';
+import { getPages, allPages } from '@sphido/core';
 import slugify from '@sindresorhus/slugify';
-import {createSitemap} from '@sphido/sitemap';
+import { createSitemap } from '@sphido/sitemap';
 import got from 'got';
 
 const pages = await getPages({path: 'content'});

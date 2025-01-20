@@ -15,10 +15,10 @@
 	"main": "dist/hashtags.js",
 	"license": "MIT",
 	"devDependencies": {
-		"ava": "^6.1.2"
+		"vitest": "^3.0.2"
 	},
 	"scripts": {
-		"test": "ava",
+		"test": "vitest",
 		"build": "rm -rf dist/* && tsc"
 	},
 	"dependencies": {

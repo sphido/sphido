@@ -1,9 +1,9 @@
 # @sphido/frontmatter
 
-[Front matter](https://jekyllrb.com/docs/front-matter/) is an optional section of valid
-YAML that is placed at the top of a page and is used for maintaining metadata for the
-page and its contents. `@sphido/frontmatter` is `page` extender that process this
-blocks inside `page.content`. Using the fastest Node.js YAML Parser [js-yaml](https://github.com/nodeca/js-yaml).
+[Front matter](https://jekyllrb.com/docs/front-matter/) is an optional section of valid YAML that is placed at the top
+of a page and is used for maintaining metadata for the page and its contents. `@sphido/frontmatter` is `page` extender
+that process this blocks inside `page.content`. Using the fastest Node.js YAML
+Parser [js-yaml](https://github.com/nodeca/js-yaml).
 
 ## Install
 
@@ -16,9 +16,9 @@ yarn add @sphido/frontmatter
 ```javascript
 #!/usr/bin/env node
 
-import {getPages, allPages} from '@sphido/core';
-import {dirname, relative} from 'node:path';
-import {frontmatter} from '@sphido/frontmatter';
+import { getPages, allPages } from '@sphido/core';
+import { dirname, relative } from 'node:path';
+import { frontmatter } from '@sphido/frontmatter';
 
 const pages = await getPages({path: 'content'}, frontmatter);
 

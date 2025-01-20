@@ -28,11 +28,11 @@
 	"bugs": "https://github.com/sphido/sphido/issues",
 	"devDependencies": {
 		"@sindresorhus/slugify": "^2.2.1",
-		"ava": "^6.1.2",
-		"marked": "^14.0.0"
+		"marked": "^14.0.0",
+		"vitest": "^3.0.2"
 	},
 	"scripts": {
-		"test": "ava",
+		"test": "vitest",
 		"build": "rm -rf dist/* && tsc"
 	},
 	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"

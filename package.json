@@ -21,20 +21,19 @@
 	],
 	"workspaces": ["packages/*"],
 	"scripts": {
-		"ava": "ava",
-		"test": "ava && biome ci",
-		"fix": "biome check --fix",
+		"test": "vitest run && biome ci",
+		"format": "biome check --fix",
 		"build": "yarn workspaces run build",
 		"release": "yarn build && lerna version --no-private --force-publish && lerna publish from-git --no-private"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.8.3",
-		"@types/node": "^22.1.0",
-		"ava": "^6.1.2",
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.10.7",
+		"ava": "^6.2.0",
 		"esm": "^3.2.25",
-		"lerna": "^8.1.8",
+		"lerna": "^8.1.9",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.5.4",
+		"typescript": "^5.7.3",
 		"yarn": "^1.22.22"
 	},
 	"ava": {
