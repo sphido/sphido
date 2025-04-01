@@ -6,7 +6,13 @@
 	"homepage": "https://sphido.cz",
 	"repository": "sphido/sphido",
 	"description": "Parse hashtags from string",
-	"keywords": ["sphido", "markdown", "parser", "tags", "hashtags"],
+	"keywords": [
+		"sphido",
+		"markdown",
+		"parser",
+		"tags",
+		"hashtags"
+	],
 	"engines": {
 		"node": ">=16"
 	},
@@ -15,7 +21,7 @@
 	"main": "dist/hashtags.js",
 	"license": "MIT",
 	"devDependencies": {
-		"vitest": "^3.0.2"
+		"vitest": "^3.1.1"
 	},
 	"scripts": {
 		"test": "vitest",

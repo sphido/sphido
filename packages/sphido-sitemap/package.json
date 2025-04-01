@@ -7,14 +7,17 @@
 	"repository": "sphido/sphido",
 	"description": "Sitemap XML for Sphido CMS",
 	"exports": "./lib/sitemap.js",
-	"keywords": ["sphido", "sitemap"],
+	"keywords": [
+		"sphido",
+		"sitemap"
+	],
 	"engines": {
 		"node": ">=16"
 	},
 	"license": "MIT",
 	"devDependencies": {
 		"@sindresorhus/slugify": "^2.2.1",
-		"vitest": "^3.0.2"
+		"vitest": "^3.1.1"
 	},
 	"scripts": {
 		"test": "ava",

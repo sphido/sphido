@@ -19,7 +19,9 @@
 		"blog",
 		"markdown"
 	],
-	"workspaces": ["packages/*"],
+	"workspaces": [
+		"packages/*"
+	],
 	"scripts": {
 		"test": "vitest run && biome ci",
 		"format": "biome check --fix",
@@ -28,15 +30,17 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@types/node": "^22.10.7",
+		"@types/node": "^22.13.14",
 		"ava": "^6.2.0",
 		"esm": "^3.2.25",
-		"lerna": "^8.1.9",
+		"lerna": "^8.2.1",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.7.3",
+		"typescript": "^5.8.2",
 		"yarn": "^1.22.22"
 	},
 	"ava": {
-		"files": ["packages/**/test/**/*"]
+		"files": [
+			"packages/**/test/**/*"
+		]
 	}
 }

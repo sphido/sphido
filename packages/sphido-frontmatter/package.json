@@ -7,7 +7,11 @@
 	"repository": "sphido/sphido",
 	"description": "Frontmatter for for Sphido - A rocket 🚀 fast, lightweight, static site generator",
 	"license": "MIT",
-	"keywords": ["markdown", "sphido", "frontmatter"],
+	"keywords": [
+		"markdown",
+		"sphido",
+		"frontmatter"
+	],
 	"exports": "./dist/frontmatter.js",
 	"types": "dist/frontmatter.d.ts",
 	"main": "dist/frontmatter.js",
@@ -16,7 +20,7 @@
 	},
 	"devDependencies": {
 		"@types/js-yaml": "^4.0.9",
-		"vitest": "^3.0.2"
+		"vitest": "^3.1.1"
 	},
 	"scripts": {
 		"test": "vitest",
