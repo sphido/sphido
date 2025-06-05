@@ -30,12 +30,12 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@types/node": "^22.13.14",
-		"ava": "^6.2.0",
+		"@types/node": "^22.15.29",
+		"ava": "^6.3.0",
 		"esm": "^3.2.25",
-		"lerna": "^8.2.1",
+		"lerna": "^8.2.2",
 		"ts-node": "^10.9.2",
-		"typescript": "^5.8.2",
+		"typescript": "^5.8.3",
 		"yarn": "^1.22.22"
 	},
 	"ava": {
