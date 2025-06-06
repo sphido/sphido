@@ -1,6 +1,6 @@
 # @sphido/hashtags
 
-Search Markdown for hashtags and replaces them with a links `[#hashtag](/tag/hashtag)` code.
+Searches Markdown for hashtags and replaces them with links in the format `[#hashtag](/tag/hashtag)`.
 
 ## Install
 
@@ -12,8 +12,8 @@ yarn add @sphido/hashtags
 
 ### `getHashtags(content)`
 
-Function `getHashtags()` searches the string for all hashtags and returns them as an array. The input `content`
-parameter is expected in Markdown format, function automatically skips preformatted text in Markdown syntax.
+The `getHashtags()` function searches the string for all hashtags and returns them as an array. The input `content`
+parameter is expected to be in Markdown format. The function automatically skips preformatted text in Markdown syntax."
 
 ```javascript
 import { getHashtags } from '@sphido/hashtags';
@@ -24,8 +24,8 @@ console.log(tags); // will be ['#one', '#two', '#three'];
 
 ### `tagsToMarkdown(content, tags = [], options?)`
 
-Function `tagsToMarkdown()` expect at last two parameters on the input - `content` and `tags`
-Replace hashtags with Markdown syntax for links `[#hash](/tag/hash)`
+The `tagsToMarkdown()` function expects at least two input parameters — `content` and `tags`. It replaces hashtags with
+Markdown syntax for links in the format `[#hash](/tag/hash)`.
 
 ```javascript
 import { getPages, allPages, readFile } from '@sphido/core';
@@ -44,9 +44,9 @@ for (const page of allPages(pages)) {
 
 ### `hashtags(page, dirent)`
 
-Function `hashtags()` search for all hashtags in `page.content`. In case that `page.content` property is empty, function
-will load file content automatically. All found tags are then stored in a `page.tags` property as an array. Function
-will also automatically replace hashtags to Markdown syntax for links `[#hash](/tag/hash)`.
+The `hashtags()` function searches for all hashtags in `page.content`. If the `page.content` property is empty, the function
+will automatically load the file content. All found tags are then stored in the `page.tags` property as an array. The
+function also automatically replaces hashtags with Markdown syntax for links in the format `[#hash](/tag/hash)`.
 
 ```javascript
 import { getPages, allPages } from '@sphido/core';
