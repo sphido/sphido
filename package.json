@@ -29,8 +29,8 @@
 		"release": "yarn build && lerna version --no-private --force-publish && lerna publish from-git --no-private"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@types/node": "^22.17.2",
+		"@biomejs/biome": "^2.2.0",
+		"@types/node": "^24.3.0",
 		"ava": "^6.4.1",
 		"esm": "^3.2.25",
 		"lerna": "^8.2.3",
