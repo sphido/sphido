@@ -21,7 +21,7 @@
 	"main": "dist/hashtags.js",
 	"license": "MIT",
 	"devDependencies": {
-		"vitest": "^3.2.1"
+		"vitest": "^3.2.4"
 	},
 	"scripts": {
 		"test": "vitest",

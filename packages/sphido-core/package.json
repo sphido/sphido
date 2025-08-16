@@ -29,7 +29,7 @@
 	"devDependencies": {
 		"@sindresorhus/slugify": "^2.2.1",
 		"marked": "^15.0.12",
-		"vitest": "^3.2.1"
+		"vitest": "^3.2.4"
 	},
 	"scripts": {
 		"test": "vitest",
