@@ -28,7 +28,7 @@
 	"bugs": "https://github.com/sphido/sphido/issues",
 	"devDependencies": {
 		"@sindresorhus/slugify": "^2.2.1",
-		"marked": "^16.1.2",
+		"marked": "^16.2.1",
 		"vitest": "^3.2.4"
 	},
 	"scripts": {
