@@ -16,7 +16,7 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"@sindresorhus/slugify": "^2.2.1",
+		"@sindresorhus/slugify": "^3.0.0",
 		"vitest": "^3.2.4"
 	},
 	"scripts": {
