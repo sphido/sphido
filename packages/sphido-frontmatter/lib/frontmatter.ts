@@ -23,22 +23,41 @@ import yaml from "js-yaml";
  * @see https://jekyllrb.com/docs/front-matter/
  */
 export async function frontmatter(page: Page, dirent: Dirent): Promise<void> {
-	if (dirent.isFile()) {
-		if (!page?.content && page?.path) {
-			page.content = await readFile(page.path);
-		}
+	if (!dirent.isFile()) return; // Only process files
 
-		// Process Front Matter
-		if (page?.content.startsWith("---") || page?.content.startsWith("<!--")) {
-			let meta = {};
-			page.content.replace(
-				/^<!--([\s\S]+?)-->|^---([\s\S]+?)---/,
-				(frontMatter: string, html: string, md: string): string => {
-					meta = yaml.load((html || md).trim());
-					page = Object.assign(page, meta) satisfies Page;
-					return page.content.slice(frontMatter.length).trim();
-				},
-			);
+	// Load content if not already loaded
+	if (!page?.content && page?.path) {
+		const content = await readFile(page.path);
+		page.content = String(content);
+	}
+
+	if (!page?.content) return;
+
+	// Remove BOM if present
+	page.content = page.content.replace(/^\uFEFF/, "");
+
+	// Front Matter regex:
+	// matches YAML front matter between
+	// --- ... --- or <!-- ... -->
+	const fmRegex = /^(?:---\r?\n([\s\S]*?)\r?\n---|<!--([\s\S]*?)-->)[\r\n]*/;
+
+	const match = fmRegex.exec(page.content);
+	if (!match) return;
+
+	const yamlText = (match[1] ?? match[2] ?? "").trim();
+
+	try {
+		if (yamlText) {
+			const meta = yaml.load(yamlText) as Record<string, unknown> | undefined;
+			if (meta && typeof meta === "object") {
+				Object.assign(page, meta);
+			}
 		}
+	} catch (err) {
+		// Store front matter parsing error message
+		(page as Page).fmParseError = err instanceof Error ? err.message : String(err);
+	} finally {
+		// Remove front matter from content
+		page.content = page.content.slice(match[0].length).trimStart();
 	}
 }
