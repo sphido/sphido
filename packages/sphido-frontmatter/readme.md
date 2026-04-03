@@ -1,8 +1,8 @@
 # @sphido/frontmatter
 
 [Front matter](https://jekyllrb.com/docs/front-matter/) is an optional section of valid YAML that is placed at the top
-of a page and is used for maintaining metadata for the page and its contents. `@sphido/frontmatter` is `page` extender
-that process this blocks inside `page.content`. Using the fastest Node.js YAML
+of a page and is used for maintaining metadata for the page and its contents. `@sphido/frontmatter` is a `page` extender
+that processes these blocks inside `page.content`. Using the fastest Node.js YAML
 Parser [js-yaml](https://github.com/nodeca/js-yaml).
 
 ## Install
@@ -41,7 +41,7 @@ tags: [one, two, other]
 
 # Content
 
-Lorem ipusm...
+Lorem ipsum...
 ```
 
 or
@@ -54,9 +54,9 @@ tags: [one, two, other]
 
 # Content
 
-Lorem ipusm...
+Lorem ipsum...
 ```
 
-## Source codes
+## Source code
 
 [@sphido/frontmatter](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter)

@@ -13,7 +13,7 @@ yarn add @sphido/hashtags
 ### `getHashtags(content)`
 
 The `getHashtags()` function searches the string for all hashtags and returns them as an array. The input `content`
-parameter is expected to be in Markdown format. The function automatically skips preformatted text in Markdown syntax."
+parameter is expected to be in Markdown format. The function automatically skips preformatted text in Markdown syntax.
 
 ```javascript
 import { getHashtags } from '@sphido/hashtags';
@@ -59,6 +59,6 @@ for (const page of allPages(pages)) {
 }
 ```
 
-## Source codes
+## Source code
 
 [@sphido/hashtags](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags)

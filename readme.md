@@ -1,4 +1,4 @@
-# A rocket 🚀 fast, ️💭 lightweight and flexible static site 🤖 generator.
+# A rocket 🚀 fast, 💭 lightweight and flexible static site 🤖 generator.
 
 [![NPM Downloads](https://img.shields.io/npm/dm/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
 [![NPM Version](https://img.shields.io/npm/v/@sphido/core?style=for-the-badge)](https://www.npmjs.com/package/@sphido/core)
@@ -13,7 +13,7 @@ you to iterate through them.
 You get a static site generator that is:
 
 - 🚀 rocket fast
-- 💭️ light-weight
+- 💭 lightweight
 - 🤘 no dependencies
 - ⚡️ flexible
 
@@ -67,7 +67,7 @@ Sphido requires Node `16.x` and newer. To load an ES module, set `"type": "modul
 ## Run script
 
 ```shell
-node index.ts
+node index.js
 ```
 
 ## Packages

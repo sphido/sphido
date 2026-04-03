@@ -39,6 +39,6 @@ for (const page of await allPages(pages)) {
 map.end();
 ```
 
-## Source codes
+## Source code
 
 [@sphido/sitemap](https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap)

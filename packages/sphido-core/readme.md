@@ -1,15 +1,15 @@
 # @sphido/core
 
-Sphido core package contains two most important function `getPages()` and `allPages()`. The `getPages()` function scans
-directories for all `*.md` and `*.html` files. Second function `allPages()`
-is [generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
-that allow to iterate over all pages.
+Sphido core package contains the two most important functions `getPages()` and `allPages()`. The `getPages()` function scans
+directories for all `*.md` and `*.html` files. The second function, `allPages()`,
+is a [generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
+that allows you to iterate over all pages.
 
 ```javascript
-const pages = await getPages({path: 'content'}, /* ...exteners */);
+const pages = await getPages({path: 'content'}, /* ...extenders */);
 ```
 
-Returned structure is very simple and looks like follow:
+The returned structure is very simple and looks as follows:
 
 ```json
 [
@@ -33,7 +33,7 @@ Returned structure is very simple and looks like follow:
 ]
 ```
 
-Then iterate over pages like follow:
+Then iterate over the pages like this:
 
 ```javascript
 for (const page of allPages(pages)) {
@@ -78,7 +78,7 @@ There is no limit to the number of extenders, you can combine as many as you wan
 ```javascript
 const extenders = [
 
-	// callback extenders will be called during iteration ony by one
+	// callback extenders will be called during iteration one by one
 
 	(page) => {
 		// add property
@@ -134,8 +134,8 @@ yarn add @sphido/core
 
 ## Example
 
-Following example read all `*.md` files in `content` directory and process them
-with [marked](https://github.com/markedjs/marked) to HTML files
+The following example reads all `*.md` files in the `content` directory and processes them
+with [marked](https://github.com/markedjs/marked) into HTML files.
 
 ```javascript
 #!/usr/bin/env node
@@ -169,6 +169,6 @@ for (const page of allPages(pages)) {
 }
 ```
 
-## Source codes
+## Source code
 
 [@sphido/core](https://github.com/sphido/sphido/tree/main/packages/sphido-core)
