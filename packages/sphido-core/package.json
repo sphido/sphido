@@ -8,7 +8,7 @@
 	"description": "A rocket 🚀 fast, lightweight, static site generator",
 	"type": "module",
 	"engines": {
-		"node": ">=16"
+		"node": ">=23"
 	},
 	"exports": "./dist/index.js",
 	"types": "dist/index.d.ts",

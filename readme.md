@@ -62,7 +62,7 @@ for (const page of allPages(pages)) {
 }
 ```
 
-Sphido requires Node `16.x` and newer. To load an ES module, set `"type": "module"` in the `package.json` or use the `.mjs` extension.
+Sphido requires Node `23.x` or newer. To load an ES module, set `"type": "module"` in the `package.json` or use the `.mjs` extension.
 
 ## Run script
 

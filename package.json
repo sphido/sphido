@@ -19,6 +19,9 @@
 		"blog",
 		"markdown"
 	],
+	"engines": {
+		"node": ">=23"
+	},
 	"workspaces": [
 		"packages/*"
 	],
@@ -31,16 +34,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.11",
 		"@types/node": "^24.10.9",
-		"ava": "^6.4.1",
-		"esm": "^3.2.25",
 		"lerna": "^9.0.3",
-		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3",
 		"yarn": "^1.22.22"
-	},
-	"ava": {
-		"files": [
-			"packages/**/test/**/*"
-		]
 	}
 }

@@ -12,7 +12,7 @@
 		"sitemap"
 	],
 	"engines": {
-		"node": ">=16"
+		"node": ">=23"
 	},
 	"license": "MIT",
 	"devDependencies": {
@@ -20,7 +20,7 @@
 		"vitest": "^4.0.17"
 	},
 	"scripts": {
-		"test": "ava",
+		"test": "vitest",
 		"build": "rm -rf dist/* && tsc"
 	},
 	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
