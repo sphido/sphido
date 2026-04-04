@@ -2,7 +2,7 @@ import { readFile, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { describe, expect, test, afterEach } from "vitest";
-import { createSitemap } from "./sitemap.ts";
+import { createSitemap } from "./sitemap.js";
 
 const tmp = join(tmpdir(), "sphido-sitemap-test");
 
