@@ -17,7 +17,6 @@ pnpm add @sphido/frontmatter
 #!/usr/bin/env node
 
 import { getPages, allPages } from '@sphido/core';
-import { dirname, relative } from 'node:path';
 import { frontmatter } from '@sphido/frontmatter';
 
 const pages = await getPages({path: 'content'}, frontmatter);

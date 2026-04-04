@@ -37,7 +37,6 @@ for (const page of allPages(pages)) {
 	page.content = await readFile(page.path);
 	page.tags = getHashtags(page.content);
 
-	// 
 	page.content = tagsToMarkdown(page.content, page.tags);
 }
 ```
@@ -45,7 +44,7 @@ for (const page of allPages(pages)) {
 ### `hashtags(page, dirent)`
 
 The `hashtags()` function searches for all hashtags in `page.content`. If the `page.content` property is empty, the function
-will automatically load the file content. All found tags are then stored in the `page.tags` property as an array. The
+will automatically load the file content. All found tags are then stored in the `page.tags` property as a `Set`. The
 function also automatically replaces hashtags with Markdown syntax for links in the format `[#hash](/tag/hash)`.
 
 ```javascript

@@ -1,5 +1,7 @@
 # @sphido/sitemap
 
+Generates [XML sitemap](https://www.sitemaps.org/protocol.html) files for Sphido CMS.
+
 ## Install
 
 ```bash
@@ -35,7 +37,7 @@ for (const page of await allPages(pages)) {
 	map.add(page);
 }
 
-map.end();
+await map.end();
 ```
 
 ## Source code
