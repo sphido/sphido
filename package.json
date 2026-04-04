@@ -20,7 +20,7 @@
 		"markdown"
 	],
 	"engines": {
-		"node": ">=23"
+		"node": ">=22"
 	},
 	"workspaces": [
 		"packages/*"

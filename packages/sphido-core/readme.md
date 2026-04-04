@@ -128,6 +128,8 @@ then you get this structure:
 
 ## Installation
 
+Requires [Node.js](https://nodejs.org/) 22 or newer.
+
 ```bash
 yarn add @sphido/core
 ```

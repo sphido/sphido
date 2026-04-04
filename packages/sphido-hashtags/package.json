@@ -14,7 +14,7 @@
 		"hashtags"
 	],
 	"engines": {
-		"node": ">=23"
+		"node": ">=22"
 	},
 	"exports": "./dist/hashtags.js",
 	"types": "dist/hashtags.d.ts",

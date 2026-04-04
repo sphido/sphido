@@ -12,7 +12,7 @@
 		"sitemap"
 	],
 	"engines": {
-		"node": ">=23"
+		"node": ">=22"
 	},
 	"license": "MIT",
 	"devDependencies": {
