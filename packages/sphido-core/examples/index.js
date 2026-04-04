@@ -32,6 +32,6 @@ for (const page of allPages(pages)) {
 		</html>
 	`,
 	);
-
-	await copyFile("content/favicon.ico", "public/favicon.ico");
 }
+
+await copyFile("content/favicon.ico", "public/favicon.ico");
