@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-yarn add @sphido/sitemap
+pnpm add @sphido/sitemap
 ```
 
 ## Example

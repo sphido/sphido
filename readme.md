@@ -20,13 +20,23 @@ You get a static site generator that is:
 ## Installation
 
 ```shell
-yarn add @sphido/core
+pnpm add @sphido/core
 ```
 
 or
 
 ```shell
 npm i @sphido/core
+```
+
+## Monorepo development
+
+Use [pnpm](https://pnpm.io/); the intended version is pinned in the root `packageManager` field.
+
+```shell
+pnpm install
+pnpm build
+pnpm test
 ```
 
 ## Quick Start

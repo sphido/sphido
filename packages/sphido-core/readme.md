@@ -131,7 +131,7 @@ then you get this structure:
 Requires [Node.js](https://nodejs.org/) 22 or newer.
 
 ```bash
-yarn add @sphido/core
+pnpm add @sphido/core
 ```
 
 ## Example

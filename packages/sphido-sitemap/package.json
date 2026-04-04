@@ -6,7 +6,10 @@
 	"homepage": "https://sphido.cz",
 	"repository": "sphido/sphido",
 	"description": "Sitemap XML for Sphido CMS",
-	"exports": "./lib/sitemap.js",
+	"files": ["dist"],
+	"exports": "./dist/sitemap.js",
+	"types": "dist/sitemap.d.ts",
+	"main": "dist/sitemap.js",
 	"keywords": [
 		"sphido",
 		"sitemap"
@@ -17,11 +20,11 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@sindresorhus/slugify": "^3.0.0",
-		"vitest": "^4.0.17"
+		"typescript": "catalog:",
+		"vitest": "catalog:"
 	},
 	"scripts": {
-		"test": "vitest",
+		"test": "vitest run --passWithNoTests",
 		"build": "rm -rf dist/* && tsc"
-	},
-	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+	}
 }

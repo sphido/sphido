@@ -12,6 +12,7 @@
 		"sphido",
 		"frontmatter"
 	],
+	"files": ["dist"],
 	"exports": "./dist/frontmatter.js",
 	"types": "dist/frontmatter.d.ts",
 	"main": "dist/frontmatter.js",
@@ -20,14 +21,15 @@
 	},
 	"devDependencies": {
 		"@types/js-yaml": "^4.0.9",
-		"vitest": "^4.0.17"
+		"typescript": "catalog:",
+		"vitest": "catalog:"
 	},
 	"scripts": {
-		"test": "vitest",
+		"test": "vitest run --passWithNoTests",
 		"build": "rm -rf dist/* && tsc"
 	},
 	"dependencies": {
+		"@sphido/core": "workspace:*",
 		"js-yaml": "^4.1.1"
-	},
-	"gitHead": "36d588a4c534bf062dde96cff8587d50f337dddd"
+	}
 }

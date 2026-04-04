@@ -1,7 +1,7 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
 	"files": {
-		"includes": ["**", "!**/dist/**/*.*", "!**/package.json"]
+		"includes": ["**", "!**/dist/**/*.*", "!**/.turbo", "!**/package.json"]
 	},
 	"formatter": {
 		"lineWidth": 120,

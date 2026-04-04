@@ -22,20 +22,20 @@
 	"engines": {
 		"node": ">=22"
 	},
-	"workspaces": [
-		"packages/*"
-	],
+	"packageManager": "pnpm@10.33.0",
 	"scripts": {
-		"test": "vitest run && biome ci",
+		"test": "turbo run test && biome ci",
 		"format": "biome check --fix",
-		"build": "yarn workspaces run build",
-		"release": "yarn build && lerna version --no-private --force-publish && lerna publish from-git --no-private"
+		"build": "turbo run build",
+		"changeset": "changeset",
+		"version-packages": "changeset version",
+		"release": "pnpm build && changeset publish"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.11",
+		"@changesets/cli": "^2.30.0",
 		"@types/node": "^24.10.9",
-		"lerna": "^9.0.3",
-		"typescript": "^5.9.3",
-		"yarn": "^1.22.22"
+		"turbo": "^2.9.3",
+		"typescript": "catalog:"
 	}
 }

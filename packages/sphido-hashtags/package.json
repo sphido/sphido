@@ -16,18 +16,21 @@
 	"engines": {
 		"node": ">=22"
 	},
+	"files": ["dist"],
 	"exports": "./dist/hashtags.js",
 	"types": "dist/hashtags.d.ts",
 	"main": "dist/hashtags.js",
 	"license": "MIT",
 	"devDependencies": {
-		"vitest": "^4.0.17"
+		"typescript": "catalog:",
+		"vitest": "catalog:"
 	},
 	"scripts": {
-		"test": "vitest",
+		"test": "vitest run --passWithNoTests",
 		"build": "rm -rf dist/* && tsc"
 	},
 	"dependencies": {
+		"@sphido/core": "workspace:*",
 		"@sindresorhus/slugify": "^3.0.0"
 	}
 }

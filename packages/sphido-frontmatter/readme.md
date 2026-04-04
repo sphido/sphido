@@ -8,7 +8,7 @@ Parser [js-yaml](https://github.com/nodeca/js-yaml).
 ## Install
 
 ```bash
-yarn add @sphido/frontmatter
+pnpm add @sphido/frontmatter
 ```
 
 ## Example

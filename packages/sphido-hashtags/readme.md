@@ -5,7 +5,7 @@ Searches Markdown for hashtags and replaces them with links in the format `[#has
 ## Install
 
 ```bash
-yarn add @sphido/hashtags
+pnpm add @sphido/hashtags
 ```
 
 ## API
