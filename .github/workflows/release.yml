@@ -23,11 +23,9 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6.3.0
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
           registry-url: https://registry.npmjs.org
-      # npm 11.5.1+ required for OIDC trusted publishing
-      - run: npm install -g npm@latest
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
       - name: Create Release Pull Request or Publish
