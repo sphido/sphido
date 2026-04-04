@@ -2,6 +2,16 @@ import { createWriteStream, existsSync } from "node:fs";
 import { mkdir, unlink } from "node:fs/promises";
 import { dirname } from "node:path";
 
+/** Escape text for XML element content (order: `&` first). */
+function escapeXml(text: string): string {
+	return text
+		.replaceAll("&", "&amp;")
+		.replaceAll("<", "&lt;")
+		.replaceAll(">", "&gt;")
+		.replaceAll('"', "&quot;")
+		.replaceAll("'", "&apos;");
+}
+
 interface SitemapParams {
 	url?: string;
 	date?: Date;
@@ -14,7 +24,10 @@ export type Sitemap = {
 	end: () => void;
 };
 
-/** * Generate XML sitemap * @see https://www.sitemaps.org/protocol.html */
+/**
+ * Generate XML sitemap
+ * @see https://www.sitemaps.org/protocol.html
+ */
 export async function createSitemap(file = "public/sitemap.xml"): Promise<Sitemap> {
 	// Create directory
 	if (!existsSync(dirname(file))) {
@@ -34,7 +47,7 @@ export async function createSitemap(file = "public/sitemap.xml"): Promise<Sitema
 	return {
 		add({ url, date = new Date(), priority = 0.5, changefreq = "monthly" }: SitemapParams = {}): void {
 			sitemap.write("\t<url>\r\n");
-			sitemap.write(`\t\t<loc>${url}</loc>\r\n`);
+			sitemap.write(`\t\t<loc>${escapeXml(String(url))}</loc>\r\n`);
 			sitemap.write(`\t\t<lastmod>${date.toISOString()}</lastmod>\r\n`);
 			sitemap.write(`\t\t<priority>${priority}</priority>\r\n`);
 			sitemap.write(`\t\t<changefreq>${changefreq}</changefreq>\r\n`);
