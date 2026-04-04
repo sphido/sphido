@@ -55,7 +55,7 @@ export async function frontmatter(page: Page, dirent: Dirent): Promise<void> {
 		}
 	} catch (err) {
 		// Store front matter parsing error message
-		(page as Page).fmParseError = err instanceof Error ? err.message : String(err);
+		page.fmParseError = err instanceof Error ? err.message : String(err);
 	} finally {
 		// Remove front matter from content
 		page.content = page.content.slice(match[0].length).trimStart();
