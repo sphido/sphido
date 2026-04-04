@@ -1,6 +1,6 @@
 {
 	"name": "@sphido/frontmatter",
-	"version": "2.0.17",
+	"version": "3.0.0",
 	"type": "module",
 	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
 	"homepage": "https://sphido.cz",
@@ -12,7 +12,9 @@
 		"sphido",
 		"frontmatter"
 	],
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": "./dist/frontmatter.js",
 	"types": "dist/frontmatter.d.ts",
 	"main": "dist/frontmatter.js",

@@ -1,6 +1,6 @@
 {
 	"name": "@sphido/core",
-	"version": "2.0.30",
+	"version": "3.0.0",
 	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
 	"homepage": "https://sphido.cz",
 	"repository": "sphido/sphido",
@@ -10,7 +10,9 @@
 	"engines": {
 		"node": ">=22"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": "./dist/index.js",
 	"types": "dist/index.d.ts",
 	"main": "dist/index.js",
