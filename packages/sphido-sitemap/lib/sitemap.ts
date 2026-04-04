@@ -2,7 +2,7 @@ import { createWriteStream, existsSync } from "node:fs";
 import { mkdir, unlink } from "node:fs/promises";
 import { dirname } from "node:path";
 
-interface SitempParams {
+interface SitemapParams {
 	url?: string;
 	date?: Date;
 	priority?: number;
@@ -10,7 +10,7 @@ interface SitempParams {
 }
 
 export type Sitemap = {
-	add: (params: SitempParams) => void;
+	add: (params: SitemapParams) => void;
 	end: () => void;
 };
 
@@ -32,7 +32,7 @@ export async function createSitemap(file = "public/sitemap.xml"): Promise<Sitema
 	sitemap.write('<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">\r\n');
 
 	return {
-		add({ url, date = new Date(), priority = 0.5, changefreq = "monthly" }: SitempParams = {}): void {
+		add({ url, date = new Date(), priority = 0.5, changefreq = "monthly" }: SitemapParams = {}): void {
 			sitemap.write("\t<url>\r\n");
 			sitemap.write(`\t\t<loc>${url}</loc>\r\n`);
 			sitemap.write(`\t\t<lastmod>${date.toISOString()}</lastmod>\r\n`);
