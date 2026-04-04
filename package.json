@@ -29,7 +29,7 @@
 		"build": "turbo run build",
 		"changeset": "changeset",
 		"version-packages": "changeset version",
-		"release": "pnpm build && pnpm -r publish --access public --no-git-checks"
+		"release": "pnpm build && changeset publish"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.11",
