@@ -19,6 +19,7 @@ The returned structure is very simple and looks as follows:
 	},
 	{
 		"name": "Directory",
+		"path": "content/Directory",
 		"children": [
 			{
 				"name": "Subpage one",
@@ -49,10 +50,10 @@ the `getPages()` function. There are two types of extenders:
 ### *Callback* extenders
 
 Callback extender is a function that is called during recursion over each page with three parameters passed to the
-function `page`, `path` and [`dirent`](https://nodejs.org/api/fs.html#class-fsdirent).
+function `page`, [`dirent`](https://nodejs.org/api/fs.html#class-fsdirent) and `path`.
 
 ```javascript
-const callbackExtender = (page, path, dirent) => {
+const callbackExtender = (page, dirent, path) => {
 	// do anything with page object
 }
 
@@ -87,7 +88,7 @@ const extenders = [
 		// or function
 		page.getDate = () => new Date();
 
-		// or something else 
+		// or something else
 		page.counter = 1;
 	},
 
@@ -107,7 +108,7 @@ const extenders = [
 	}
 ];
 
-const pages = getPages({path: 'content'}, ...extenders);
+const pages = await getPages({path: 'content'}, ...extenders);
 ```
 
 then you get this structure:
@@ -125,6 +126,14 @@ then you get this structure:
 	}
 ]
 ```
+
+## Utility functions
+
+The package also exports helper functions for common file operations:
+
+- **`readFile(path)`** — reads file content as a UTF-8 string
+- **`writeFile(file, content)`** — writes content to a file, creating parent directories if needed
+- **`copyFile(src, dest)`** — copies a file, creating destination directories if needed
 
 ## Installation
 
