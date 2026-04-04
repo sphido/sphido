@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { rm } from "node:fs/promises";
-import { join } from "node:path";
 import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { afterAll, describe, expect, test } from "vitest";
 import { copyFile } from "./copy-file.js";
 import { readFile } from "./read-file.js";
