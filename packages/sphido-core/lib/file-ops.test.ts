@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { afterAll, describe, expect, test } from "vitest";
 import { copyFile } from "./copy-file.js";
 import { readFile } from "./read-file.js";
@@ -15,7 +16,7 @@ afterAll(async () => {
 
 describe("readFile", () => {
 	test("reads file content as string", async () => {
-		const content = await readFile(new URL("../examples/content/one.md", import.meta.url).pathname);
+		const content = await readFile(fileURLToPath(new URL("../examples/content/one.md", import.meta.url)));
 		expect(content).toContain("# This is dummy page one");
 	});
 });
@@ -31,7 +32,7 @@ describe("writeFile", () => {
 
 describe("copyFile", () => {
 	test("copies file and creates directories", async () => {
-		const src = new URL("../examples/content/one.md", import.meta.url).pathname;
+		const src = fileURLToPath(new URL("../examples/content/one.md", import.meta.url));
 		const dest = join(tmp, "copy/one.md");
 		await copyFile(src, dest);
 		expect(existsSync(dest)).toBe(true);

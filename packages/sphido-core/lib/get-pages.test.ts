@@ -1,8 +1,9 @@
+import { fileURLToPath } from "node:url";
 import { describe, expect, test } from "vitest";
 import { getPages } from "./get-pages.js";
 import type { Page } from "./index.js";
 
-const contentPath = new URL("../examples/content", import.meta.url).pathname;
+const contentPath = fileURLToPath(new URL("../examples/content", import.meta.url));
 
 describe("getPages", () => {
 	test("returns pages from directory", async () => {
