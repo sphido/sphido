@@ -1,25 +1,25 @@
-import { describe, expect, it } from "vitest";
-import { tagsToMarkdown } from "../lib/tags-to-markdown.ts";
+import { describe, expect, test } from "vitest";
+import { tagsToMarkdown } from "./tags-to-markdown.js";
 
 describe("tagsToMarkdown", () => {
-	it("empty tag array shouldn't convert anything", () => {
+	test("empty or null tag array returns content unchanged", () => {
 		expect(tagsToMarkdown("some #content", [])).toBe("some #content");
 		expect(tagsToMarkdown("some #content", null)).toBe("some #content");
 	});
 
-	it("single tag should be converted", () => {
+	test("single tag converted to markdown link", () => {
 		expect(tagsToMarkdown("some #content content", ["#content"])).toBe("some [#content](/tag/content) content");
 	});
 
-	it("multiple tags should be converted", () => {
+	test("multiple tags converted", () => {
 		expect(tagsToMarkdown("some #a #a #b", ["#a", "#b"])).toBe("some [#a](/tag/a) [#a](/tag/a) [#b](/tag/b)");
 	});
 
-	it("change tag urlBase", () => {
+	test("custom urlBase", () => {
 		expect(tagsToMarkdown("#a", ["#a"], { urlBase: "/new-base/" })).toBe("[#a](/new-base/a)");
 	});
 
-	it("change tagToUrl function", () => {
+	test("custom tagToUrl function", () => {
 		expect(tagsToMarkdown("#a", ["#a"], { tagToUrl: (tag) => tag })).toBe("[#a](/tag/#a)");
 	});
 });
