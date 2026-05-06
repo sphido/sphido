@@ -35,7 +35,7 @@
 		"build": "rm -rf dist/* && tsc"
 	},
 	"dependencies": {
-		"@sphido/core": "workspace:*",
-		"@sindresorhus/slugify": "^3.0.0"
+		"@sindresorhus/slugify": "^3.0.0",
+		"@sphido/core": "workspace:*"
 	}
 }

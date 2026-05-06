@@ -34,7 +34,7 @@
 	},
 	"devDependencies": {
 		"@sindresorhus/slugify": "^3.0.0",
-		"marked": "^16.4.2",
+		"marked": "^18.0.3",
 		"typescript": "catalog:",
 		"vitest": "catalog:"
 	},

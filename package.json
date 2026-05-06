@@ -22,16 +22,16 @@
 	"engines": {
 		"node": ">=22"
 	},
-	"packageManager": "pnpm@10.33.0",
+	"packageManager": "pnpm@10.33.3",
 	"scripts": {
 		"test": "turbo run test && biome ci",
 		"format": "biome check --fix",
 		"build": "turbo run build"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.11",
-		"@types/node": "^24.10.9",
-		"turbo": "^2.9.3",
+		"@biomejs/biome": "^2.4.14",
+		"@types/node": "^25.6.0",
+		"turbo": "^2.9.9",
 		"typescript": "catalog:"
 	}
 }
