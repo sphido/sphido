@@ -21,6 +21,9 @@
 	"engines": {
 		"node": ">=22"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"devDependencies": {
 		"@types/js-yaml": "^4.0.9",
 		"typescript": "catalog:",

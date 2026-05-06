@@ -20,6 +20,9 @@
 		"node": ">=22"
 	},
 	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"devDependencies": {
 		"@sindresorhus/slugify": "^3.0.0",
 		"typescript": "catalog:",

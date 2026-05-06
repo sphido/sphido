@@ -23,6 +23,9 @@
 	"types": "dist/hashtags.d.ts",
 	"main": "dist/hashtags.js",
 	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"devDependencies": {
 		"typescript": "catalog:",
 		"vitest": "catalog:"
