@@ -19,6 +19,14 @@ You get a static site generator that is:
 
 ## Installation
 
+The fastest way to start is the scaffolder — it generates a small working blog:
+
+```shell
+npm create sphido my-blog
+```
+
+Or add the core package to an existing project:
+
 ```shell
 pnpm add @sphido/core
 ```
@@ -99,6 +107,29 @@ node index.js
 ### Website components
 
 * [`@sphido/sitemap`](https://github.com/sphido/sphido/tree/main/packages/sphido-sitemap) - generate `sitemap.xml` file
+* [`@sphido/feed`](https://github.com/sphido/sphido/tree/main/packages/sphido-feed) - generate RSS 2.0 `feed.xml` file
+
+### Helpers
+
+* [`@sphido/collections`](https://github.com/sphido/sphido/tree/main/packages/sphido-collections) - sorting, pagination, tag pages and prev/next navigation
+* [`@sphido/dev`](https://github.com/sphido/sphido/tree/main/packages/sphido-dev) - dev server with watch mode and live reload
+* [`create-sphido`](https://github.com/sphido/sphido/tree/main/packages/create-sphido) - project scaffolder for `npm create sphido`
+
+## TypeScript
+
+Extender packages export the types they contribute to pages, so you can compose a fully typed page:
+
+```typescript
+import {getPages, allPages, type Page} from '@sphido/core';
+import {frontmatter, type WithFrontmatter} from '@sphido/frontmatter';
+import {hashtags, type WithHashtags} from '@sphido/hashtags';
+
+type BlogPage = Page & WithFrontmatter & WithHashtags & {slug: string};
+
+const pages = await getPages<BlogPage>({path: 'content'}, frontmatter, hashtags, (page) => {
+  page.slug = `${page.name}.html`;
+});
+```
 
 ## Examples
 
