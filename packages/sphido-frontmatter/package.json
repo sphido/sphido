@@ -4,9 +4,14 @@
 	"type": "module",
 	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
 	"homepage": "https://sphido.cz",
-	"repository": "sphido/sphido",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/sphido-frontmatter"
+	},
 	"description": "Frontmatter for Sphido - A rocket 🚀 fast, lightweight, static site generator",
 	"license": "MIT",
+	"sideEffects": false,
 	"keywords": [
 		"markdown",
 		"sphido",
@@ -15,9 +20,12 @@
 	"files": [
 		"dist"
 	],
-	"exports": "./dist/frontmatter.js",
-	"types": "dist/frontmatter.d.ts",
-	"main": "dist/frontmatter.js",
+	"exports": {
+		".": {
+			"types": "./dist/frontmatter.d.ts",
+			"default": "./dist/frontmatter.js"
+		}
+	},
 	"engines": {
 		"node": ">=22"
 	},
@@ -31,7 +39,7 @@
 	},
 	"scripts": {
 		"test": "vitest run --passWithNoTests",
-		"build": "rm -rf dist/* && tsc"
+		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
 	},
 	"dependencies": {
 		"@sphido/core": "workspace:*",

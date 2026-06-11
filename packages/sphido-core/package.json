@@ -3,19 +3,27 @@
 	"version": "3.0.0",
 	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
 	"homepage": "https://sphido.cz",
-	"repository": "sphido/sphido",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/sphido-core"
+	},
 	"license": "MIT",
 	"description": "A rocket 🚀 fast, lightweight, static site generator",
 	"type": "module",
+	"sideEffects": false,
 	"engines": {
 		"node": ">=22"
 	},
 	"files": [
 		"dist"
 	],
-	"exports": "./dist/index.js",
-	"types": "dist/index.d.ts",
-	"main": "dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
 	"keywords": [
 		"markdown",
 		"markup",
@@ -40,6 +48,6 @@
 	},
 	"scripts": {
 		"test": "vitest run --passWithNoTests",
-		"build": "rm -rf dist/* && tsc"
+		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
 	}
 }
