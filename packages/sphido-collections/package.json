@@ -1,0 +1,47 @@
+{
+	"name": "@sphido/collections",
+	"type": "module",
+	"version": "1.0.0",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/sphido-collections"
+	},
+	"description": "Sorting, pagination, tag pages and prev/next navigation helpers for Sphido pages",
+	"sideEffects": false,
+	"keywords": [
+		"sphido",
+		"collections",
+		"pagination",
+		"tags"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"typescript": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run --passWithNoTests",
+		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
+	},
+	"dependencies": {
+		"@sphido/core": "workspace:*"
+	}
+}
