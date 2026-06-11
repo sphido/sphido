@@ -49,6 +49,19 @@ importers:
         specifier: 'catalog:'
         version: 4.1.5(@types/node@25.6.0)(vite@8.0.10(@types/node@25.6.0))
 
+  packages/sphido-feed:
+    dependencies:
+      '@sphido/core':
+        specifier: workspace:*
+        version: link:../sphido-core
+    devDependencies:
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.5(@types/node@25.6.0)(vite@8.0.10(@types/node@25.6.0))
+
   packages/sphido-frontmatter:
     dependencies:
       '@sphido/core':

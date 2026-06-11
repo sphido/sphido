@@ -1,0 +1,47 @@
+{
+	"name": "@sphido/feed",
+	"version": "1.0.0",
+	"type": "module",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/sphido-feed"
+	},
+	"description": "RSS 2.0 feed generator for Sphido CMS",
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/feed.d.ts",
+			"default": "./dist/feed.js"
+		}
+	},
+	"keywords": [
+		"sphido",
+		"rss",
+		"feed",
+		"atom"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@sphido/core": "workspace:*"
+	},
+	"devDependencies": {
+		"typescript": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run --passWithNoTests",
+		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
+	}
+}
