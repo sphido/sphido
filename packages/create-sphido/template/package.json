@@ -1,0 +1,17 @@
+{
+	"name": "my-site",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "node index.js"
+	},
+	"dependencies": {
+		"@sindresorhus/slugify": "^3",
+		"@sphido/core": "^3",
+		"@sphido/frontmatter": "^3",
+		"@sphido/hashtags": "^3",
+		"@sphido/sitemap": "^4",
+		"marked": "^18"
+	}
+}

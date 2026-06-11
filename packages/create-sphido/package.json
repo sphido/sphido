@@ -1,0 +1,40 @@
+{
+	"name": "create-sphido",
+	"version": "1.0.0",
+	"type": "module",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/create-sphido"
+	},
+	"description": "Scaffold a new Sphido site with a single command: npm create sphido",
+	"bin": {
+		"create-sphido": "./bin.js"
+	},
+	"files": [
+		"bin.js",
+		"template"
+	],
+	"keywords": [
+		"sphido",
+		"create",
+		"scaffold",
+		"starter"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run --passWithNoTests",
+		"build": "node -e \"\""
+	}
+}
