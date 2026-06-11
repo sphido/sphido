@@ -58,6 +58,30 @@ for (const page of allPages(pages)) {
 }
 ```
 
+## TypeScript
+
+The package exports a `WithHashtags` type describing the field the `hashtags` extender adds:
+
+```typescript
+import { getPages, type Page } from '@sphido/core';
+import { hashtags, type WithHashtags } from '@sphido/hashtags';
+
+type BlogPage = Page & WithHashtags;
+
+const pages = await getPages<BlogPage>({path: 'content'}, hashtags);
+// pages[0].tags is Set<string> | undefined
+```
+
+```typescript
+type WithHashtags = {
+	tags?: Set<string>;
+};
+```
+
+When combined with the `@sphido/frontmatter` extender (which may read `tags` as a `string[]` from
+the YAML block), the runtime merges both into a single `Set` — `hashtags` spreads any existing
+`page.tags` value into the `Set` it creates, so frontmatter tags and content hashtags end up together.
+
 ## Source code
 
 [@sphido/hashtags](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags)

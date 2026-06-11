@@ -35,6 +35,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
+		"@sphido/frontmatter": "workspace:*",
 		"typescript": "catalog:",
 		"vitest": "catalog:"
 	},

@@ -77,6 +77,9 @@ importers:
         specifier: workspace:*
         version: link:../sphido-core
     devDependencies:
+      '@sphido/frontmatter':
+        specifier: workspace:*
+        version: link:../sphido-frontmatter
       typescript:
         specifier: 'catalog:'
         version: 6.0.3

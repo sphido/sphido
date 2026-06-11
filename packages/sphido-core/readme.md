@@ -180,6 +180,58 @@ for (const page of allPages(pages)) {
 }
 ```
 
+## TypeScript
+
+`getPages()` and `allPages()` are generic, with `Page` as the default — existing JavaScript and
+TypeScript code compiles unchanged. To get typed pages, describe what your extenders add and pass
+the resulting type as the generic parameter:
+
+```typescript
+import { getPages, allPages, type Page } from '@sphido/core';
+import { frontmatter, type WithFrontmatter } from '@sphido/frontmatter';
+import { hashtags, type WithHashtags } from '@sphido/hashtags';
+
+type BlogPage = Page & WithFrontmatter & WithHashtags & { slug: string };
+
+const pages = await getPages<BlogPage>({path: 'content'}, frontmatter, hashtags, (page) => {
+	page.slug = `${page.name}.html`; // page is typed as BlogPage
+});
+
+for (const page of allPages<BlogPage>(pages)) {
+	page.title; // string | undefined — typed
+	page.tags;  // typed as a Set<string>
+}
+```
+
+The related types are exported as well:
+
+- **`Page`** — the base page object (`name`, `path`, optional `content` and `children`)
+- **`Pages<T extends Page = Page>`** — an array of pages, `Array<T>`
+- **`ExtenderCallback<T extends Page = Page>`** — `(page: T, dirent: Dirent, path?: string) => Promise<void> | void`
+- **`Extenders<T extends Page = Page>`** — array of callback or object extenders
+
+Note: `Page` keeps an `[key: string]: any` index signature for backward compatibility, so types
+intersected with `Page` still allow unknown keys (they are typed `any`, while declared fields such
+as `title` stay precisely typed). If you want typos on unknown fields to be compile errors, define
+a closed page type instead of intersecting `Page`:
+
+```typescript
+import { getPages, type Pages } from '@sphido/core';
+
+type StrictPage = {
+	name: string;
+	path: string;
+	content?: string;
+	children?: Pages<StrictPage>;
+	title?: string;
+};
+
+const pages = await getPages<StrictPage>({path: 'content'}, (page) => {
+	page.title = 'ok';
+	page.titel = 'typo'; // ✗ compile error
+});
+```
+
 ## Source code
 
 [@sphido/core](https://github.com/sphido/sphido/tree/main/packages/sphido-core)

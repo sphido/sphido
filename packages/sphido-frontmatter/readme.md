@@ -56,6 +56,35 @@ tags: [one, two, other]
 Lorem ipsum...
 ```
 
+## TypeScript
+
+The package exports a `WithFrontmatter` type describing the fields the extender commonly adds:
+
+```typescript
+import { getPages, type Page } from '@sphido/core';
+import { frontmatter, type WithFrontmatter } from '@sphido/frontmatter';
+
+type BlogPage = Page & WithFrontmatter;
+
+const pages = await getPages<BlogPage>({path: 'content'}, frontmatter);
+// pages[0].title is string | undefined, pages[0].date is string | Date | undefined, ...
+```
+
+```typescript
+type WithFrontmatter = {
+	title?: string;
+	description?: string;
+	date?: string | Date;
+	tags?: string[];
+	slug?: string;
+	fmParseError?: string;
+};
+```
+
+`WithFrontmatter` is intentionally a closed type — arbitrary YAML keys from your front matter
+blocks still land on the page at runtime via the `Page` index signature (typed `any`). If you rely
+on additional keys, intersect your own type: `type BlogPage = Page & WithFrontmatter & { author?: string }`.
+
 ## Source code
 
 [@sphido/frontmatter](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter)

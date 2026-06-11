@@ -4,6 +4,23 @@ import { readFile } from "@sphido/core";
 import yaml from "js-yaml";
 
 /**
+ * Fields the `frontmatter` extender commonly adds to a page.
+ *
+ * This type is intentionally closed — arbitrary YAML keys still land
+ * on the page at runtime via the `Page` index signature.
+ *
+ * Usage: `type BlogPage = Page & WithFrontmatter;`
+ */
+export type WithFrontmatter = {
+	title?: string;
+	description?: string;
+	date?: string | Date;
+	tags?: string[];
+	slug?: string;
+	fmParseError?: string;
+};
+
+/**
  * Process front matter data on the beginning of the markdown file
  *
  * ---

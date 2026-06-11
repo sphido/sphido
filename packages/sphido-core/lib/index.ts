@@ -6,9 +6,9 @@ export { getPages } from "./get-pages.js";
 export { readFile } from "./read-file.js";
 export { writeFile } from "./write-file.js";
 
-export type Extender = ExtenderCallback | ExtenderObject;
+export type Extender<T extends Page = Page> = ExtenderCallback<T> | ExtenderObject;
 
-export type Extenders = Array<Extender>;
+export type Extenders<T extends Page = Page> = Array<Extender<T>>;
 
 export type Page = {
 	name: string;
@@ -19,11 +19,11 @@ export type Page = {
 	[key: string]: any;
 };
 
-export type Pages = Array<Page>;
+export type Pages<T extends Page = Page> = Array<T>;
 
 export type Options = { path?: string; include?: IncludePage };
 
-export type ExtenderCallback = (page: Page, dirent: Dirent, path?: string) => Promise<void> | void;
+export type ExtenderCallback<T extends Page = Page> = (page: T, dirent: Dirent, path?: string) => Promise<void> | void;
 
 export type ExtenderObject = Record<string, unknown>;
 

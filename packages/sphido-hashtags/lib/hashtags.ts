@@ -7,6 +7,18 @@ import { tagsToMarkdown } from "./tags-to-markdown.js";
 export { getHashtags } from "./get-hashtags.js";
 export { tagsToMarkdown } from "./tags-to-markdown.js";
 
+/**
+ * Fields the `hashtags` extender adds to a page.
+ *
+ * When combined with the `frontmatter` extender, the runtime merges
+ * frontmatter tags and hashtags into a single `Set`.
+ *
+ * Usage: `type BlogPage = Page & WithHashtags;`
+ */
+export type WithHashtags = {
+	tags?: Set<string>;
+};
+
 /** * Replace hashtags in markdown with links */
 export async function hashtags(page: Page, dirent: Dirent): Promise<void> {
 	if (!dirent.isFile()) return;
