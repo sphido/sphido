@@ -1,10 +1,10 @@
 # @sphido/feed
 
-## 1.0.1
+## 3.1.0
 
 ### Patch Changes
 
-- no code changes; version 1.0.0 is permanently blocked on npm because the package name was published and unpublished in 2024
+- no code changes; the @sphido/feed name was published 2019–2024 and unpublished, which permanently blocks versions 0.0.1–0.0.8, 1.0.0–1.0.10 and 1.1.0 on npm — 3.1.0 aligns with the current @sphido/core release line
 
 ## 1.0.0
 
