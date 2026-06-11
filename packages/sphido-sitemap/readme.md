@@ -1,6 +1,6 @@
 # @sphido/sitemap
 
-Generates [XML sitemap](https://www.sitemaps.org/protocol.html) files for Sphido CMS.
+Generates [XML sitemap](https://www.sitemaps.org/protocol.html) files for Sphido CMS — as pure functions, no state to manage.
 
 ## Install
 
@@ -13,32 +13,54 @@ pnpm add @sphido/sitemap
 ```javascript
 #!/usr/bin/env node
 
-import { dirname, relative, join } from 'node:path';
-import { getPages, allPages } from '@sphido/core';
+import { dirname, join, relative } from 'node:path';
+import { getPages } from '@sphido/core';
 import slugify from '@sindresorhus/slugify';
-import { createSitemap } from '@sphido/sitemap';
+import { pagesToSitemap, writeSitemap } from '@sphido/sitemap';
 
-const pages = await getPages({path: 'content'});
-const map = await createSitemap('sitemap.xml');
-
-map.add({url: 'https://sphido.cz', priority: 1});
-
-for (const page of await allPages(pages)) {
+const pages = await getPages({path: 'content'}, (page) => {
 	page.slug = slugify(page.name) + '.html';
-	page.output = join('/', relative('content', dirname(page.path)), page.slug);
-
-	// prepare sitemap item properties
-	page.url = new URL(page.slug, 'https://sphido.cz');
+	page.url = join('/', relative('content', dirname(page.path)), page.slug);
 	page.date = new Date();
-	page.priority = 0.5;
-	page.changefreq = 'daily';
+});
 
-	// add page to sitemap
-	map.add(page);
-}
+const xml = pagesToSitemap(pages, {
+	baseUrl: 'https://sphido.cz',
+	defaults: {priority: 0.5, changefreq: 'daily'},
+});
 
-await map.end();
+await writeSitemap('public/sitemap.xml', xml);
 ```
+
+## API
+
+### `pagesToSitemap(pages, {baseUrl, defaults})`
+
+Maps a Sphido pages tree (nested pages are flattened) to sitemap XML. For each page:
+
+- the URL is `page.url ?? page.slug ?? page.name + '.html'`, resolved against `baseUrl`
+- `lastmod` comes from `page.lastmod ?? page.date` (no filesystem access)
+- `priority` and `changefreq` come from the page, falling back to `defaults`
+
+### `renderSitemap(entries)`
+
+Lowest level: renders any iterable of entries to an XML string. Only `url` is
+required; `lastmod` (`Date` or string), `priority` (clamped to 0–1) and
+`changefreq` (`always` … `never`) are emitted only when present. Composes with
+generators, so large entry sets need not be materialized as arrays.
+
+```javascript
+import { renderSitemap } from '@sphido/sitemap';
+
+const xml = renderSitemap([
+	{url: 'https://sphido.cz', priority: 1},
+	{url: 'https://sphido.cz/about.html', lastmod: new Date(), changefreq: 'monthly'},
+]);
+```
+
+### `writeSitemap(file, xml)`
+
+Writes the XML to a file, creating parent directories when needed.
 
 ## Source code
 

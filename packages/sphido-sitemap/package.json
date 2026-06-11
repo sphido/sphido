@@ -1,6 +1,6 @@
 {
 	"name": "@sphido/sitemap",
-	"version": "3.0.1",
+	"version": "4.0.0",
 	"type": "module",
 	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
 	"homepage": "https://sphido.cz",
@@ -30,6 +30,9 @@
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
+	},
+	"dependencies": {
+		"@sphido/core": "workspace:*"
 	},
 	"devDependencies": {
 		"@sindresorhus/slugify": "^3.0.0",
