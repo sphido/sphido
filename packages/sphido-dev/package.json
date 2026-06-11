@@ -1,0 +1,45 @@
+{
+	"name": "@sphido/dev",
+	"type": "module",
+	"version": "1.0.0",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/sphido-dev"
+	},
+	"description": "Watch mode and dev server with live reload for Sphido",
+	"sideEffects": false,
+	"keywords": [
+		"sphido",
+		"dev-server",
+		"live-reload",
+		"watch"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/serve.d.ts",
+			"default": "./dist/serve.js"
+		}
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@types/node": "^25",
+		"typescript": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run --passWithNoTests",
+		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
+	}
+}
