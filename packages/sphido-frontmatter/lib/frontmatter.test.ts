@@ -41,6 +41,20 @@ describe("frontmatter — HTML comment delimiters (<!-- -->)", () => {
 		expect(p.tags).toEqual(["x", "y"]);
 		expect(p.content).toBe("html content");
 	});
+
+	test("leaves plain HTML comments in place", async () => {
+		const p = page("<!-- just a plain comment -->\n\ncontent");
+		await frontmatter(p, fileDirent());
+		expect(p.content).toBe("<!-- just a plain comment -->\n\ncontent");
+		expect(p.fmParseError).toBeUndefined();
+	});
+
+	test("leaves HTML comments with invalid YAML in place", async () => {
+		const p = page("<!-- title: [ -->\n\ncontent");
+		await frontmatter(p, fileDirent());
+		expect(p.content).toBe("<!-- title: [ -->\n\ncontent");
+		expect(p.fmParseError).toBeUndefined();
+	});
 });
 
 describe("frontmatter — edge cases", () => {

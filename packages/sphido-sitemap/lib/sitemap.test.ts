@@ -18,7 +18,7 @@ describe("createSitemap", () => {
 
 		const content = await readFile(file, "utf-8");
 		expect(content).toContain('<?xml version="1.0" encoding="UTF-8"?>');
-		expect(content).toContain('<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">');
+		expect(content).toContain('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
 		expect(content).toContain("</urlset>");
 	});
 
@@ -100,6 +100,32 @@ describe("createSitemap", () => {
 		const content = await readFile(file, "utf-8");
 		expect(content).not.toContain("https://example.com/old");
 		expect(content).toContain("<loc>https://example.com/new</loc>");
+	});
+
+	test("clamps priority to the 0-1 range", async () => {
+		const file = join(tmp, "sitemap.xml");
+		const map = await createSitemap(file);
+		map.add({ url: "https://example.com/a", priority: 1.5 });
+		map.add({ url: "https://example.com/b", priority: -1 });
+		await map.end();
+
+		const content = await readFile(file, "utf-8");
+		expect(content).toContain("<priority>1</priority>");
+		expect(content).toContain("<priority>0</priority>");
+	});
+
+	test("supports all protocol changefreq values", async () => {
+		const file = join(tmp, "sitemap.xml");
+		const map = await createSitemap(file);
+		map.add({ url: "https://example.com/a", changefreq: "always" });
+		map.add({ url: "https://example.com/b", changefreq: "hourly" });
+		map.add({ url: "https://example.com/c", changefreq: "never" });
+		await map.end();
+
+		const content = await readFile(file, "utf-8");
+		expect(content).toContain("<changefreq>always</changefreq>");
+		expect(content).toContain("<changefreq>hourly</changefreq>");
+		expect(content).toContain("<changefreq>never</changefreq>");
 	});
 
 	test("uses LF line endings", async () => {

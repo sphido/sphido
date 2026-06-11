@@ -68,6 +68,27 @@ describe("hashtags", () => {
 		expect(p.tags.has("something")).toBe(false);
 	});
 
+	test("merges with existing tags instead of overwriting them", async () => {
+		const p = page("post about #js");
+		p.tags = ["frontend", "web"]; // e.g. from the frontmatter extender
+		await hashtags(p, fileDirent());
+		expect(p.tags.has("frontend")).toBe(true);
+		expect(p.tags.has("web")).toBe(true);
+		expect(p.tags.has("js")).toBe(true);
+	});
+
+	test("does not link hashtags inside code", async () => {
+		const p = page("real #code tag and `#code` in code");
+		await hashtags(p, fileDirent());
+		expect(p.content).toBe("real [#code](/tag/code) tag and `#code` in code");
+	});
+
+	test("does not partially match longer tags", async () => {
+		const p = page("#go and #golang");
+		await hashtags(p, fileDirent());
+		expect(p.content).toBe("[#go](/tag/go) and [#golang](/tag/golang)");
+	});
+
 	test("skips directories", async () => {
 		const p = page("#tag in directory");
 		await hashtags(p, dirDirent());

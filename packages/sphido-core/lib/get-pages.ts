@@ -1,7 +1,7 @@
 import type { Dirent } from "node:fs";
 import { readdir } from "node:fs/promises";
 import { join, parse } from "node:path";
-import type { ExtenderCallback, Extenders, Options, Page, Pages } from "./index.js";
+import type { ExtenderCallback, ExtenderObject, Extenders, Options, Page, Pages } from "./index.js";
 import { isPage } from "./is-page.js";
 
 /** * Retrieve an array tree of pages from path */
@@ -13,12 +13,12 @@ export async function getPages(
 
 	return Promise.all(
 		dir
-			.filter((dirent) => include(dirent, path.toString()))
+			.filter((dirent) => include(dirent, path))
 			.map(async (dirent) => {
 				// Page object
 				const page: Page = {
 					name: parse(dirent.name).name,
-					path: join(path.toString(), dirent.name),
+					path: join(path, dirent.name),
 				};
 
 				// Read subdirectory recursively
@@ -27,12 +27,15 @@ export async function getPages(
 				}
 
 				// Calling callbacks in the series
-				for (const cb of extenders.filter((f: ExtenderCallback): boolean => typeof f === "function")) {
-					await cb(page, dirent, path.toString());
+				for (const cb of extenders.filter((f): f is ExtenderCallback => typeof f === "function")) {
+					await cb(page, dirent, path);
 				}
 
 				// Assign objects with page
-				return Object.assign(page, ...extenders.filter((o: ExtenderCallback): boolean => typeof o === "object"));
+				return Object.assign(
+					page,
+					...extenders.filter((o): o is ExtenderObject => typeof o === "object" && o !== null),
+				);
 			}),
 	);
 }

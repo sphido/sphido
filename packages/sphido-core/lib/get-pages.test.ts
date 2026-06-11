@@ -38,7 +38,7 @@ describe("getPages", () => {
 	});
 
 	test("applies object extender", async () => {
-		const pages = await getPages({ path: contentPath }, { extra: true } as any);
+		const pages = await getPages({ path: contentPath }, { extra: true });
 		for (const page of pages) {
 			expect(page.extra).toBe(true);
 		}

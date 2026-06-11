@@ -15,6 +15,18 @@ describe("tagsToMarkdown", () => {
 		expect(tagsToMarkdown("some #a #a #b", ["#a", "#b"])).toBe("some [#a](/tag/a) [#a](/tag/a) [#b](/tag/b)");
 	});
 
+	test("tag that is a prefix of another tag does not split it", () => {
+		expect(tagsToMarkdown("#go #golang", ["#go", "#golang"])).toBe("[#go](/tag/go) [#golang](/tag/golang)");
+	});
+
+	test("keeps inline code untouched", () => {
+		expect(tagsToMarkdown("use `#tag` and #tag", ["#tag"])).toBe("use `#tag` and [#tag](/tag/tag)");
+	});
+
+	test("keeps fenced code blocks untouched", () => {
+		expect(tagsToMarkdown("```\n#tag\n```\n#tag", ["#tag"])).toBe("```\n#tag\n```\n[#tag](/tag/tag)");
+	});
+
 	test("custom urlBase", () => {
 		expect(tagsToMarkdown("#a", ["#a"], { urlBase: "/new-base/" })).toBe("[#a](/new-base/a)");
 	});

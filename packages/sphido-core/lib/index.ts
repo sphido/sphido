@@ -1,4 +1,4 @@
-import type { Dirent, PathLike } from "node:fs";
+import type { Dirent } from "node:fs";
 
 export { allPages } from "./all-pages.js";
 export { copyFile } from "./copy-file.js";
@@ -6,7 +6,9 @@ export { getPages } from "./get-pages.js";
 export { readFile } from "./read-file.js";
 export { writeFile } from "./write-file.js";
 
-export type Extenders = Array<ExtenderCallback>;
+export type Extender = ExtenderCallback | ExtenderObject;
+
+export type Extenders = Array<Extender>;
 
 export type Page = {
 	name: string;
@@ -19,8 +21,10 @@ export type Page = {
 
 export type Pages = Array<Page>;
 
-export type Options = { path?: PathLike; include?: IncludePage };
+export type Options = { path?: string; include?: IncludePage };
 
-export type ExtenderCallback = (page: Page, dirent: Dirent, path?: string) => Promise<void>;
+export type ExtenderCallback = (page: Page, dirent: Dirent, path?: string) => Promise<void> | void;
 
-export type IncludePage = (dirent: Dirent, path?: string) => void;
+export type ExtenderObject = Record<string, unknown>;
+
+export type IncludePage = (dirent: Dirent, path?: string) => boolean;
