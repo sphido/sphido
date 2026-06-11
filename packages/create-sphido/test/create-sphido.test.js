@@ -32,6 +32,8 @@ describe("create-sphido bin", () => {
 		for (const file of [
 			"package.json",
 			"index.js",
+			"build.js",
+			"dev.js",
 			"layout.js",
 			".gitignore",
 			"content/index.md",
@@ -87,7 +89,7 @@ describe("create-sphido bin", () => {
 });
 
 describe("template smoke checks", () => {
-	test.each(["index.js", "layout.js"])("template/%s parses (node --check)", (file) => {
+	test.each(["index.js", "build.js", "dev.js", "layout.js"])("template/%s parses (node --check)", (file) => {
 		const { status, stderr } = spawnSync(process.execPath, ["--check", join(template, file)], { encoding: "utf8" });
 		expect(stderr).toBe("");
 		expect(status).toBe(0);

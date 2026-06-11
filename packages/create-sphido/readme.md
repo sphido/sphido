@@ -45,10 +45,13 @@ turns `#hashtags` into links, a small callback computes `page.slug` and `page.ur
 ```shell
 cd my-blog
 npm install
-node index.js
+node index.js     # build the site into public/
+npm run dev       # dev server with live reload on http://localhost:4000
 ```
 
-The site is generated into `public/`.
+The site is generated into `public/`. The `dev` script uses
+[`@sphido/dev`](https://www.npmjs.com/package/@sphido/dev) to rebuild on every
+change in `content/` and reload the browser automatically.
 
 ## License
 

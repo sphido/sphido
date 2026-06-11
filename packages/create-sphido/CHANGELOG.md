@@ -1,5 +1,11 @@
 # create-sphido
 
+## 1.1.0
+
+### Minor Changes
+
+- the template now includes a development workflow: the build logic moved into `build.js`, a new `dev.js` runs it through `@sphido/dev` (`npm run dev` — watch mode + live reload), and `@sphido/dev` ships as a devDependency of the scaffolded project
+
 ## 1.0.0
 
 ### Major Changes

@@ -31,5 +31,6 @@ Next steps:
 
   cd ${targetArg}
   npm install
-  node index.js
+  node index.js     # build the site into public/
+  npm run dev       # dev server with live reload
 `);

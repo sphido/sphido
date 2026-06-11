@@ -4,7 +4,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "node index.js"
+		"build": "node index.js",
+		"dev": "node dev.js"
 	},
 	"dependencies": {
 		"@sindresorhus/slugify": "^3",
@@ -13,5 +14,8 @@
 		"@sphido/hashtags": "^3",
 		"@sphido/sitemap": "^4",
 		"marked": "^18"
+	},
+	"devDependencies": {
+		"@sphido/dev": "^1"
 	}
 }
