@@ -14,7 +14,7 @@ You get a static site generator that is:
 
 - 🚀 rocket fast
 - 💭 lightweight
-- 🤘 no dependencies
+- 🤘 zero-dependency core
 - ⚡️ flexible
 
 ## Installation
@@ -27,6 +27,13 @@ or
 
 ```shell
 npm i @sphido/core
+```
+
+The Quick Start below also uses [marked](https://www.npmjs.com/package/marked) and
+[@sindresorhus/slugify](https://www.npmjs.com/package/@sindresorhus/slugify) — install them alongside:
+
+```shell
+pnpm add marked @sindresorhus/slugify
 ```
 
 ## Monorepo development
