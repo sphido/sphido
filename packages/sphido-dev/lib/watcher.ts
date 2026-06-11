@@ -1,4 +1,4 @@
-import { type FSWatcher, watch } from "node:fs";
+import { type FSWatcher, realpathSync, watch } from "node:fs";
 
 export interface WatcherOptions {
 	/** Directories to watch recursively */
@@ -32,7 +32,10 @@ export function createWatcher({ dirs, debounceMs = 50, onChange }: WatcherOption
 	};
 
 	const watchers: FSWatcher[] = dirs.map((dir) => {
-		const watcher = watch(dir, { recursive: true }, trigger);
+		// Canonicalize the path (resolves Windows 8.3 short names like RUNNER~1):
+		// libuv 1.52.x asserts in fs-event.c when the watched dir prefix does not
+		// match the long-form paths reported by ReadDirectoryChangesW.
+		const watcher = watch(realpathSync.native(dir), { recursive: true }, trigger);
 		// Without a listener an "error" event crashes the whole process —
 		// e.g. EPERM on Windows when a watched directory is removed.
 		watcher.on("error", (error) => {
