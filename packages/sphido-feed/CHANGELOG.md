@@ -1,5 +1,11 @@
 # @sphido/feed
 
+## 1.0.1
+
+### Patch Changes
+
+- no code changes; version 1.0.0 is permanently blocked on npm because the package name was published and unpublished in 2024
+
 ## 1.0.0
 
 ### Major Changes
