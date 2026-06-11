@@ -31,7 +31,16 @@ export function createWatcher({ dirs, debounceMs = 50, onChange }: WatcherOption
 		timer = setTimeout(onChange, debounceMs);
 	};
 
-	const watchers: FSWatcher[] = dirs.map((dir) => watch(dir, { recursive: true }, trigger));
+	const watchers: FSWatcher[] = dirs.map((dir) => {
+		const watcher = watch(dir, { recursive: true }, trigger);
+		// Without a listener an "error" event crashes the whole process —
+		// e.g. EPERM on Windows when a watched directory is removed.
+		watcher.on("error", (error) => {
+			console.error("[sphido] watch error:", error);
+			watcher.close();
+		});
+		return watcher;
+	});
 
 	return {
 		trigger,
