@@ -43,6 +43,6 @@
 	},
 	"dependencies": {
 		"@sphido/core": "workspace:*",
-		"js-yaml": "^4.1.1"
+		"js-yaml": "^4.3.0"
 	}
 }
