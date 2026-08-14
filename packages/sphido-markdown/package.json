@@ -1,7 +1,7 @@
 {
 	"name": "@sphido/markdown",
 	"type": "module",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
 	"homepage": "https://sphido.cz",
 	"repository": {
