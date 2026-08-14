@@ -22,7 +22,9 @@ A minimal, working blog that builds on the first run:
 ```
 my-blog/
 ├── package.json        # type: module, deps, "build" script
-├── index.js            # build script — getPages() + extenders + marked + sitemap
+├── index.js            # entry point — runs the build
+├── build.js            # getPages() + extenders + markdown + sitemap
+├── dev.js              # dev server with live reload
 ├── layout.js           # single template-literal layout function
 ├── .gitignore
 └── content/
@@ -32,11 +34,12 @@ my-blog/
         └── hello-world.md   # uses #hashtags to demonstrate the extender
 ```
 
-The generated `index.js` demonstrates the Sphido extender model:
+The generated `build.js` demonstrates the Sphido extender model:
 [`@sphido/frontmatter`](https://www.npmjs.com/package/@sphido/frontmatter) reads
 YAML front matter, [`@sphido/hashtags`](https://www.npmjs.com/package/@sphido/hashtags)
 turns `#hashtags` into links, a small callback computes `page.slug` and `page.url`,
-[marked](https://www.npmjs.com/package/marked) renders Markdown to HTML, and
+[`@sphido/markdown`](https://www.npmjs.com/package/@sphido/markdown) renders
+`page.content` to HTML last of all, and
 [`@sphido/sitemap`](https://www.npmjs.com/package/@sphido/sitemap) writes
 `public/sitemap.xml` at the end.
 
