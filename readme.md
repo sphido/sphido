@@ -113,6 +113,7 @@ node index.js
 ### Helpers
 
 * [`@sphido/collections`](https://github.com/sphido/sphido/tree/main/packages/sphido-collections) - sorting, pagination, tag pages and prev/next navigation
+* [`@sphido/cache`](https://github.com/sphido/sphido/tree/main/packages/sphido-cache) - incremental builds, skip pages that have not changed
 * [`@sphido/dev`](https://github.com/sphido/sphido/tree/main/packages/sphido-dev) - dev server with watch mode and live reload
 * [`create-sphido`](https://github.com/sphido/sphido/tree/main/packages/create-sphido) - project scaffolder for `npm create sphido`
 

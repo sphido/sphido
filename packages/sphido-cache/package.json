@@ -1,0 +1,48 @@
+{
+	"name": "@sphido/cache",
+	"type": "module",
+	"version": "1.0.0",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/sphido-cache"
+	},
+	"description": "Incremental builds for Sphido — skip pages that have not changed",
+	"sideEffects": false,
+	"keywords": [
+		"sphido",
+		"cache",
+		"incremental",
+		"build",
+		"static site generator"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/cache.d.ts",
+			"default": "./dist/cache.js"
+		}
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"typescript": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run --passWithNoTests",
+		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
+	},
+	"dependencies": {
+		"@sphido/core": "workspace:*"
+	}
+}
