@@ -1,5 +1,11 @@
 # create-sphido
 
+## 1.2.0
+
+### Minor Changes
+
+- the template renders markdown through [`@sphido/markdown`](https://www.npmjs.com/package/@sphido/markdown) instead of calling marked in the build loop — `markdown()` runs as the last extender and `page.content` arrives as HTML
+
 ## 1.1.0
 
 ### Minor Changes
