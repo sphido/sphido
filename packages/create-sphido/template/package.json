@@ -12,7 +12,7 @@
 		"@sphido/core": "^3",
 		"@sphido/frontmatter": "^3",
 		"@sphido/hashtags": "^3",
-		"@sphido/markdown": "^1",
+		"@sphido/markdown": "^2",
 		"@sphido/sitemap": "^4"
 	},
 	"devDependencies": {

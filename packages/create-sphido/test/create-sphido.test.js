@@ -103,7 +103,7 @@ describe("template smoke checks", () => {
 
 	test("template renders markdown through @sphido/markdown", async () => {
 		const pkg = JSON.parse(await readFile(join(template, "package.json"), "utf8"));
-		expect(pkg.dependencies["@sphido/markdown"]).toBe("^1");
+		expect(pkg.dependencies["@sphido/markdown"]).toBe("^2");
 
 		const build = await readFile(join(template, "build.js"), "utf8");
 		expect(build).toContain("markdown()");
