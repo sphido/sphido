@@ -14,7 +14,7 @@ Prepare a release for the sphido monorepo. Follow these steps:
 
 Important:
 - This is a pnpm monorepo using Turborepo. Releases use **npm Trusted Publishers (OIDC)** — no NPM_TOKEN.
-- Packages: @sphido/core, @sphido/frontmatter, @sphido/hashtags, @sphido/markdown, @sphido/sitemap, @sphido/feed, @sphido/collections, @sphido/dev, create-sphido.
+- Packages: @sphido/core, @sphido/frontmatter, @sphido/hashtags, @sphido/markdown, @sphido/sitemap, @sphido/feed, @sphido/collections, @sphido/cache, @sphido/dev, create-sphido.
 - Each package has `publishConfig.access: "public"`. Trusted Publisher on npmjs.com points to workflow `publish.yaml`.
 - Do NOT run `pnpm publish` locally — publishing only happens in CI from a tag. The one exception is the first release of a brand-new package, see below.
 - The `create-sphido` template pins published versions (`"@sphido/markdown": "^2"`), so a change there means bumping create-sphido in the same release.
