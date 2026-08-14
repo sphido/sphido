@@ -33,7 +33,6 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@types/js-yaml": "^4.0.9",
 		"typescript": "catalog:",
 		"vitest": "catalog:"
 	},
@@ -43,6 +42,6 @@
 	},
 	"dependencies": {
 		"@sphido/core": "workspace:*",
-		"js-yaml": "^4.3.0"
+		"js-yaml": "^5.2.3"
 	}
 }

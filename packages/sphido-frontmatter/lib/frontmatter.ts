@@ -1,7 +1,7 @@
 import type { Dirent } from "node:fs";
 import type { Page } from "@sphido/core";
 import { readFile } from "@sphido/core";
-import yaml from "js-yaml";
+import { load } from "js-yaml";
 
 /**
  * Fields the `frontmatter` extender commonly adds to a page.
@@ -69,7 +69,7 @@ export async function frontmatter(page: Page, dirent: Dirent): Promise<void> {
 
 	let meta: unknown;
 	try {
-		meta = yamlText ? yaml.load(yamlText) : undefined;
+		meta = yamlText ? load(yamlText) : undefined;
 	} catch (err) {
 		// An HTML comment with unparseable YAML is an ordinary comment — leave it in place
 		if (isHtmlComment) return;

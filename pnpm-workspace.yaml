@@ -2,9 +2,13 @@ packages:
   - "packages/*"
 
 catalog:
-  typescript: ^6.0.3
-  vitest: ^4.1.5
+  typescript: ^7.0.2
+  vitest: ^4.1.10
+
+minimumReleaseAgeExclude:
+  - postcss@8.5.16
+  - vite@8.0.16
 
 overrides:
-  vite: ^8.0.10
-  postcss: ^8.5.14
+  vite: 8.0.16
+  postcss: ^8.5.16
