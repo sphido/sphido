@@ -1,7 +1,17 @@
 import type { Dirent } from "node:fs";
 import type { Page } from "@sphido/core";
 import { readFile } from "@sphido/core";
-import { load } from "js-yaml";
+import { CORE_SCHEMA, load, Schema, timestampTag } from "js-yaml";
+
+/**
+ * The YAML 1.2 core schema plus timestamps, so `date: 2018-09-11` arrives as a
+ * `Date` instead of a string.
+ *
+ * js-yaml 5 dropped the timestamp type from its default schema; adding the tag
+ * back keeps dates working without pulling in the rest of YAML 1.1, where
+ * `y` would become `true` and `0755` an octal number.
+ */
+const schema = new Schema([...CORE_SCHEMA.tags, timestampTag]);
 
 /**
  * Fields the `frontmatter` extender commonly adds to a page.
@@ -69,7 +79,7 @@ export async function frontmatter(page: Page, dirent: Dirent): Promise<void> {
 
 	let meta: unknown;
 	try {
-		meta = yamlText ? load(yamlText) : undefined;
+		meta = yamlText ? load(yamlText, { schema }) : undefined;
 	} catch (err) {
 		// An HTML comment with unparseable YAML is an ordinary comment — leave it in place
 		if (isHtmlComment) return;

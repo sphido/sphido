@@ -33,6 +33,39 @@ describe("frontmatter — YAML delimiters (---)", () => {
 	});
 });
 
+describe("frontmatter — dates", () => {
+	test("a plain date becomes a Date", async () => {
+		const p = page("---\ndate: 2018-09-11\n---\n\ncontent");
+		await frontmatter(p, fileDirent());
+		expect(p.date).toBeInstanceOf(Date);
+		expect((p.date as Date).toISOString()).toBe("2018-09-11T00:00:00.000Z");
+	});
+
+	test("a timestamp with time and zone becomes a Date", async () => {
+		const p = page("---\ndate: 2018-09-11T10:20:30Z\nupdated: 2024-05-07 07:30:56 +2\n---\n\ncontent");
+		await frontmatter(p, fileDirent());
+		expect(p.date).toBeInstanceOf(Date);
+		expect((p.date as Date).toISOString()).toBe("2018-09-11T10:20:30.000Z");
+		expect(p.updated).toBeInstanceOf(Date);
+		expect((p.updated as Date).toISOString()).toBe("2024-05-07T05:30:56.000Z");
+	});
+
+	test("a quoted date stays a string", async () => {
+		const p = page('---\ndate: "2018-09-11"\n---\n\ncontent');
+		await frontmatter(p, fileDirent());
+		expect(p.date).toBe("2018-09-11");
+	});
+
+	test("adding timestamps keeps the rest of the core schema intact", async () => {
+		const p = page("---\nshorthand: y\nzeroes: 0755\nversion: 1.10\nnothing: null\n---\n\ncontent");
+		await frontmatter(p, fileDirent());
+		expect(p.shorthand).toBe("y"); // YAML 1.1 would make this true
+		expect(p.zeroes).toBe(755); // and this an octal 493
+		expect(p.version).toBe(1.1);
+		expect(p.nothing).toBeNull();
+	});
+});
+
 describe("frontmatter — HTML comment delimiters (<!-- -->)", () => {
 	test("parses metadata from HTML comments", async () => {
 		const p = page("<!--\ntitle: html title\ntags: [x, y]\n-->\n\nhtml content");
