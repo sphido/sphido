@@ -146,7 +146,14 @@ pnpm add @sphido/core
 ## Example
 
 The following example reads all `*.md` files in the `content` directory and processes them
-with [marked](https://github.com/markedjs/marked) into HTML files.
+with [marked](https://github.com/markedjs/marked) into HTML files. The core is
+renderer-agnostic — pick any markdown library you like, or let
+[`@sphido/markdown`](https://github.com/sphido/sphido/tree/main/packages/sphido-markdown)
+do it as an extender:
+
+```javascript
+const pages = await getPages({path: 'content'}, markdown()); // page.content is HTML
+```
 
 ```javascript
 #!/usr/bin/env node
