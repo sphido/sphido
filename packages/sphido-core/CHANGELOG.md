@@ -1,5 +1,11 @@
 # @sphido/core
 
+## 3.1.1
+
+### Patch Changes
+
+- readme: the example says out loud that the core is renderer-agnostic and links [`@sphido/markdown`](https://www.npmjs.com/package/@sphido/markdown) for the batteries-included path. Documentation only — no code changed.
+
 ## 3.1.0
 
 ### Minor Changes
