@@ -3,8 +3,8 @@ import slugify from "@sindresorhus/slugify";
 import { allPages, getPages, writeFile } from "@sphido/core";
 import { frontmatter } from "@sphido/frontmatter";
 import { hashtags } from "@sphido/hashtags";
+import { markdown } from "@sphido/markdown";
 import { pagesToSitemap, writeSitemap } from "@sphido/sitemap";
-import { marked } from "marked";
 import { layout } from "./layout.js";
 
 export async function build() {
@@ -16,10 +16,10 @@ export async function build() {
 			page.slug = `${slugify(page.name)}.html`;
 			page.url = join(relative("content", dirname(page.path)), page.slug).replaceAll("\\", "/");
 		},
+		markdown(), // renders page.content to HTML — keep it last
 	);
 
 	for (const page of allPages(pages)) {
-		page.content = marked(page.content ?? "");
 		await writeFile(join("public", page.url), layout(page));
 	}
 
