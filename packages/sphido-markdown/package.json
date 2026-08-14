@@ -1,0 +1,51 @@
+{
+	"name": "@sphido/markdown",
+	"type": "module",
+	"version": "1.0.0",
+	"author": "Roman Ožana <roman@ozana.cz> (https://ozana.cz)",
+	"homepage": "https://sphido.cz",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sphido/sphido.git",
+		"directory": "packages/sphido-markdown"
+	},
+	"description": "Markdown rendering extender for Sphido - A rocket 🚀 fast, lightweight, static site generator",
+	"sideEffects": false,
+	"keywords": [
+		"sphido",
+		"markdown",
+		"satteri",
+		"gfm",
+		"renderer",
+		"html"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/markdown.d.ts",
+			"default": "./dist/markdown.js"
+		}
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@sphido/frontmatter": "workspace:*",
+		"typescript": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run --passWithNoTests",
+		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
+	},
+	"dependencies": {
+		"@sphido/core": "workspace:*",
+		"satteri": "^0.9.5"
+	}
+}

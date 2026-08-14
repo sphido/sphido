@@ -37,11 +37,11 @@ or
 npm i @sphido/core
 ```
 
-The Quick Start below also uses [marked](https://www.npmjs.com/package/marked) and
-[@sindresorhus/slugify](https://www.npmjs.com/package/@sindresorhus/slugify) — install them alongside:
+The Quick Start below also uses [`@sphido/markdown`](https://github.com/sphido/sphido/tree/main/packages/sphido-markdown)
+and [@sindresorhus/slugify](https://www.npmjs.com/package/@sindresorhus/slugify) — install them alongside:
 
 ```shell
-pnpm add marked @sindresorhus/slugify
+pnpm add @sphido/markdown @sindresorhus/slugify
 ```
 
 ## Monorepo development
@@ -60,19 +60,19 @@ pnpm test
 #!/usr/bin/env node
 
 import {dirname, join, relative} from 'node:path';
-import {allPages, getPages, readFile, writeFile} from '@sphido/core';
+import {allPages, getPages, writeFile} from '@sphido/core';
+import {markdown} from '@sphido/markdown';
 import slugify from '@sindresorhus/slugify';
-import {marked} from 'marked';
 
 const pages = await getPages({path: 'content'}, // ... extenders
   (page) => {
     page.slug = slugify(page.name) + '.html';
     page.dir = dirname(page.path);
-  });
+  },
+  markdown()); // page.content is HTML from here on
 
 for (const page of allPages(pages)) {
   page.output = join('public', relative('content', page.dir), page.slug);
-  page.content = marked(await readFile(page.path));
 
   await writeFile(page.output, `<!DOCTYPE html>
   <html lang="en" dir="ltr">
@@ -103,6 +103,7 @@ node index.js
 
 * [`@sphido/frontmatter`](https://github.com/sphido/sphido/tree/main/packages/sphido-frontmatter) - frontmatter extender for `page`
 * [`@sphido/hashtags`](https://github.com/sphido/sphido/tree/main/packages/sphido-hashtags) - process hashtags in `page.content`
+* [`@sphido/markdown`](https://github.com/sphido/sphido/tree/main/packages/sphido-markdown) - render `page.content` from markdown to HTML
 
 ### Website components
 
@@ -123,12 +124,13 @@ Extender packages export the types they contribute to pages, so you can compose 
 import {getPages, allPages, type Page} from '@sphido/core';
 import {frontmatter, type WithFrontmatter} from '@sphido/frontmatter';
 import {hashtags, type WithHashtags} from '@sphido/hashtags';
+import {markdown} from '@sphido/markdown';
 
 type BlogPage = Page & WithFrontmatter & WithHashtags & {slug: string};
 
 const pages = await getPages<BlogPage>({path: 'content'}, frontmatter, hashtags, (page) => {
   page.slug = `${page.name}.html`;
-});
+}, markdown());
 ```
 
 ## Examples

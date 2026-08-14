@@ -100,4 +100,12 @@ describe("template smoke checks", () => {
 		expect(pkg.type).toBe("module");
 		expect(pkg.scripts.build).toBe("node index.js");
 	});
+
+	test("template renders markdown through @sphido/markdown", async () => {
+		const pkg = JSON.parse(await readFile(join(template, "package.json"), "utf8"));
+		expect(pkg.dependencies["@sphido/markdown"]).toBe("^1");
+
+		const build = await readFile(join(template, "build.js"), "utf8");
+		expect(build).toContain("markdown()");
+	});
 });

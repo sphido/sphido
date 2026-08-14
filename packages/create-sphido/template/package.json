@@ -12,8 +12,8 @@
 		"@sphido/core": "^3",
 		"@sphido/frontmatter": "^3",
 		"@sphido/hashtags": "^3",
-		"@sphido/sitemap": "^4",
-		"marked": "^18"
+		"@sphido/markdown": "^1",
+		"@sphido/sitemap": "^4"
 	},
 	"devDependencies": {
 		"@sphido/dev": "^1"
