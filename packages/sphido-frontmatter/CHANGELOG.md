@@ -1,5 +1,11 @@
 # @sphido/frontmatter
 
+## 3.1.2
+
+### Patch Changes
+
+- js-yaml `^5.2.3` → `^5.5.0`
+
 ## 3.1.1
 
 ### Patch Changes

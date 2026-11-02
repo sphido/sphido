@@ -1,5 +1,11 @@
 # @sphido/sitemap
 
+## 4.0.1
+
+### Patch Changes
+
+- XML escaping type-checks under `noUncheckedIndexedAccess`; output unchanged
+
 ## 4.0.0
 
 ### Major Changes

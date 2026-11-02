@@ -1,5 +1,11 @@
 # @sphido/feed
 
+## 3.1.1
+
+### Patch Changes
+
+- XML escaping type-checks under `noUncheckedIndexedAccess`; output unchanged
+
 ## 3.1.0
 
 ### Patch Changes

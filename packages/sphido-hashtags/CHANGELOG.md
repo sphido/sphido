@@ -1,5 +1,11 @@
 # @sphido/hashtags
 
+## 3.1.1
+
+### Patch Changes
+
+- `@sindresorhus/slugify` `^3.0.0` → `^3.0.1`
+
 ## 3.1.0
 
 ### Minor Changes
