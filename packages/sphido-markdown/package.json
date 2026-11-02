@@ -46,6 +46,6 @@
 	},
 	"dependencies": {
 		"@sphido/core": "workspace:*",
-		"satteri": "^0.9.5"
+		"satteri": "^0.11.6"
 	}
 }

@@ -2,13 +2,6 @@ packages:
   - "packages/*"
 
 catalog:
+  "@ozzyczech/tsconfig": ^2.1.0
   typescript: ^7.0.2
-  vitest: ^4.1.11
-
-minimumReleaseAgeExclude:
-  - postcss@8.5.16
-  - vite@8.0.16
-
-overrides:
-  vite: 8.0.16
-  postcss: ^8.5.16
+  vitest: ^5.0.5

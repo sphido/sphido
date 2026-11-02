@@ -10,7 +10,7 @@ const ESC: Record<string, string> = {
 
 /** Escape text for XML element content in a single pass */
 function escapeXml(text: string): string {
-	return text.replace(/[&<>"']/g, (c) => ESC[c]);
+	return text.replace(/[&<>"']/g, (c) => ESC[c] ?? c);
 }
 
 function href(url: string | URL): string {

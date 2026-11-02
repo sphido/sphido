@@ -26,6 +26,7 @@ describe("WithFrontmatter types", () => {
 		expectTypeOf(pages).toEqualTypeOf<Promise<FmPage[]>>();
 
 		void pages.then(([page]) => {
+			if (!page) return;
 			expectTypeOf(page.title).toEqualTypeOf<string | undefined>();
 			expectTypeOf(page.date).toEqualTypeOf<string | Date | undefined>();
 			expectTypeOf(page.tags).toEqualTypeOf<string[] | undefined>();
