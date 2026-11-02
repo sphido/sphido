@@ -1,5 +1,11 @@
 # @sphido/cache
 
+## 1.0.1
+
+### Patch Changes
+
+- no code changes, the published files are identical to 1.0.0; first release through CI, which validates the npm trusted publisher
+
 ## 1.0.0
 
 ### Major Changes
