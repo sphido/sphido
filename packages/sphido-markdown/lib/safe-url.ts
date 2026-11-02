@@ -35,7 +35,7 @@ function stripBlanks(url: string): string {
  * same way `javascript:alert(1)` is.
  */
 export function isSafeUrl(url: string, protocols: string[] = defaultProtocols): boolean {
-	const protocol = /^([a-z][a-z\d+.-]*):/i.exec(stripBlanks(decodeEntities(url)));
-	if (!protocol) return true;
-	return protocols.some((allowed) => allowed.toLowerCase() === protocol[1].toLowerCase());
+	const scheme = /^([a-z][a-z\d+.-]*):/i.exec(stripBlanks(decodeEntities(url)))?.[1];
+	if (!scheme) return true;
+	return protocols.some((allowed) => allowed.toLowerCase() === scheme.toLowerCase());
 }

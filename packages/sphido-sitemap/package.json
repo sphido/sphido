@@ -35,7 +35,7 @@
 		"@sphido/core": "workspace:*"
 	},
 	"devDependencies": {
-		"@sindresorhus/slugify": "^3.0.0",
+		"@sindresorhus/slugify": "^3.0.1",
 		"typescript": "catalog:",
 		"vitest": "catalog:"
 	},

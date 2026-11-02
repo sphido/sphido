@@ -11,7 +11,7 @@ export function siblings(pages: Pages, page: Page): Siblings {
 	if (index === -1) return { prev: null, next: null };
 
 	return {
-		prev: index > 0 ? pages[index - 1] : null,
-		next: index < pages.length - 1 ? pages[index + 1] : null,
+		prev: pages[index - 1] ?? null,
+		next: pages[index + 1] ?? null,
 	};
 }

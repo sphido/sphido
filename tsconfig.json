@@ -1,14 +1,10 @@
 {
+	"extends": "@ozzyczech/tsconfig",
 	"compilerOptions": {
-		"module": "nodenext",
-		"moduleResolution": "nodenext",
-		"moduleDetection": "force",
 		"target": "es2022",
 		"lib": ["ES2022"],
 		"types": ["node"],
-		"declaration": true,
 		"declarationMap": true,
-		"skipLibCheck": true,
 		"rootDir": "${configDir}/lib",
 		"outDir": "${configDir}/dist"
 	}

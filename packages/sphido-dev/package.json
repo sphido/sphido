@@ -34,7 +34,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@types/node": "^26.2.0",
+		"@types/node": "^26.6.6",
 		"typescript": "catalog:",
 		"vitest": "catalog:"
 	},

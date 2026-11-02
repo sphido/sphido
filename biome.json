@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.8/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
 	"files": {
 		"includes": ["**", "!**/dist/**/*.*", "!**/.turbo", "!**/package.json"]
 	},
@@ -11,6 +11,11 @@
 		"enabled": true,
 		"rules": {
 			"preset": "recommended"
+		}
+	},
+	"markdown": {
+		"formatter": {
+			"enabled": false
 		}
 	}
 }
