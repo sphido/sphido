@@ -1,5 +1,11 @@
 # @sphido/hashtags
 
+## 3.1.2
+
+### Patch Changes
+
+- `@sindresorhus/slugify` `^3.0.1` → `^4.0.0` (requires Node.js 22, already the minimum here); tag URLs stay the same except for characters slugify 3 dropped, which are now transliterated — ligatures (`ﬁ` → `fi`) and symbols (`©` → `c`, `½` → `1-2`, `№` → `no`)
+
 ## 3.1.1
 
 ### Patch Changes

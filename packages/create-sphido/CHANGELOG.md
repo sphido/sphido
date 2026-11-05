@@ -1,5 +1,11 @@
 # create-sphido
 
+## 1.2.1
+
+### Patch Changes
+
+- the template depends on `@sindresorhus/slugify` `^4` instead of `^3`
+
 ## 1.2.0
 
 ### Minor Changes
