@@ -44,7 +44,7 @@
 		"build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc"
 	},
 	"dependencies": {
-		"@sindresorhus/slugify": "^3.0.1",
+		"@sindresorhus/slugify": "^4.0.0",
 		"@sphido/core": "workspace:*"
 	}
 }
